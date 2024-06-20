@@ -1,31 +1,22 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.VisualStudio.TestPlatform.TestHost;
+using TgSearchStatistics.Services;
 using Xunit;
 
 namespace TgSearchStatistics.Benchmarks
 {
-    public class ApiBenchmarkTests
+    public class ApiBenchmarkTests : IClassFixture<CustomWebApplicationFactory<Program>>
     {
         private readonly HttpClient _client;
-        private readonly string _logFilePath = "benchmark_log.txt";
 
-        public ApiBenchmarkTests()
+        public ApiBenchmarkTests(CustomWebApplicationFactory<Program> factory)
         {
-            _client = new HttpClient
-            {
-                BaseAddress = new Uri("http://localhost:5000") // Ensure this matches the address your API is running on
-            };
-
-            // Ensure the log file is created or cleared at the start of the tests
-            if (File.Exists(_logFilePath))
-            {
-                File.Delete(_logFilePath);
-            }
-            File.Create(_logFilePath).Dispose();
+            _client = factory.CreateClient();
         }
 
         [Fact]
@@ -76,13 +67,8 @@ namespace TgSearchStatistics.Benchmarks
 
         private void LogBenchmarkResult(BenchmarkLog log)
         {
-            var logEntry = $"URL: {log.Url}, StatusCode: {log.StatusCode}, ExecutionTime: {log.ExecutionTime}ms, Timestamp: {log.Timestamp}, Response: {log.ResponseContent}\n";
-
-            // Log to console
-            Console.WriteLine(logEntry);
-
-            // Log to file
-            File.AppendAllText(_logFilePath, logEntry);
+            // Log to console or a file or a database
+            Console.WriteLine($"URL: {log.Url}, StatusCode: {log.StatusCode}, ExecutionTime: {log.ExecutionTime}ms, Timestamp: {log.Timestamp}, Response: {log.ResponseContent}");
         }
 
         private class BenchmarkLog

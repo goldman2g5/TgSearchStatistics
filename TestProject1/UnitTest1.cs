@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -17,7 +17,7 @@ namespace TgSearchStatistics.Benchmarks
         {
             _client = new HttpClient
             {
-                BaseAddress = new Uri("http://localhost:5000") // Ensure this matches the address your API is running on
+                BaseAddress = new Uri("http://localhost:7143") // Ensure this matches the address your API is running on
             };
 
             // Ensure the log file is created or cleared at the start of the tests

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TgSearchStatistics", "TgSearchStatistics\TgSearchStatistics.csproj", "{54C1CC85-7864-40F9-BD4E-E86DF0FAE99A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TgSearchStatistics", "TgSearchStatistics\TgSearchStatistics.csproj", "{54C1CC85-7864-40F9-BD4E-E86DF0FAE99A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{4B8E4D27-B480-4D1A-ABC1-74DC93740390}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{54C1CC85-7864-40F9-BD4E-E86DF0FAE99A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54C1CC85-7864-40F9-BD4E-E86DF0FAE99A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54C1CC85-7864-40F9-BD4E-E86DF0FAE99A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B8E4D27-B480-4D1A-ABC1-74DC93740390}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B8E4D27-B480-4D1A-ABC1-74DC93740390}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B8E4D27-B480-4D1A-ABC1-74DC93740390}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B8E4D27-B480-4D1A-ABC1-74DC93740390}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
