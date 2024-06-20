@@ -1,0 +1,6 @@
+@TgSearchStatistics_HostAddress = http://localhost:5026
+
+GET {{TgSearchStatistics_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
