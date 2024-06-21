@@ -1,10 +1,22 @@
 using Microsoft.EntityFrameworkCore;
+using TgSearchStatistics.Interfaces;
 using TgSearchStatistics.Models.BaseModels;
+using TgSearchStatistics.Queues;
 using TgSearchStatistics.Services;
+using TL;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Host.UseSerilog((_, conf) =>
+{
+    conf
+        .WriteTo.Console()
+        .WriteTo.File("log-.txt",
+ rollingInterval: RollingInterval.Day)
+    ;
+});
 
 builder.Services.AddControllers();
 builder.Services.AddHttpClient();
@@ -25,9 +37,14 @@ builder.Services.AddSingleton<IDbContextFactory<TgDbContext>>(serviceProvider =>
     return new MyDbContextFactory(optionsBuilder.Options, serviceProvider.GetRequiredService<IServiceScopeFactory>());
 });
 
+builder.Services.AddHostedService<MessageUpdateBackgroundService>();
+builder.Services.AddSingleton<IMessageUpdateQueue, MessageUpdateQueue>();
 builder.Services.AddSingleton<TgClientFactory>();
 builder.Services.AddSingleton<TelegramClientService>();
 builder.Services.AddHostedService<TelegramClientInitializer>();
+
+
+
 
 var app = builder.Build();
 

@@ -11,6 +11,8 @@ using System.Security.Cryptography.Xml;
 using Newtonsoft.Json;
 using Microsoft.EntityFrameworkCore;
 using System.Text.RegularExpressions;
+using TgSearchStatistics.Interfaces;
+using TgSearchStatistics.Queues;
 //using Nest;
 
 namespace TgCheckerApi.Controllers
@@ -23,15 +25,18 @@ namespace TgCheckerApi.Controllers
         private readonly ILogger<TelegramController> _logger;
         private readonly IWebHostEnvironment _env;
         private readonly TelegramClientService _tgclientService;
+        private readonly IMessageUpdateQueue _messageUpdateQueue;
+
         //private readonly IElasticClient _elasticClient;
 
 
-        public TelegramController(TgDbContext context, ILogger<TelegramController> logger, IWebHostEnvironment env, TelegramClientService telegramClientService/*, IElasticClient elasticClient*/)
+        public TelegramController(TgDbContext context, ILogger<TelegramController> logger, IMessageUpdateQueue messageUpdateQueue, IWebHostEnvironment env, TelegramClientService telegramClientService/*, IElasticClient elasticClient*/)
         {
             _context = context;
             _logger = logger;
             _env = env;
             _tgclientService = telegramClientService;
+            _messageUpdateQueue = messageUpdateQueue;
             //_elasticClient = elasticClient;
         }
 
@@ -89,37 +94,16 @@ namespace TgCheckerApi.Controllers
                     offsetDate = earliestMessageInBatch.Date;
                     lastMessageId = earliestMessageInBatch.id;
                 }
-
-                // Database update logic
-                var messageIds = allMessages.Select(m => m.id).ToList();
-                var existingMessages = await _context.Messages
-                                        .Where(m => messageIds.Contains(m.Id))
-                                        .ToListAsync();
-
-                foreach (var tlMessage in allMessages)
+                try
                 {
-                    var existingMessage = existingMessages.FirstOrDefault(m => m.Id == tlMessage.id);
-                    if (existingMessage == null)
-                    {
-                        _context.Messages.Add(new TgSearchStatistics.Models.BaseModels.Message
-                        {
-                            Id = tlMessage.id,
-                            ChannelTelegramId = channelId, // Adjust if necessary
-                            Views = tlMessage.views,
-                            Text = tlMessage.message,
-                            // Map other fields as necessary
-                        });
-                    }
-                    else
-                    {
-                        // Update fields as necessary
-                        existingMessage.Views = tlMessage.views;
-                        existingMessage.Text = tlMessage.message;
-                        // Continue updating other fields as necessary
-                    }
+                    await _messageUpdateQueue.QueueMessagesForUpdateAsync(allMessages);
                 }
-
-                await _context.SaveChangesAsync();
+                catch(Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+                // Queue messages for background update
+               
 
                 // Return fetched messages
                 return Ok(allMessages.Select(m => new { m.id, m.Date, m.views, m.reactions }).OrderByDescending(m => m.Date));

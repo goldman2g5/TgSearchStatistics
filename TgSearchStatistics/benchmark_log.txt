@@ -1,3 +1,3 @@
-URL: /api/Telegram/GetMessagesByPeriod?channelId=-1001075423523&startDate=2024-05-20T14:18:05Z&endDate=2024-06-20T14:18:05Z, StatusCode: OK, ExecutionTime: 5.03 seconds, Timestamp: 6/20/2024 2:18:10 PM
-URL: /api/Telegram/GetMessagesByPeriod?channelId=-1001075423523&startDate=2024-04-20T14:18:05Z&endDate=2024-06-20T14:18:05Z, StatusCode: OK, ExecutionTime: 7.41 seconds, Timestamp: 6/20/2024 2:18:12 PM
-URL: /api/Telegram/GetMessagesByPeriod?channelId=-1001075423523&startDate=2024-03-20T14:18:05Z&endDate=2024-06-20T14:18:05Z, StatusCode: OK, ExecutionTime: 11.11 seconds, Timestamp: 6/20/2024 2:18:16 PM
+URL: /api/Telegram/GetMessagesByPeriod?channelId=-1001075423523&startDate=2024-05-21T11:49:20Z&endDate=2024-06-21T11:49:20Z, StatusCode: OK, ExecutionTime: 2.47 seconds, Timestamp: 6/21/2024 11:49:22 AM
+URL: /api/Telegram/GetMessagesByPeriod?channelId=-1001075423523&startDate=2024-04-21T11:49:20Z&endDate=2024-06-21T11:49:20Z, StatusCode: OK, ExecutionTime: 3.30 seconds, Timestamp: 6/21/2024 11:49:23 AM
+URL: /api/Telegram/GetMessagesByPeriod?channelId=-1001075423523&startDate=2024-03-21T11:49:20Z&endDate=2024-06-21T11:49:20Z, StatusCode: OK, ExecutionTime: 4.62 seconds, Timestamp: 6/21/2024 11:49:24 AM
