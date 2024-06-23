@@ -1,4 +1,5 @@
-﻿using Microsoft.Diagnostics.Tracing.Parsers.AspNet;
+﻿using CommandLine;
+using Microsoft.Diagnostics.Tracing.Parsers.AspNet;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Channels;
 using TgSearchStatistics.Interfaces;
@@ -29,81 +30,87 @@ namespace TgSearchStatistics.Services
 
             await foreach (var messages in _messageUpdateQueue.GetReader().ReadAllAsync(stoppingToken))
             {
-                _logger.LogInformation("Starting processing batch of messages.");
+                var messageBatches = messages
+                    .Select((message, index) => new { message, index })
+                    .GroupBy(x => x.index / 100)
+                    .Select(g => g.Select(x => x.message).ToList());
 
                 using (var scope = _serviceScopeFactory.CreateScope())
                 {
                     var context = scope.ServiceProvider.GetRequiredService<TgDbContext>();
+                    context.ChangeTracker.Clear();
 
-                    var messageIds = messages.Select(m => m.id).ToList();
-                    _logger.LogInformation("Message IDs to process: {MessageIds}", messageIds);
-
-                    var existingMessages = await context.Messages
-                        .Where(m => messageIds.Contains(m.Id))
-                        .AsNoTracking()
-                        .ToDictionaryAsync(m => m.Id, stoppingToken);
-
-                    var newMessages = new List<TgSearchStatistics.Models.BaseModels.Message>();
-                    var updatedMessages = new List<TgSearchStatistics.Models.BaseModels.Message>();
-
-                    foreach (var tlMessage in messages)
+                    foreach (var batch in messageBatches)
                     {
-                        if (existingMessages.TryGetValue(tlMessage.id, out var existingMessage))
+                        _logger.LogInformation("Starting processing batch of messages.");
+
+                        var messageIds = batch.Select(m => m.id).ToList();
+                        _logger.LogInformation("Message IDs to process: {MessageIds}", messageIds);
+
+                        var existingMessages = await context.Messages
+                            .Where(m => messageIds.Contains(m.Id))
+                            .AsNoTracking()
+                            .ToDictionaryAsync(m => m.Id, stoppingToken);
+
+                        var newMessages = new List<TgSearchStatistics.Models.BaseModels.Message>();
+                        var updatedMessages = new List<TgSearchStatistics.Models.BaseModels.Message>();
+
+                        foreach (var tlMessage in batch)
                         {
-                            _logger.LogInformation("Updating existing message ID: {MessageId}", tlMessage.id);
-                            var updatedMessage = new TgSearchStatistics.Models.BaseModels.Message
+                            if (existingMessages.TryGetValue(tlMessage.id, out var existingMessage))
                             {
-                                Id = existingMessage.Id,
-                                ChannelTelegramId = existingMessage.ChannelTelegramId,
-                                Views = tlMessage.views,
-                                Text = tlMessage.message,
-                                // Continue updating other fields as necessary
-                            };
-                            updatedMessages.Add(updatedMessage);
-                        }
-                        else if (!context.Messages.Local.Any(m => m.Id == tlMessage.id))
-                        {
-                            _logger.LogInformation("Adding new message ID: {MessageId}", tlMessage.id);
-                            newMessages.Add(new TgSearchStatistics.Models.BaseModels.Message
+                                _logger.LogInformation("Updating existing message ID: {MessageId}", tlMessage.id);
+                                var updatedMessage = new TgSearchStatistics.Models.BaseModels.Message
+                                {
+                                    Id = existingMessage.Id,
+                                    ChannelTelegramId = existingMessage.ChannelTelegramId,
+                                    Views = tlMessage.views,
+                                    Text = tlMessage.message,
+                                    // Continue updating other fields as necessary
+                                };
+                                updatedMessages.Add(updatedMessage);
+                            }
+                            else if (!context.Messages.Local.Any(m => m.Id == tlMessage.id))
                             {
-                                Id = tlMessage.id,
-                                ChannelTelegramId = TelegramIdConverter.ToPyrogram(tlMessage.peer_id),
-                                Views = tlMessage.views,
-                                Text = tlMessage.message,
-                            });
-                        }
-                        else
-                        {
-                            _logger.LogWarning("Message ID: {MessageId} is already being tracked and will not be added again.", tlMessage.id);
-                        }
-                    }
-
-                    try
-                    {
-                        // Detach all tracked entities to avoid conflicts
-                        context.ChangeTracker.Clear();
-
-                        if (newMessages.Any())
-                        {
-                            _logger.LogInformation("Adding {Count} new messages.", newMessages.Count);
-                            await context.Messages.AddRangeAsync(newMessages, stoppingToken);
+                                _logger.LogInformation("Adding new message ID: {MessageId}", tlMessage.id);
+                                newMessages.Add(new TgSearchStatistics.Models.BaseModels.Message
+                                {
+                                    Id = tlMessage.id,
+                                    ChannelTelegramId = TelegramIdConverter.ToPyrogram(tlMessage.peer_id),
+                                    Views = tlMessage.views,
+                                    Text = tlMessage.message,
+                                });
+                            }
+                            else
+                            {
+                                _logger.LogWarning("Message ID: {MessageId} is already being tracked and will not be added again.", tlMessage.id);
+                            }
                         }
 
-                        if (updatedMessages.Any())
+                        try
                         {
-                            _logger.LogInformation("Updating {Count} messages.", updatedMessages.Count);
-                            context.Messages.UpdateRange(updatedMessages); // Use UpdateRange to handle tracking
-                        }
+                            if (newMessages.Any())
+                            {
+                                _logger.LogInformation("Adding {Count} new messages.", newMessages.Count);
+                                await context.Messages.AddRangeAsync(newMessages, stoppingToken);
+                            }
 
-                        _logger.LogInformation("Saving changes to the database.");
-                        await context.SaveChangesAsync(stoppingToken);
-                    }
-                    catch (Exception ex)
-                    {
-                        _logger.LogError("An error occurred: {Message}", ex.Message);
-                        foreach (var entry in context.ChangeTracker.Entries())
+                            if (updatedMessages.Any())
+                            {
+                                _logger.LogInformation("Updating {Count} messages.", updatedMessages.Count);
+                                context.Messages.UpdateRange(updatedMessages); // Use UpdateRange to handle tracking
+                            }
+
+                            _logger.LogInformation("Saving changes to the database.");
+                            await context.SaveChangesAsync(stoppingToken);
+                        }
+                        catch (Exception ex)
                         {
-                            _logger.LogError("Entity type: {EntityType}, Entity state: {EntityState}", entry.Entity.GetType().Name, entry.State);
+                            _logger.LogError("An error occurred: {Message}", ex.Message);
+                            foreach (var entry in context.ChangeTracker.Entries())
+                            {
+                                _logger.LogError("Entity type: {EntityType}, Entity state: {EntityState}, Message id: {MessageId}", entry.Entity.GetType().Name, entry.State, entry.Entity.Cast<Message>().Id);
+                            }
                         }
                     }
                 }

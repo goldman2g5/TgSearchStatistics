@@ -39,9 +39,13 @@ namespace TgSearchStatistics.Controllers
             // Define different data sets for requests
             var requestDataList = new List<RequestData>
             {
-                //new RequestData { ChannelId = -1001075423523, StartDate = now.AddDays(-5), EndDate = now }, // 1 month ago to now
-                //new RequestData { ChannelId = -1001197426087, StartDate = now.AddDays(-5), EndDate = now }, // 2 months ago to now
-                new RequestData { ChannelId = -1001135818819, StartDate = now.AddDays(-5), EndDate = now }, // 3 months ago to now
+                                //new RequestData { ChannelId = -1001135818819, StartDate = now.AddDays(-10), EndDate = now }, // 3 months ago to nownew RequestData { ChannelId = -1001135818819, StartDate = now.AddDays(-10), EndDate = now }, // 3 months ago to now
+                //new RequestData { ChannelId = -1001075423523, StartDate = now.AddDays(-10), EndDate = now },
+
+                new RequestData { ChannelId = -1001135818819, StartDate = now.AddDays(-60), EndDate = now },
+                //new RequestData { ChannelId = -1001703721750, StartDate = now.AddDays(-10), EndDate = now },
+
+
                                                                                                              // Add more data sets as needed
             };
 

@@ -1,1 +1,1 @@
-URL: /api/Telegram/GetMessagesByPeriod?channelId=-1001135818819&startDate=2024-06-18T14:41:21Z&endDate=2024-06-23T14:41:21Z, StatusCode: OK, ExecutionTime: 1.18 seconds, Timestamp: 6/23/2024 2:41:22 PM
+URL: /api/Telegram/GetMessagesByPeriod?channelId=-1001135818819&startDate=2024-04-24T16:06:04Z&endDate=2024-06-23T16:06:04Z, StatusCode: OK, ExecutionTime: 6.26 seconds, Timestamp: 6/23/2024 4:06:10 PM
