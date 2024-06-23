@@ -32,7 +32,7 @@ builder.Services.AddSingleton<IDbContextFactory<TgDbContext>>(serviceProvider =>
     var connectionString = configuration.GetConnectionString("MainConnectionString");
 
     var optionsBuilder = new DbContextOptionsBuilder<TgDbContext>();
-    optionsBuilder.UseNpgsql(connectionString).UseLazyLoadingProxies();
+    optionsBuilder.UseNpgsql(connectionString).UseLazyLoadingProxies().EnableSensitiveDataLogging();
 
     return new MyDbContextFactory(optionsBuilder.Options, serviceProvider.GetRequiredService<IServiceScopeFactory>());
 });

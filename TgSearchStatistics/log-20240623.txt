@@ -1,0 +1,275 @@
+2024-06-23 17:41:11.600 +03:00 [INF] Entering ExecuteAsyncFunction.
+2024-06-23 17:41:15.104 +03:00 [INF] Now listening on: https://localhost:7143
+2024-06-23 17:41:15.107 +03:00 [INF] Now listening on: http://localhost:5026
+2024-06-23 17:41:15.108 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-23 17:41:15.109 +03:00 [INF] Hosting environment: Development
+2024-06-23 17:41:15.110 +03:00 [INF] Content root path: C:\Users\79103\source\Repos\TgSearchStatistics\TgSearchStatistics
+2024-06-23 17:41:15.888 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7143/swagger/index.html - null null
+2024-06-23 17:41:16.071 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7143/swagger/index.html - 200 null text/html;charset=utf-8 188.1404ms
+2024-06-23 17:41:16.078 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7143/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-23 17:41:16.086 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7143/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 8.6619ms
+2024-06-23 17:41:16.106 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7143/_vs/browserLink - null null
+2024-06-23 17:41:16.161 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7143/_vs/browserLink - 200 null text/javascript; charset=UTF-8 54.9669ms
+2024-06-23 17:41:16.262 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7143/swagger/v1/swagger.json - null null
+2024-06-23 17:41:16.326 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7143/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 63.9312ms
+2024-06-23 17:41:21.455 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7143/api/Benchmark/run-benchmark - null 0
+2024-06-23 17:41:21.469 +03:00 [INF] Executing endpoint 'TgSearchStatistics.Controllers.BenchmarkController.RunBenchmark (TgSearchStatistics)'
+2024-06-23 17:41:21.487 +03:00 [INF] Route matched with {action = "RunBenchmark", controller = "Benchmark"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RunBenchmark() on controller TgSearchStatistics.Controllers.BenchmarkController (TgSearchStatistics).
+2024-06-23 17:41:21.505 +03:00 [INF] Start processing HTTP request GET https://localhost:7143/api/Telegram/GetMessagesByPeriod?channelId=-1001135818819&startDate=2024-06-18T14:41:21Z&endDate=2024-06-23T14:41:21Z
+2024-06-23 17:41:21.509 +03:00 [INF] Sending HTTP request GET https://localhost:7143/api/Telegram/GetMessagesByPeriod?channelId=-1001135818819&startDate=2024-06-18T14:41:21Z&endDate=2024-06-23T14:41:21Z
+2024-06-23 17:41:21.532 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7143/api/Telegram/GetMessagesByPeriod?channelId=-1001135818819&startDate=2024-06-18T14:41:21Z&endDate=2024-06-23T14:41:21Z - null null
+2024-06-23 17:41:21.535 +03:00 [INF] Executing endpoint 'TgCheckerApi.Controllers.TelegramController.GetMessagesByPeriodAsync (TgSearchStatistics)'
+2024-06-23 17:41:21.543 +03:00 [INF] Route matched with {action = "GetMessagesByPeriod", controller = "Telegram"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetMessagesByPeriodAsync(Int64, System.DateTime, System.DateTime) on controller TgCheckerApi.Controllers.TelegramController (TgSearchStatistics).
+2024-06-23 17:41:21.578 +03:00 [INF] GetMessagesByPeriodAsync started for channel -1001135818819 with start date "2024-06-18T14:41:21.0000000Z" and end date "2024-06-23T14:41:21.0000000Z"
+2024-06-23 17:41:22.627 +03:00 [INF] No more messages found for channel -1001135818819 in the specified date range
+2024-06-23 17:41:22.628 +03:00 [INF] Fetched 129 messages for channel -1001135818819
+2024-06-23 17:41:22.630 +03:00 [INF] Queued 129 messages for update for channel -1001135818819
+2024-06-23 17:41:22.630 +03:00 [INF] Starting processing batch of messages.
+2024-06-23 17:41:22.631 +03:00 [INF] Returning 129 messages for channel -1001135818819
+2024-06-23 17:41:22.633 +03:00 [INF] Message IDs to process: [51810,51809,51808,51807,51806,51805,51804,51803,51802,51801,51800,51799,51798,51797,51796,51795,51794,51793,51792,51791,51789,51788,51787,51786,51785,51784,51783,51782,51781,51780,51779,51778,51777,51776,51775,51774,51773,51772,51771,51770,51769,51768,51767,51766,51765,51764,51763,51762,51761,51760,51759,51758,51757,51756,51755,51754,51753,51752,51751,51749,51748,51747,51746,51745,51744,51743,51742,51741,51740,51739,51738,51737,51736,51735,51734,51733,51732,51731,51730,51729,51728,51727,51726,51725,51724,51723,51722,51721,51720,51719,51718,51717,51716,51715,51714,51713,51712,51711,51710,51709,51711,51710,51709,51708,51707,51706,51704,51703,51702,51701,51700,51699,51698,51697,51696,51695,51694,51693,51692,51691,51690,51689,51688,51687,51686,51685,51684,51683,51682]
+2024-06-23 17:41:22.636 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.OrderedEnumerable`2[[<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[TL.MessageReactions, WTelegramClient, Version=4.1.1.0, Culture=neutral, PublicKeyToken=null]], TgSearchStatistics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-06-23 17:41:22.669 +03:00 [INF] Executed action TgCheckerApi.Controllers.TelegramController.GetMessagesByPeriodAsync (TgSearchStatistics) in 1122.0633ms
+2024-06-23 17:41:22.670 +03:00 [INF] Received HTTP response headers after 1158.4196ms - 200
+2024-06-23 17:41:22.672 +03:00 [INF] Executed endpoint 'TgCheckerApi.Controllers.TelegramController.GetMessagesByPeriodAsync (TgSearchStatistics)'
+2024-06-23 17:41:22.673 +03:00 [INF] End processing HTTP request after 1170.3047ms - 200
+2024-06-23 17:41:22.674 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7143/api/Telegram/GetMessagesByPeriod?channelId=-1001135818819&startDate=2024-06-18T14:41:21Z&endDate=2024-06-23T14:41:21Z - 200 null application/json; charset=utf-8 1143.0509ms
+2024-06-23 17:41:22.678 +03:00 [INF] Executing OkObjectResult, writing value of type 'TgSearchStatistics.Controllers.BenchmarkController+BenchmarkLog[]'.
+2024-06-23 17:41:22.686 +03:00 [INF] Executed action TgSearchStatistics.Controllers.BenchmarkController.RunBenchmark (TgSearchStatistics) in 1195.9591ms
+2024-06-23 17:41:22.688 +03:00 [INF] Executed endpoint 'TgSearchStatistics.Controllers.BenchmarkController.RunBenchmark (TgSearchStatistics)'
+2024-06-23 17:41:22.689 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7143/api/Benchmark/run-benchmark - 200 null application/json; charset=utf-8 1233.6724ms
+2024-06-23 17:41:22.911 +03:00 [INF] Executed DbCommand (41ms) [Parameters=[@__messageIds_0='?' (DbType = Object)], CommandType='"Text"', CommandTimeout='30']
+SELECT m.id, m.channel_telegram_id, m.media, m.text, m.views
+FROM "Message" AS m
+WHERE m.id = ANY (@__messageIds_0)
+2024-06-23 17:41:22.918 +03:00 [INF] Adding new message ID: 51810
+2024-06-23 17:41:22.920 +03:00 [INF] Adding new message ID: 51809
+2024-06-23 17:41:22.921 +03:00 [INF] Adding new message ID: 51808
+2024-06-23 17:41:22.922 +03:00 [INF] Adding new message ID: 51807
+2024-06-23 17:41:22.922 +03:00 [INF] Adding new message ID: 51806
+2024-06-23 17:41:22.923 +03:00 [INF] Adding new message ID: 51805
+2024-06-23 17:41:22.923 +03:00 [INF] Adding new message ID: 51804
+2024-06-23 17:41:22.924 +03:00 [INF] Adding new message ID: 51803
+2024-06-23 17:41:22.925 +03:00 [INF] Adding new message ID: 51802
+2024-06-23 17:41:22.926 +03:00 [INF] Adding new message ID: 51801
+2024-06-23 17:41:22.927 +03:00 [INF] Adding new message ID: 51800
+2024-06-23 17:41:22.928 +03:00 [INF] Adding new message ID: 51799
+2024-06-23 17:41:22.929 +03:00 [INF] Adding new message ID: 51798
+2024-06-23 17:41:22.929 +03:00 [INF] Adding new message ID: 51797
+2024-06-23 17:41:22.930 +03:00 [INF] Adding new message ID: 51796
+2024-06-23 17:41:22.930 +03:00 [INF] Adding new message ID: 51795
+2024-06-23 17:41:22.932 +03:00 [INF] Adding new message ID: 51794
+2024-06-23 17:41:22.932 +03:00 [INF] Adding new message ID: 51793
+2024-06-23 17:41:22.933 +03:00 [INF] Adding new message ID: 51792
+2024-06-23 17:41:22.934 +03:00 [INF] Adding new message ID: 51791
+2024-06-23 17:41:22.934 +03:00 [INF] Adding new message ID: 51789
+2024-06-23 17:41:22.935 +03:00 [INF] Adding new message ID: 51788
+2024-06-23 17:41:22.935 +03:00 [INF] Adding new message ID: 51787
+2024-06-23 17:41:22.936 +03:00 [INF] Adding new message ID: 51786
+2024-06-23 17:41:22.937 +03:00 [INF] Adding new message ID: 51785
+2024-06-23 17:41:22.938 +03:00 [INF] Adding new message ID: 51784
+2024-06-23 17:41:22.939 +03:00 [INF] Adding new message ID: 51783
+2024-06-23 17:41:22.940 +03:00 [INF] Adding new message ID: 51782
+2024-06-23 17:41:22.940 +03:00 [INF] Adding new message ID: 51781
+2024-06-23 17:41:22.941 +03:00 [INF] Adding new message ID: 51780
+2024-06-23 17:41:22.941 +03:00 [INF] Adding new message ID: 51779
+2024-06-23 17:41:22.942 +03:00 [INF] Adding new message ID: 51778
+2024-06-23 17:41:22.943 +03:00 [INF] Adding new message ID: 51777
+2024-06-23 17:41:22.944 +03:00 [INF] Adding new message ID: 51776
+2024-06-23 17:41:22.944 +03:00 [INF] Adding new message ID: 51775
+2024-06-23 17:41:22.945 +03:00 [INF] Adding new message ID: 51774
+2024-06-23 17:41:22.946 +03:00 [INF] Adding new message ID: 51773
+2024-06-23 17:41:22.946 +03:00 [INF] Adding new message ID: 51772
+2024-06-23 17:41:22.947 +03:00 [INF] Adding new message ID: 51771
+2024-06-23 17:41:22.947 +03:00 [INF] Adding new message ID: 51770
+2024-06-23 17:41:22.948 +03:00 [INF] Adding new message ID: 51769
+2024-06-23 17:41:22.949 +03:00 [INF] Adding new message ID: 51768
+2024-06-23 17:41:22.950 +03:00 [INF] Adding new message ID: 51767
+2024-06-23 17:41:22.951 +03:00 [INF] Adding new message ID: 51766
+2024-06-23 17:41:22.952 +03:00 [INF] Adding new message ID: 51765
+2024-06-23 17:41:22.952 +03:00 [INF] Adding new message ID: 51764
+2024-06-23 17:41:22.954 +03:00 [INF] Adding new message ID: 51763
+2024-06-23 17:41:22.954 +03:00 [INF] Adding new message ID: 51762
+2024-06-23 17:41:22.955 +03:00 [INF] Adding new message ID: 51761
+2024-06-23 17:41:22.956 +03:00 [INF] Adding new message ID: 51760
+2024-06-23 17:41:22.957 +03:00 [INF] Adding new message ID: 51759
+2024-06-23 17:41:22.958 +03:00 [INF] Adding new message ID: 51758
+2024-06-23 17:41:22.959 +03:00 [INF] Adding new message ID: 51757
+2024-06-23 17:41:22.960 +03:00 [INF] Adding new message ID: 51756
+2024-06-23 17:41:22.961 +03:00 [INF] Adding new message ID: 51755
+2024-06-23 17:41:22.962 +03:00 [INF] Adding new message ID: 51754
+2024-06-23 17:41:22.963 +03:00 [INF] Adding new message ID: 51753
+2024-06-23 17:41:22.964 +03:00 [INF] Adding new message ID: 51752
+2024-06-23 17:41:22.965 +03:00 [INF] Adding new message ID: 51751
+2024-06-23 17:41:22.965 +03:00 [INF] Adding new message ID: 51749
+2024-06-23 17:41:22.966 +03:00 [INF] Adding new message ID: 51748
+2024-06-23 17:41:22.966 +03:00 [INF] Adding new message ID: 51747
+2024-06-23 17:41:22.967 +03:00 [INF] Adding new message ID: 51746
+2024-06-23 17:41:22.968 +03:00 [INF] Adding new message ID: 51745
+2024-06-23 17:41:22.969 +03:00 [INF] Adding new message ID: 51744
+2024-06-23 17:41:22.970 +03:00 [INF] Adding new message ID: 51743
+2024-06-23 17:41:22.970 +03:00 [INF] Adding new message ID: 51742
+2024-06-23 17:41:22.971 +03:00 [INF] Adding new message ID: 51741
+2024-06-23 17:41:22.971 +03:00 [INF] Adding new message ID: 51740
+2024-06-23 17:41:22.972 +03:00 [INF] Adding new message ID: 51739
+2024-06-23 17:41:22.972 +03:00 [INF] Adding new message ID: 51738
+2024-06-23 17:41:22.973 +03:00 [INF] Adding new message ID: 51737
+2024-06-23 17:41:22.975 +03:00 [INF] Adding new message ID: 51736
+2024-06-23 17:41:22.975 +03:00 [INF] Adding new message ID: 51735
+2024-06-23 17:41:22.976 +03:00 [INF] Adding new message ID: 51734
+2024-06-23 17:41:22.977 +03:00 [INF] Adding new message ID: 51733
+2024-06-23 17:41:22.977 +03:00 [INF] Adding new message ID: 51732
+2024-06-23 17:41:22.978 +03:00 [INF] Adding new message ID: 51731
+2024-06-23 17:41:22.979 +03:00 [INF] Adding new message ID: 51730
+2024-06-23 17:41:22.979 +03:00 [INF] Adding new message ID: 51729
+2024-06-23 17:41:22.980 +03:00 [INF] Adding new message ID: 51728
+2024-06-23 17:41:22.981 +03:00 [INF] Adding new message ID: 51727
+2024-06-23 17:41:22.981 +03:00 [INF] Adding new message ID: 51726
+2024-06-23 17:41:22.982 +03:00 [INF] Adding new message ID: 51725
+2024-06-23 17:41:22.983 +03:00 [INF] Adding new message ID: 51724
+2024-06-23 17:41:22.983 +03:00 [INF] Adding new message ID: 51723
+2024-06-23 17:41:22.984 +03:00 [INF] Adding new message ID: 51722
+2024-06-23 17:41:22.985 +03:00 [INF] Adding new message ID: 51721
+2024-06-23 17:41:22.985 +03:00 [INF] Adding new message ID: 51720
+2024-06-23 17:41:22.987 +03:00 [INF] Adding new message ID: 51719
+2024-06-23 17:41:22.988 +03:00 [INF] Adding new message ID: 51718
+2024-06-23 17:41:22.988 +03:00 [INF] Adding new message ID: 51717
+2024-06-23 17:41:22.989 +03:00 [INF] Adding new message ID: 51716
+2024-06-23 17:41:22.989 +03:00 [INF] Adding new message ID: 51715
+2024-06-23 17:41:22.990 +03:00 [INF] Adding new message ID: 51714
+2024-06-23 17:41:22.991 +03:00 [INF] Adding new message ID: 51713
+2024-06-23 17:41:22.991 +03:00 [INF] Adding new message ID: 51712
+2024-06-23 17:41:22.992 +03:00 [INF] Adding new message ID: 51711
+2024-06-23 17:41:22.993 +03:00 [INF] Adding new message ID: 51710
+2024-06-23 17:41:22.994 +03:00 [INF] Adding new message ID: 51709
+2024-06-23 17:41:22.994 +03:00 [INF] Adding new message ID: 51711
+2024-06-23 17:41:22.995 +03:00 [INF] Adding new message ID: 51710
+2024-06-23 17:41:22.996 +03:00 [INF] Adding new message ID: 51709
+2024-06-23 17:41:22.996 +03:00 [INF] Adding new message ID: 51708
+2024-06-23 17:41:22.997 +03:00 [INF] Adding new message ID: 51707
+2024-06-23 17:41:22.997 +03:00 [INF] Adding new message ID: 51706
+2024-06-23 17:41:22.999 +03:00 [INF] Adding new message ID: 51704
+2024-06-23 17:41:23.000 +03:00 [INF] Adding new message ID: 51703
+2024-06-23 17:41:23.001 +03:00 [INF] Adding new message ID: 51702
+2024-06-23 17:41:23.002 +03:00 [INF] Adding new message ID: 51701
+2024-06-23 17:41:23.003 +03:00 [INF] Adding new message ID: 51700
+2024-06-23 17:41:23.005 +03:00 [INF] Adding new message ID: 51699
+2024-06-23 17:41:23.006 +03:00 [INF] Adding new message ID: 51698
+2024-06-23 17:41:23.007 +03:00 [INF] Adding new message ID: 51697
+2024-06-23 17:41:23.008 +03:00 [INF] Adding new message ID: 51696
+2024-06-23 17:41:23.009 +03:00 [INF] Adding new message ID: 51695
+2024-06-23 17:41:23.009 +03:00 [INF] Adding new message ID: 51694
+2024-06-23 17:41:23.011 +03:00 [INF] Adding new message ID: 51693
+2024-06-23 17:41:23.012 +03:00 [INF] Adding new message ID: 51692
+2024-06-23 17:41:23.012 +03:00 [INF] Adding new message ID: 51691
+2024-06-23 17:41:23.013 +03:00 [INF] Adding new message ID: 51690
+2024-06-23 17:41:23.014 +03:00 [INF] Adding new message ID: 51689
+2024-06-23 17:41:23.014 +03:00 [INF] Adding new message ID: 51688
+2024-06-23 17:41:23.015 +03:00 [INF] Adding new message ID: 51687
+2024-06-23 17:41:23.015 +03:00 [INF] Adding new message ID: 51686
+2024-06-23 17:41:23.017 +03:00 [INF] Adding new message ID: 51685
+2024-06-23 17:41:23.017 +03:00 [INF] Adding new message ID: 51684
+2024-06-23 17:41:23.018 +03:00 [INF] Adding new message ID: 51683
+2024-06-23 17:41:23.018 +03:00 [INF] Adding new message ID: 51682
+2024-06-23 17:41:23.021 +03:00 [INF] Adding 129 new messages.
+2024-06-23 17:41:23.083 +03:00 [ERR] An error occurred: The instance of entity type 'Message' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values.
+2024-06-23 17:41:23.091 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.092 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.093 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.094 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.095 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.095 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.096 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.097 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.098 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.099 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.100 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.100 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.101 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.102 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.103 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.104 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.104 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.105 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.106 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.108 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.109 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.109 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.110 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.111 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.111 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.112 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.113 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.114 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.114 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.115 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.116 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.117 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.117 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.118 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.119 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.120 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.120 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.121 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.122 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.123 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.124 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.124 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.125 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.126 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.127 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.127 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.128 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.129 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.129 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.130 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.131 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.132 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.132 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.133 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.134 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.135 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.135 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.136 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.138 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.139 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.140 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.140 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.141 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.142 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.143 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.143 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.144 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.145 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.145 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.146 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.147 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.148 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.148 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.149 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.150 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.150 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.151 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.152 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.153 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.153 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.154 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.155 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.155 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.156 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.157 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.158 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.158 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.159 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.160 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.160 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.161 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.162 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.164 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.165 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.166 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.167 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.168 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.169 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.170 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.171 +03:00 [ERR] Entity type: Message, Entity state: "Added"
+2024-06-23 17:41:23.172 +03:00 [ERR] Entity type: Message, Entity state: "Added"

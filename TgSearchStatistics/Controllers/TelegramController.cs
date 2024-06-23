@@ -55,17 +55,20 @@ namespace TgCheckerApi.Controllers
         [HttpGet("GetMessagesByPeriod")]
         public async Task<IActionResult> GetMessagesByPeriodAsync(long channelId, DateTime startDate, DateTime endDate)
         {
+            _logger.LogInformation("GetMessagesByPeriodAsync started for channel {ChannelId} with start date {StartDate} and end date {EndDate}", channelId, startDate, endDate);
             try
             {
                 var _client = await _tgclientService.GetClientByTelegramId(channelId);
                 if (_client == null)
                 {
+                    _logger.LogWarning("No active client found for channel {ChannelId}", channelId);
                     return NotFound("No active client found for that channel");
                 }
 
                 var channelInfo = await _tgclientService.GetChannelAccessHash(channelId, _client);
                 if (!channelInfo.HasValue)
                 {
+                    _logger.LogWarning("Channel not found or access hash unavailable for channel {ChannelId}", channelId);
                     return NotFound("Channel not found or access hash unavailable.");
                 }
 
@@ -85,35 +88,50 @@ namespace TgCheckerApi.Controllers
                         .Where(m => m.Date >= startDate && m.Date <= endDate)
                         .ToList();
 
-                    if (messages.Count == 0) break;
+                    if (messages.Count == 0)
+                    {
+                        _logger.LogInformation("No more messages found for channel {ChannelId} in the specified date range", channelId);
+                        break;
+                    }
+
                     allMessages.AddRange(messages);
                     var earliestMessageInBatch = messages.OrderBy(m => m.Date).FirstOrDefault();
 
-                    if (earliestMessageInBatch == null || earliestMessageInBatch.Date <= startDate) break;
+                    if (earliestMessageInBatch == null || earliestMessageInBatch.Date <= startDate)
+                    {
+                        _logger.LogInformation("Reached the start date for channel {ChannelId}, stopping fetch", channelId);
+                        break;
+                    }
 
                     offsetDate = earliestMessageInBatch.Date;
                     lastMessageId = earliestMessageInBatch.id;
                 }
+
+                _logger.LogInformation("Fetched {Count} messages for channel {ChannelId}", allMessages.Count, channelId);
+
                 try
                 {
                     await _messageUpdateQueue.QueueMessagesForUpdateAsync(allMessages);
+                    _logger.LogInformation("Queued {Count} messages for update for channel {ChannelId}", allMessages.Count, channelId);
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
-                    Console.WriteLine(e);
+                    _logger.LogError("Failed to queue messages for update: {Message}", e.Message);
                 }
-                // Queue messages for background update
-               
 
                 // Return fetched messages
-                return Ok(allMessages.Select(m => new { m.id, m.Date, m.views, m.reactions }).OrderByDescending(m => m.Date));
+                var result = allMessages.Select(m => new { m.id, m.Date, m.views, m.reactions }).OrderByDescending(m => m.Date);
+                _logger.LogInformation("Returning {Count} messages for channel {ChannelId}", result.Count(), channelId);
+
+                return Ok(result);
             }
             catch (Exception ex)
             {
-                _logger.LogError($"Failed to retrieve messages by period: {ex.Message}");
+                _logger.LogError("Failed to retrieve messages by period for channel {ChannelId}: {Message}", channelId, ex.Message);
                 return StatusCode(500, "An error occurred while attempting to fetch messages by period.");
             }
         }
+
 
         [HttpGet("GetMessagesByIds")]
         public async Task<IActionResult> GetMessagesByIdsAsync(long channelId, [FromQuery] List<int> messageIds)
