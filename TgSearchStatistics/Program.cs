@@ -1,10 +1,9 @@
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 using TgSearchStatistics.Interfaces;
 using TgSearchStatistics.Models.BaseModels;
 using TgSearchStatistics.Queues;
 using TgSearchStatistics.Services;
-using TL;
-using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,11 +1,11 @@
-﻿using WTelegram;
-using TgSearchStatistics.Models.BaseModels;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using System.Text.RegularExpressions;
 using TgSearchStatistics.Models;
+using TgSearchStatistics.Models.BaseModels;
 using TgSearchStatistics.Utility;
 using TL;
-using System.Text.RegularExpressions;
-using Newtonsoft.Json;
+using WTelegram;
 
 namespace TgSearchStatistics.Services
 {
@@ -39,14 +39,15 @@ namespace TgSearchStatistics.Services
                             // Trigger the bot to ask for the verification code via FastAPI
                             var userId = clientConfig.TelegramId;
                             await httpClient.PostAsync($"/trigger_verification/{userId}", new StringContent(""));
-                           
+
 
                             // Wait for the verification code to be sent by the user
                             HttpResponseMessage response;
                             string verificationCode = null;
                             do
                             {
-                                try {
+                                try
+                                {
                                     await Task.Delay(5000); // Check every 5 seconds
                                     response = await httpClient.GetAsync($"/get_verification_code/{userId}");
                                     Console.WriteLine(userId);
@@ -59,12 +60,12 @@ namespace TgSearchStatistics.Services
                                         Console.WriteLine(verificationCode);
                                     }
                                 }
-                                catch(Exception ex)
+                                catch (Exception ex)
                                 {
                                     Console.WriteLine($"Exception whili logging in {ex.Message}");
                                 };
-                                
-                                
+
+
                             } while (verificationCode == null);
 
                             if (verificationCode != null)
@@ -251,56 +252,131 @@ namespace TgSearchStatistics.Services
 
         public async Task<(long channelId, long accessHash)?> GetChannelAccessHash(long telegramChannelId, Client _client)
         {
-        try
-        {
-        if (_client == null)
-        {
-            Console.WriteLine("Failed to get Telegram client.");
+            try
+            {
+                if (_client == null)
+                {
+                    Console.WriteLine("Failed to get Telegram client.");
+                    return null;
+                }
+
+                // Convert the channel ID to the expected format
+                var pyrogramChannelId = TelegramIdConverter.ToPyrogram(telegramChannelId);
+
+                // Fetch the channel from the database to obtain its username
+                var dbChannel = await _dbContextFactory.CreateDbContext().Channels
+                                .Where(c => c.TelegramId == pyrogramChannelId)
+                                .FirstOrDefaultAsync();
+
+                if (dbChannel == null)
+                {
+                    Console.WriteLine($"Channel with Telegram ID {telegramChannelId} not found in the database.");
+                    return null;
+                }
+
+                var channelUsername = RemoveTMeUrl(dbChannel.Url); // Assuming this method extracts the username from the channel URL
+                if (string.IsNullOrEmpty(channelUsername))
+                {
+                    Console.WriteLine("Channel name or username is required but not found.");
+                    return null;
+                }
+
+                // Resolve the channel using its username to get the access hash
+                var resolveResult = await _client.Contacts_ResolveUsername(channelUsername);
+                var channel = resolveResult.Channel;
+
+                if (channel != null)
+                {
+                    Console.WriteLine($"Successfully resolved channel: {channelUsername} with access hash {channel.access_hash}");
+                    return (channel.ID, channel.access_hash);
+                }
+                else
+                {
+                    Console.WriteLine($"Failed to resolve channel or mismatch in channel ID for username: {channelUsername}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred while trying to resolve the channel access hash: {ex.Message}");
+            }
+
             return null;
         }
-
-        // Convert the channel ID to the expected format
-        var pyrogramChannelId = TelegramIdConverter.ToPyrogram(telegramChannelId);
-        
-        // Fetch the channel from the database to obtain its username
-        var dbChannel = await _dbContextFactory.CreateDbContext().Channels
-                        .Where(c => c.TelegramId == pyrogramChannelId)
-                        .FirstOrDefaultAsync();
-
-        if (dbChannel == null)
+        public async Task<T> ExecuteWithClientAsync<T>(TelegramClientWrapper clientWrapper, Func<Client, Task<T>> task)
         {
-            Console.WriteLine($"Channel with Telegram ID {telegramChannelId} not found in the database.");
-            return null;
+            if (clientWrapper == null)
+            {
+                throw new ArgumentNullException(nameof(clientWrapper));
+            }
+
+            try
+            {
+                clientWrapper.IsBusy = true;
+                return await task(clientWrapper.Client);
+            }
+            finally
+            {
+                clientWrapper.IsBusy = false;
+            }
         }
 
-        var channelUsername = RemoveTMeUrl(dbChannel.Url); // Assuming this method extracts the username from the channel URL
-        if (string.IsNullOrEmpty(channelUsername))
+        private async Task<List<TL.Message>> GetMessagesByPeriodInternalAsync(Client _client, long channelId, DateTime startDate, DateTime endDate)
         {
-            Console.WriteLine("Channel name or username is required but not found.");
-            return null;
+            var channelInfo = await GetChannelAccessHash(channelId, _client);
+            if (!channelInfo.HasValue)
+            {
+                throw new InvalidOperationException("Channel not found or access hash unavailable.");
+            }
+
+            var (resolvedChannelId, accessHash) = channelInfo.Value;
+            var inputPeer = new InputPeerChannel(resolvedChannelId, accessHash);
+
+            var allMessages = new List<TL.Message>();
+            int limit = 100;
+            DateTime offsetDate = DateTime.UtcNow;
+            int lastMessageId = 0;
+
+            while (offsetDate > startDate)
+            {
+                var messagesBatch = await _client.Messages_GetHistory(inputPeer, offset_id: lastMessageId, limit: limit, offset_date: offsetDate);
+                var messages = messagesBatch.Messages.OfType<TL.Message>()
+                    .Where(m => m.Date >= startDate && m.Date <= endDate)
+                    .ToList();
+
+                if (messages.Count == 0)
+                {
+                    break;
+                }
+
+                allMessages.AddRange(messages);
+                var earliestMessageInBatch = messages.OrderBy(m => m.Date).FirstOrDefault();
+
+                if (earliestMessageInBatch == null || earliestMessageInBatch.Date <= startDate)
+                {
+                    break;
+                }
+
+                offsetDate = earliestMessageInBatch.Date;
+                lastMessageId = earliestMessageInBatch.id;
+            }
+
+            return allMessages;
         }
 
-        // Resolve the channel using its username to get the access hash
-        var resolveResult = await _client.Contacts_ResolveUsername(channelUsername);
-        var channel = resolveResult.Channel;
-        
-        if (channel != null)
+        public async Task<List<TL.Message>> GetMessagesByPeriodAsync(Client _client, long channelId, DateTime startDate, DateTime endDate)
         {
-            Console.WriteLine($"Successfully resolved channel: {channelUsername} with access hash {channel.access_hash}");
-            return (channel.ID, channel.access_hash);
-        }
-        else
-        {
-            Console.WriteLine($"Failed to resolve channel or mismatch in channel ID for username: {channelUsername}");
-        }
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine($"An error occurred while trying to resolve the channel access hash: {ex.Message}");
-    }
+            var clientWrapper = Clients.FirstOrDefault(c => c.Client == _client);
+            if (clientWrapper == null)
+            {
+                throw new InvalidOperationException("Client wrapper not found.");
+            }
 
-    return null;
-}
+            return await ExecuteWithClientAsync(
+                clientWrapper,
+                async client => await GetMessagesByPeriodInternalAsync(client, channelId, startDate, endDate)
+            );
+        }
+
 
         public static void DisposeClients()
         {

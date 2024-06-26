@@ -1,6 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 
 namespace TgSearchStatistics.Models.BaseModels;
 
@@ -45,7 +43,7 @@ public partial class Channel
     public string? Url { get; set; }
 
     public bool? Hidden { get; set; }
-    
+
     public int? TopPos { get; set; }
 
     public bool? IsPartner { get; set; }

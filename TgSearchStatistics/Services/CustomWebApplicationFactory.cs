@@ -1,11 +1,4 @@
-﻿using System;
-using System.Data.Common;
-using System.Linq;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
+﻿using Microsoft.AspNetCore.Mvc.Testing;
 using TgSearchStatistics.Models.BaseModels;
 
 

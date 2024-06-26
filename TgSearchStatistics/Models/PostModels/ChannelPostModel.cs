@@ -4,7 +4,7 @@ using TgSearchStatistics.Models.BaseModels;
 namespace TgSearchStatistics.Models
 {
     public class ChannelPostModel : Channel
-    {  
+    {
         public long userTelegramID { get; set; }
 
         [JsonIgnore]

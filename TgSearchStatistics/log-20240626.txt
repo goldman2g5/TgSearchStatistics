@@ -1,0 +1,1632 @@
+2024-06-26 18:47:56.650 +03:00 [INF] Entering ExecuteAsyncFunction.
+2024-06-26 18:48:03.856 +03:00 [INF] Now listening on: https://localhost:7143
+2024-06-26 18:48:03.859 +03:00 [INF] Now listening on: http://localhost:5026
+2024-06-26 18:48:03.860 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-26 18:48:03.861 +03:00 [INF] Hosting environment: Development
+2024-06-26 18:48:03.862 +03:00 [INF] Content root path: C:\Users\79103\source\Repos\TgSearchStatistics\TgSearchStatistics
+2024-06-26 18:48:04.797 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7143/swagger/index.html - null null
+2024-06-26 18:48:04.990 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7143/swagger/index.html - 200 null text/html;charset=utf-8 197.91ms
+2024-06-26 18:48:04.996 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7143/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-26 18:48:05.005 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7143/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 9.6885ms
+2024-06-26 18:48:05.030 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7143/_vs/browserLink - null null
+2024-06-26 18:48:05.081 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7143/_vs/browserLink - 200 null text/javascript; charset=UTF-8 51.8036ms
+2024-06-26 18:48:05.212 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7143/swagger/v1/swagger.json - null null
+2024-06-26 18:48:05.305 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7143/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 93.1047ms
+2024-06-26 18:48:09.473 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7143/api/Benchmark/run-benchmark - null 0
+2024-06-26 18:48:09.487 +03:00 [INF] Executing endpoint 'TgSearchStatistics.Controllers.BenchmarkController.RunBenchmark (TgSearchStatistics)'
+2024-06-26 18:48:09.505 +03:00 [INF] Route matched with {action = "RunBenchmark", controller = "Benchmark"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RunBenchmark() on controller TgSearchStatistics.Controllers.BenchmarkController (TgSearchStatistics).
+2024-06-26 18:48:09.527 +03:00 [INF] Start processing HTTP request GET https://localhost:7143/api/Telegram/GetMessagesByPeriod?channelId=-1001075423523&startDate=2024-06-16T15:48:09Z&endDate=2024-06-26T15:48:09Z
+2024-06-26 18:48:09.532 +03:00 [INF] Sending HTTP request GET https://localhost:7143/api/Telegram/GetMessagesByPeriod?channelId=-1001075423523&startDate=2024-06-16T15:48:09Z&endDate=2024-06-26T15:48:09Z
+2024-06-26 18:48:09.540 +03:00 [INF] Start processing HTTP request GET https://localhost:7143/api/Telegram/GetMessagesByPeriod?channelId=-1001135818819&startDate=2024-06-16T15:48:09Z&endDate=2024-06-26T15:48:09Z
+2024-06-26 18:48:09.543 +03:00 [INF] Sending HTTP request GET https://localhost:7143/api/Telegram/GetMessagesByPeriod?channelId=-1001135818819&startDate=2024-06-16T15:48:09Z&endDate=2024-06-26T15:48:09Z
+2024-06-26 18:48:09.547 +03:00 [INF] Start processing HTTP request GET https://localhost:7143/api/Telegram/GetMessagesByPeriod?channelId=-1001703721750&startDate=2024-06-16T15:48:09Z&endDate=2024-06-26T15:48:09Z
+2024-06-26 18:48:09.556 +03:00 [INF] Sending HTTP request GET https://localhost:7143/api/Telegram/GetMessagesByPeriod?channelId=-1001703721750&startDate=2024-06-16T15:48:09Z&endDate=2024-06-26T15:48:09Z
+2024-06-26 18:48:09.570 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7143/api/Telegram/GetMessagesByPeriod?channelId=-1001135818819&startDate=2024-06-16T15:48:09Z&endDate=2024-06-26T15:48:09Z - null null
+2024-06-26 18:48:09.571 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7143/api/Telegram/GetMessagesByPeriod?channelId=-1001703721750&startDate=2024-06-16T15:48:09Z&endDate=2024-06-26T15:48:09Z - null null
+2024-06-26 18:48:09.576 +03:00 [INF] Executing endpoint 'TgCheckerApi.Controllers.TelegramController.GetMessagesByPeriodAsync (TgSearchStatistics)'
+2024-06-26 18:48:09.570 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7143/api/Telegram/GetMessagesByPeriod?channelId=-1001075423523&startDate=2024-06-16T15:48:09Z&endDate=2024-06-26T15:48:09Z - null null
+2024-06-26 18:48:09.580 +03:00 [INF] Executing endpoint 'TgCheckerApi.Controllers.TelegramController.GetMessagesByPeriodAsync (TgSearchStatistics)'
+2024-06-26 18:48:09.583 +03:00 [INF] Executing endpoint 'TgCheckerApi.Controllers.TelegramController.GetMessagesByPeriodAsync (TgSearchStatistics)'
+2024-06-26 18:48:09.590 +03:00 [INF] Route matched with {action = "GetMessagesByPeriod", controller = "Telegram"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetMessagesByPeriodAsync(Int64, System.DateTime, System.DateTime) on controller TgCheckerApi.Controllers.TelegramController (TgSearchStatistics).
+2024-06-26 18:48:09.590 +03:00 [INF] Route matched with {action = "GetMessagesByPeriod", controller = "Telegram"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetMessagesByPeriodAsync(Int64, System.DateTime, System.DateTime) on controller TgCheckerApi.Controllers.TelegramController (TgSearchStatistics).
+2024-06-26 18:48:09.593 +03:00 [INF] Route matched with {action = "GetMessagesByPeriod", controller = "Telegram"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetMessagesByPeriodAsync(Int64, System.DateTime, System.DateTime) on controller TgCheckerApi.Controllers.TelegramController (TgSearchStatistics).
+2024-06-26 18:48:09.672 +03:00 [INF] GetMessagesByPeriodAsync started for channel -1001703721750 with start date "2024-06-16T15:48:09.0000000Z" and end date "2024-06-26T15:48:09.0000000Z"
+2024-06-26 18:48:09.672 +03:00 [INF] GetMessagesByPeriodAsync started for channel -1001075423523 with start date "2024-06-16T15:48:09.0000000Z" and end date "2024-06-26T15:48:09.0000000Z"
+2024-06-26 18:48:09.672 +03:00 [INF] GetMessagesByPeriodAsync started for channel -1001135818819 with start date "2024-06-16T15:48:09.0000000Z" and end date "2024-06-26T15:48:09.0000000Z"
+2024-06-26 18:48:12.577 +03:00 [INF] Fetched 55 messages for channel -1001075423523
+2024-06-26 18:48:12.580 +03:00 [INF] Queued 55 messages for update for channel -1001075423523
+2024-06-26 18:48:12.580 +03:00 [INF] Fetched 55 messages from the queue.
+2024-06-26 18:48:12.582 +03:00 [INF] Returning 55 messages for channel -1001075423523
+2024-06-26 18:48:12.589 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.OrderedEnumerable`2[[<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[TL.MessageReactions, WTelegramClient, Version=4.1.1.0, Culture=neutral, PublicKeyToken=null]], TgSearchStatistics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-06-26 18:48:12.612 +03:00 [INF] Received HTTP response headers after 3075.7934ms - 200
+2024-06-26 18:48:12.612 +03:00 [INF] Executed action TgCheckerApi.Controllers.TelegramController.GetMessagesByPeriodAsync (TgSearchStatistics) in 3010.9667ms
+2024-06-26 18:48:12.614 +03:00 [INF] End processing HTTP request after 3088.9815ms - 200
+2024-06-26 18:48:12.617 +03:00 [INF] Executed endpoint 'TgCheckerApi.Controllers.TelegramController.GetMessagesByPeriodAsync (TgSearchStatistics)'
+2024-06-26 18:48:12.621 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7143/api/Telegram/GetMessagesByPeriod?channelId=-1001075423523&startDate=2024-06-16T15:48:09Z&endDate=2024-06-26T15:48:09Z - 200 null application/json; charset=utf-8 3052.9786ms
+2024-06-26 18:48:12.702 +03:00 [INF] Fetched 166 messages for channel -1001703721750
+2024-06-26 18:48:12.703 +03:00 [INF] Queued 166 messages for update for channel -1001703721750
+2024-06-26 18:48:12.704 +03:00 [INF] Returning 166 messages for channel -1001703721750
+2024-06-26 18:48:12.706 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.OrderedEnumerable`2[[<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[TL.MessageReactions, WTelegramClient, Version=4.1.1.0, Culture=neutral, PublicKeyToken=null]], TgSearchStatistics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-06-26 18:48:12.710 +03:00 [INF] Executed action TgCheckerApi.Controllers.TelegramController.GetMessagesByPeriodAsync (TgSearchStatistics) in 3117.325ms
+2024-06-26 18:48:12.710 +03:00 [INF] Received HTTP response headers after 3147.6072ms - 200
+2024-06-26 18:48:12.713 +03:00 [INF] Executed endpoint 'TgCheckerApi.Controllers.TelegramController.GetMessagesByPeriodAsync (TgSearchStatistics)'
+2024-06-26 18:48:12.716 +03:00 [INF] End processing HTTP request after 3169.7558ms - 200
+2024-06-26 18:48:12.719 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7143/api/Telegram/GetMessagesByPeriod?channelId=-1001703721750&startDate=2024-06-16T15:48:09Z&endDate=2024-06-26T15:48:09Z - 200 null application/json; charset=utf-8 3147.333ms
+2024-06-26 18:48:12.749 +03:00 [INF] Processing batch 1 with 55 messages.
+2024-06-26 18:48:12.790 +03:00 [INF] Fetched 278 messages for channel -1001135818819
+2024-06-26 18:48:12.791 +03:00 [INF] Queued 278 messages for update for channel -1001135818819
+2024-06-26 18:48:12.793 +03:00 [INF] Returning 278 messages for channel -1001135818819
+2024-06-26 18:48:12.795 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.OrderedEnumerable`2[[<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[TL.MessageReactions, WTelegramClient, Version=4.1.1.0, Culture=neutral, PublicKeyToken=null]], TgSearchStatistics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-06-26 18:48:12.799 +03:00 [INF] Executed action TgCheckerApi.Controllers.TelegramController.GetMessagesByPeriodAsync (TgSearchStatistics) in 3203.4302ms
+2024-06-26 18:48:12.799 +03:00 [INF] Received HTTP response headers after 3254.7027ms - 200
+2024-06-26 18:48:12.800 +03:00 [INF] Executed endpoint 'TgCheckerApi.Controllers.TelegramController.GetMessagesByPeriodAsync (TgSearchStatistics)'
+2024-06-26 18:48:12.802 +03:00 [INF] End processing HTTP request after 3261.5601ms - 200
+2024-06-26 18:48:12.804 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7143/api/Telegram/GetMessagesByPeriod?channelId=-1001135818819&startDate=2024-06-16T15:48:09Z&endDate=2024-06-26T15:48:09Z - 200 null application/json; charset=utf-8 3235.5695ms
+2024-06-26 18:48:12.822 +03:00 [INF] Executing OkObjectResult, writing value of type 'TgSearchStatistics.Controllers.BenchmarkController+BenchmarkLog[]'.
+2024-06-26 18:48:12.822 +03:00 [INF] Processing batch of 55 messages.
+2024-06-26 18:48:12.826 +03:00 [INF] Message IDs to process: [47327,47326,47325,47324,47323,47322,47321,47320,47319,47318,47317,47316,47315,47314,47313,47312,47311,47310,47309,47308,47307,47306,47305,47304,47303,47302,47301,47300,47299,47298,47297,47296,47295,47294,47293,47292,47291,47290,47288,47286,47285,47283,47282,47281,47279,47277,47276,47274,47272,47271,47270,47269,47268,47266,47265]
+2024-06-26 18:48:12.832 +03:00 [INF] Executed action TgSearchStatistics.Controllers.BenchmarkController.RunBenchmark (TgSearchStatistics) in 3320.7281ms
+2024-06-26 18:48:12.848 +03:00 [INF] Executed endpoint 'TgSearchStatistics.Controllers.BenchmarkController.RunBenchmark (TgSearchStatistics)'
+2024-06-26 18:48:12.850 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7143/api/Benchmark/run-benchmark - 200 null application/json; charset=utf-8 3376.6579ms
+2024-06-26 18:48:12.971 +03:00 [INF] Executed DbCommand (58ms) [Parameters=[@__messageIds_0='?' (DbType = Object)], CommandType='"Text"', CommandTimeout='30']
+SELECT m.id, m.channel_telegram_id, m.media, m.text, m.views
+FROM "Message" AS m
+WHERE m.id = ANY (@__messageIds_0)
+2024-06-26 18:48:12.982 +03:00 [INF] Adding new message ID: 47327
+2024-06-26 18:48:12.985 +03:00 [INF] Adding new message ID: 47326
+2024-06-26 18:48:12.987 +03:00 [INF] Adding new message ID: 47325
+2024-06-26 18:48:12.989 +03:00 [INF] Adding new message ID: 47324
+2024-06-26 18:48:12.991 +03:00 [INF] Adding new message ID: 47323
+2024-06-26 18:48:12.992 +03:00 [INF] Adding new message ID: 47322
+2024-06-26 18:48:12.993 +03:00 [INF] Adding new message ID: 47321
+2024-06-26 18:48:12.994 +03:00 [INF] Adding new message ID: 47320
+2024-06-26 18:48:12.995 +03:00 [INF] Adding new message ID: 47319
+2024-06-26 18:48:12.997 +03:00 [INF] Adding new message ID: 47318
+2024-06-26 18:48:13.000 +03:00 [INF] Adding new message ID: 47317
+2024-06-26 18:48:13.002 +03:00 [INF] Adding new message ID: 47316
+2024-06-26 18:48:13.003 +03:00 [INF] Adding new message ID: 47315
+2024-06-26 18:48:13.004 +03:00 [INF] Adding new message ID: 47314
+2024-06-26 18:48:13.005 +03:00 [INF] Adding new message ID: 47313
+2024-06-26 18:48:13.007 +03:00 [INF] Adding new message ID: 47312
+2024-06-26 18:48:13.009 +03:00 [INF] Adding new message ID: 47311
+2024-06-26 18:48:13.010 +03:00 [INF] Adding new message ID: 47310
+2024-06-26 18:48:13.011 +03:00 [INF] Adding new message ID: 47309
+2024-06-26 18:48:13.016 +03:00 [INF] Adding new message ID: 47308
+2024-06-26 18:48:13.017 +03:00 [INF] Adding new message ID: 47307
+2024-06-26 18:48:13.018 +03:00 [INF] Adding new message ID: 47306
+2024-06-26 18:48:13.020 +03:00 [INF] Updating existing message ID: 47305
+2024-06-26 18:48:13.021 +03:00 [INF] Updating existing message ID: 47304
+2024-06-26 18:48:13.023 +03:00 [INF] Updating existing message ID: 47303
+2024-06-26 18:48:13.024 +03:00 [INF] Updating existing message ID: 47302
+2024-06-26 18:48:13.025 +03:00 [INF] Updating existing message ID: 47301
+2024-06-26 18:48:13.026 +03:00 [INF] Updating existing message ID: 47300
+2024-06-26 18:48:13.028 +03:00 [INF] Updating existing message ID: 47299
+2024-06-26 18:48:13.032 +03:00 [INF] Updating existing message ID: 47298
+2024-06-26 18:48:13.034 +03:00 [INF] Updating existing message ID: 47297
+2024-06-26 18:48:13.035 +03:00 [INF] Updating existing message ID: 47296
+2024-06-26 18:48:13.036 +03:00 [INF] Updating existing message ID: 47295
+2024-06-26 18:48:13.037 +03:00 [INF] Updating existing message ID: 47294
+2024-06-26 18:48:13.038 +03:00 [INF] Updating existing message ID: 47293
+2024-06-26 18:48:13.040 +03:00 [INF] Updating existing message ID: 47292
+2024-06-26 18:48:13.041 +03:00 [INF] Updating existing message ID: 47291
+2024-06-26 18:48:13.042 +03:00 [INF] Updating existing message ID: 47290
+2024-06-26 18:48:13.044 +03:00 [INF] Updating existing message ID: 47288
+2024-06-26 18:48:13.048 +03:00 [INF] Updating existing message ID: 47286
+2024-06-26 18:48:13.049 +03:00 [INF] Updating existing message ID: 47285
+2024-06-26 18:48:13.051 +03:00 [INF] Updating existing message ID: 47283
+2024-06-26 18:48:13.053 +03:00 [INF] Updating existing message ID: 47282
+2024-06-26 18:48:13.054 +03:00 [INF] Updating existing message ID: 47281
+2024-06-26 18:48:13.055 +03:00 [INF] Updating existing message ID: 47279
+2024-06-26 18:48:13.056 +03:00 [INF] Updating existing message ID: 47277
+2024-06-26 18:48:13.058 +03:00 [INF] Updating existing message ID: 47276
+2024-06-26 18:48:13.059 +03:00 [INF] Updating existing message ID: 47274
+2024-06-26 18:48:13.060 +03:00 [INF] Updating existing message ID: 47272
+2024-06-26 18:48:13.065 +03:00 [INF] Updating existing message ID: 47271
+2024-06-26 18:48:13.067 +03:00 [INF] Updating existing message ID: 47270
+2024-06-26 18:48:13.068 +03:00 [INF] Updating existing message ID: 47269
+2024-06-26 18:48:13.069 +03:00 [INF] Updating existing message ID: 47268
+2024-06-26 18:48:13.070 +03:00 [INF] Updating existing message ID: 47266
+2024-06-26 18:48:13.071 +03:00 [INF] Updating existing message ID: 47265
+2024-06-26 18:48:13.073 +03:00 [INF] Adding 22 new messages.
+2024-06-26 18:48:13.104 +03:00 [INF] Updating 33 messages.
+2024-06-26 18:48:13.109 +03:00 [INF] Saving changes to the database.
+2024-06-26 18:48:13.141 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (DbType = Int64), @p1='?', @p2='?', @p3='?' (DbType = Int32), @p9='?' (DbType = Int32), @p5='?' (DbType = Int64), @p6='?', @p7='?', @p8='?' (DbType = Int32), @p14='?' (DbType = Int32), @p10='?' (DbType = Int64), @p11='?', @p12='?', @p13='?' (DbType = Int32), @p19='?' (DbType = Int32), @p15='?' (DbType = Int64), @p16='?', @p17='?', @p18='?' (DbType = Int32), @p24='?' (DbType = Int32), @p20='?' (DbType = Int64), @p21='?', @p22='?', @p23='?' (DbType = Int32), @p29='?' (DbType = Int32), @p25='?' (DbType = Int64), @p26='?', @p27='?', @p28='?' (DbType = Int32), @p34='?' (DbType = Int32), @p30='?' (DbType = Int64), @p31='?', @p32='?', @p33='?' (DbType = Int32), @p39='?' (DbType = Int32), @p35='?' (DbType = Int64), @p36='?', @p37='?', @p38='?' (DbType = Int32), @p44='?' (DbType = Int32), @p40='?' (DbType = Int64), @p41='?', @p42='?', @p43='?' (DbType = Int32), @p49='?' (DbType = Int32), @p45='?' (DbType = Int64), @p46='?', @p47='?', @p48='?' (DbType = Int32), @p54='?' (DbType = Int32), @p50='?' (DbType = Int64), @p51='?', @p52='?', @p53='?' (DbType = Int32), @p59='?' (DbType = Int32), @p55='?' (DbType = Int64), @p56='?', @p57='?', @p58='?' (DbType = Int32), @p64='?' (DbType = Int32), @p60='?' (DbType = Int64), @p61='?', @p62='?', @p63='?' (DbType = Int32), @p69='?' (DbType = Int32), @p65='?' (DbType = Int64), @p66='?', @p67='?', @p68='?' (DbType = Int32), @p74='?' (DbType = Int32), @p70='?' (DbType = Int64), @p71='?', @p72='?', @p73='?' (DbType = Int32), @p79='?' (DbType = Int32), @p75='?' (DbType = Int64), @p76='?', @p77='?', @p78='?' (DbType = Int32), @p84='?' (DbType = Int32), @p80='?' (DbType = Int64), @p81='?', @p82='?', @p83='?' (DbType = Int32), @p89='?' (DbType = Int32), @p85='?' (DbType = Int64), @p86='?', @p87='?', @p88='?' (DbType = Int32), @p94='?' (DbType = Int32), @p90='?' (DbType = Int64), @p91='?', @p92='?', @p93='?' (DbType = Int32), @p99='?' (DbType = Int32), @p95='?' (DbType = Int64), @p96='?', @p97='?', @p98='?' (DbType = Int32), @p104='?' (DbType = Int32), @p100='?' (DbType = Int64), @p101='?', @p102='?', @p103='?' (DbType = Int32), @p109='?' (DbType = Int32), @p105='?' (DbType = Int64), @p106='?', @p107='?', @p108='?' (DbType = Int32), @p114='?' (DbType = Int32), @p110='?' (DbType = Int64), @p111='?', @p112='?', @p113='?' (DbType = Int32), @p119='?' (DbType = Int32), @p115='?' (DbType = Int64), @p116='?', @p117='?', @p118='?' (DbType = Int32), @p124='?' (DbType = Int32), @p120='?' (DbType = Int64), @p121='?', @p122='?', @p123='?' (DbType = Int32), @p129='?' (DbType = Int32), @p125='?' (DbType = Int64), @p126='?', @p127='?', @p128='?' (DbType = Int32), @p134='?' (DbType = Int32), @p130='?' (DbType = Int64), @p131='?', @p132='?', @p133='?' (DbType = Int32), @p139='?' (DbType = Int32), @p135='?' (DbType = Int64), @p136='?', @p137='?', @p138='?' (DbType = Int32), @p144='?' (DbType = Int32), @p140='?' (DbType = Int64), @p141='?', @p142='?', @p143='?' (DbType = Int32), @p149='?' (DbType = Int32), @p145='?' (DbType = Int64), @p146='?', @p147='?', @p148='?' (DbType = Int32), @p154='?' (DbType = Int32), @p150='?' (DbType = Int64), @p151='?', @p152='?', @p153='?' (DbType = Int32), @p159='?' (DbType = Int32), @p155='?' (DbType = Int64), @p156='?', @p157='?', @p158='?' (DbType = Int32), @p164='?' (DbType = Int32), @p160='?' (DbType = Int64), @p161='?', @p162='?', @p163='?' (DbType = Int32), @p165='?' (DbType = Int32), @p166='?' (DbType = Int64), @p167='?', @p168='?', @p169='?' (DbType = Int32), @p170='?' (DbType = Int32), @p171='?' (DbType = Int64), @p172='?', @p173='?', @p174='?' (DbType = Int32), @p175='?' (DbType = Int32), @p176='?' (DbType = Int64), @p177='?', @p178='?', @p179='?' (DbType = Int32), @p180='?' (DbType = Int32), @p181='?' (DbType = Int64), @p182='?', @p183='?', @p184='?' (DbType = Int32), @p185='?' (DbType = Int32), @p186='?' (DbType = Int64), @p187='?', @p188='?', @p189='?' (DbType = Int32), @p190='?' (DbType = Int32), @p191='?' (DbType = Int64), @p192='?', @p193='?', @p194='?' (DbType = Int32), @p195='?' (DbType = Int32), @p196='?' (DbType = Int64), @p197='?', @p198='?', @p199='?' (DbType = Int32), @p200='?' (DbType = Int32), @p201='?' (DbType = Int64), @p202='?', @p203='?', @p204='?' (DbType = Int32), @p205='?' (DbType = Int32), @p206='?' (DbType = Int64), @p207='?', @p208='?', @p209='?' (DbType = Int32), @p210='?' (DbType = Int32), @p211='?' (DbType = Int64), @p212='?', @p213='?', @p214='?' (DbType = Int32), @p215='?' (DbType = Int32), @p216='?' (DbType = Int64), @p217='?', @p218='?', @p219='?' (DbType = Int32), @p220='?' (DbType = Int32), @p221='?' (DbType = Int64), @p222='?', @p223='?', @p224='?' (DbType = Int32), @p225='?' (DbType = Int32), @p226='?' (DbType = Int64), @p227='?', @p228='?', @p229='?' (DbType = Int32), @p230='?' (DbType = Int32), @p231='?' (DbType = Int64), @p232='?', @p233='?', @p234='?' (DbType = Int32), @p235='?' (DbType = Int32), @p236='?' (DbType = Int64), @p237='?', @p238='?', @p239='?' (DbType = Int32), @p240='?' (DbType = Int32), @p241='?' (DbType = Int64), @p242='?', @p243='?', @p244='?' (DbType = Int32), @p245='?' (DbType = Int32), @p246='?' (DbType = Int64), @p247='?', @p248='?', @p249='?' (DbType = Int32), @p250='?' (DbType = Int32), @p251='?' (DbType = Int64), @p252='?', @p253='?', @p254='?' (DbType = Int32), @p255='?' (DbType = Int32), @p256='?' (DbType = Int64), @p257='?', @p258='?', @p259='?' (DbType = Int32), @p260='?' (DbType = Int32), @p261='?' (DbType = Int64), @p262='?', @p263='?', @p264='?' (DbType = Int32), @p265='?' (DbType = Int32), @p266='?' (DbType = Int64), @p267='?', @p268='?', @p269='?' (DbType = Int32), @p270='?' (DbType = Int32), @p271='?' (DbType = Int64), @p272='?', @p273='?', @p274='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Message" SET channel_telegram_id = @p0, media = @p1, text = @p2, views = @p3
+WHERE id = @p4;
+UPDATE "Message" SET channel_telegram_id = @p5, media = @p6, text = @p7, views = @p8
+WHERE id = @p9;
+UPDATE "Message" SET channel_telegram_id = @p10, media = @p11, text = @p12, views = @p13
+WHERE id = @p14;
+UPDATE "Message" SET channel_telegram_id = @p15, media = @p16, text = @p17, views = @p18
+WHERE id = @p19;
+UPDATE "Message" SET channel_telegram_id = @p20, media = @p21, text = @p22, views = @p23
+WHERE id = @p24;
+UPDATE "Message" SET channel_telegram_id = @p25, media = @p26, text = @p27, views = @p28
+WHERE id = @p29;
+UPDATE "Message" SET channel_telegram_id = @p30, media = @p31, text = @p32, views = @p33
+WHERE id = @p34;
+UPDATE "Message" SET channel_telegram_id = @p35, media = @p36, text = @p37, views = @p38
+WHERE id = @p39;
+UPDATE "Message" SET channel_telegram_id = @p40, media = @p41, text = @p42, views = @p43
+WHERE id = @p44;
+UPDATE "Message" SET channel_telegram_id = @p45, media = @p46, text = @p47, views = @p48
+WHERE id = @p49;
+UPDATE "Message" SET channel_telegram_id = @p50, media = @p51, text = @p52, views = @p53
+WHERE id = @p54;
+UPDATE "Message" SET channel_telegram_id = @p55, media = @p56, text = @p57, views = @p58
+WHERE id = @p59;
+UPDATE "Message" SET channel_telegram_id = @p60, media = @p61, text = @p62, views = @p63
+WHERE id = @p64;
+UPDATE "Message" SET channel_telegram_id = @p65, media = @p66, text = @p67, views = @p68
+WHERE id = @p69;
+UPDATE "Message" SET channel_telegram_id = @p70, media = @p71, text = @p72, views = @p73
+WHERE id = @p74;
+UPDATE "Message" SET channel_telegram_id = @p75, media = @p76, text = @p77, views = @p78
+WHERE id = @p79;
+UPDATE "Message" SET channel_telegram_id = @p80, media = @p81, text = @p82, views = @p83
+WHERE id = @p84;
+UPDATE "Message" SET channel_telegram_id = @p85, media = @p86, text = @p87, views = @p88
+WHERE id = @p89;
+UPDATE "Message" SET channel_telegram_id = @p90, media = @p91, text = @p92, views = @p93
+WHERE id = @p94;
+UPDATE "Message" SET channel_telegram_id = @p95, media = @p96, text = @p97, views = @p98
+WHERE id = @p99;
+UPDATE "Message" SET channel_telegram_id = @p100, media = @p101, text = @p102, views = @p103
+WHERE id = @p104;
+UPDATE "Message" SET channel_telegram_id = @p105, media = @p106, text = @p107, views = @p108
+WHERE id = @p109;
+UPDATE "Message" SET channel_telegram_id = @p110, media = @p111, text = @p112, views = @p113
+WHERE id = @p114;
+UPDATE "Message" SET channel_telegram_id = @p115, media = @p116, text = @p117, views = @p118
+WHERE id = @p119;
+UPDATE "Message" SET channel_telegram_id = @p120, media = @p121, text = @p122, views = @p123
+WHERE id = @p124;
+UPDATE "Message" SET channel_telegram_id = @p125, media = @p126, text = @p127, views = @p128
+WHERE id = @p129;
+UPDATE "Message" SET channel_telegram_id = @p130, media = @p131, text = @p132, views = @p133
+WHERE id = @p134;
+UPDATE "Message" SET channel_telegram_id = @p135, media = @p136, text = @p137, views = @p138
+WHERE id = @p139;
+UPDATE "Message" SET channel_telegram_id = @p140, media = @p141, text = @p142, views = @p143
+WHERE id = @p144;
+UPDATE "Message" SET channel_telegram_id = @p145, media = @p146, text = @p147, views = @p148
+WHERE id = @p149;
+UPDATE "Message" SET channel_telegram_id = @p150, media = @p151, text = @p152, views = @p153
+WHERE id = @p154;
+UPDATE "Message" SET channel_telegram_id = @p155, media = @p156, text = @p157, views = @p158
+WHERE id = @p159;
+UPDATE "Message" SET channel_telegram_id = @p160, media = @p161, text = @p162, views = @p163
+WHERE id = @p164;
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p165, @p166, @p167, @p168, @p169);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p170, @p171, @p172, @p173, @p174);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p175, @p176, @p177, @p178, @p179);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p180, @p181, @p182, @p183, @p184);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p185, @p186, @p187, @p188, @p189);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p190, @p191, @p192, @p193, @p194);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p195, @p196, @p197, @p198, @p199);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p200, @p201, @p202, @p203, @p204);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p205, @p206, @p207, @p208, @p209);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p210, @p211, @p212, @p213, @p214);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p215, @p216, @p217, @p218, @p219);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p220, @p221, @p222, @p223, @p224);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p225, @p226, @p227, @p228, @p229);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p230, @p231, @p232, @p233, @p234);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p235, @p236, @p237, @p238, @p239);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p240, @p241, @p242, @p243, @p244);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p245, @p246, @p247, @p248, @p249);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p250, @p251, @p252, @p253, @p254);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p255, @p256, @p257, @p258, @p259);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p260, @p261, @p262, @p263, @p264);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p265, @p266, @p267, @p268, @p269);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p270, @p271, @p272, @p273, @p274);
+2024-06-26 18:48:13.195 +03:00 [INF] Total number of batches processed: 1
+2024-06-26 18:48:13.197 +03:00 [INF] Fetched 166 messages from the queue.
+2024-06-26 18:48:13.200 +03:00 [INF] Processing batch 1 with 100 messages.
+2024-06-26 18:48:13.202 +03:00 [INF] Processing batch of 100 messages.
+2024-06-26 18:48:13.204 +03:00 [INF] Message IDs to process: [3771,3770,3769,3768,3767,3765,3764,3763,3761,3760,3759,3758,3757,3756,3755,3754,3753,3752,3751,3750,3749,3748,3747,3746,3745,3744,3743,3742,3741,3740,3739,3738,3737,3735,3734,3733,3732,3731,3730,3729,3728,3727,3726,3725,3724,3723,3722,3721,3720,3719,3718,3717,3716,3715,3714,3713,3712,3711,3710,3709,3708,3707,3706,3705,3704,3703,3702,3701,3700,3699,3698,3697,3696,3695,3694,3693,3692,3691,3690,3689,3688,3687,3686,3685,3684,3680,3679,3678,3677,3676,3675,3674,3673,3672,3671,3670,3669,3668,3667,3666]
+2024-06-26 18:48:13.236 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__messageIds_0='?' (DbType = Object)], CommandType='"Text"', CommandTimeout='30']
+SELECT m.id, m.channel_telegram_id, m.media, m.text, m.views
+FROM "Message" AS m
+WHERE m.id = ANY (@__messageIds_0)
+2024-06-26 18:48:13.241 +03:00 [INF] Adding new message ID: 3771
+2024-06-26 18:48:13.242 +03:00 [INF] Adding new message ID: 3770
+2024-06-26 18:48:13.243 +03:00 [INF] Adding new message ID: 3769
+2024-06-26 18:48:13.244 +03:00 [INF] Adding new message ID: 3768
+2024-06-26 18:48:13.245 +03:00 [INF] Adding new message ID: 3767
+2024-06-26 18:48:13.249 +03:00 [INF] Adding new message ID: 3765
+2024-06-26 18:48:13.250 +03:00 [INF] Adding new message ID: 3764
+2024-06-26 18:48:13.251 +03:00 [INF] Adding new message ID: 3763
+2024-06-26 18:48:13.252 +03:00 [INF] Adding new message ID: 3761
+2024-06-26 18:48:13.253 +03:00 [INF] Adding new message ID: 3760
+2024-06-26 18:48:13.254 +03:00 [INF] Adding new message ID: 3759
+2024-06-26 18:48:13.255 +03:00 [INF] Adding new message ID: 3758
+2024-06-26 18:48:13.256 +03:00 [INF] Adding new message ID: 3757
+2024-06-26 18:48:13.257 +03:00 [INF] Adding new message ID: 3756
+2024-06-26 18:48:13.258 +03:00 [INF] Adding new message ID: 3755
+2024-06-26 18:48:13.259 +03:00 [INF] Adding new message ID: 3754
+2024-06-26 18:48:13.260 +03:00 [INF] Adding new message ID: 3753
+2024-06-26 18:48:13.261 +03:00 [INF] Adding new message ID: 3752
+2024-06-26 18:48:13.265 +03:00 [INF] Adding new message ID: 3751
+2024-06-26 18:48:13.266 +03:00 [INF] Adding new message ID: 3750
+2024-06-26 18:48:13.267 +03:00 [INF] Adding new message ID: 3749
+2024-06-26 18:48:13.268 +03:00 [INF] Adding new message ID: 3748
+2024-06-26 18:48:13.270 +03:00 [INF] Adding new message ID: 3747
+2024-06-26 18:48:13.271 +03:00 [INF] Adding new message ID: 3746
+2024-06-26 18:48:13.272 +03:00 [INF] Adding new message ID: 3745
+2024-06-26 18:48:13.273 +03:00 [INF] Adding new message ID: 3744
+2024-06-26 18:48:13.273 +03:00 [INF] Adding new message ID: 3743
+2024-06-26 18:48:13.274 +03:00 [INF] Adding new message ID: 3742
+2024-06-26 18:48:13.276 +03:00 [INF] Adding new message ID: 3741
+2024-06-26 18:48:13.279 +03:00 [INF] Adding new message ID: 3740
+2024-06-26 18:48:13.280 +03:00 [INF] Adding new message ID: 3739
+2024-06-26 18:48:13.281 +03:00 [INF] Adding new message ID: 3738
+2024-06-26 18:48:13.282 +03:00 [INF] Adding new message ID: 3737
+2024-06-26 18:48:13.283 +03:00 [INF] Adding new message ID: 3735
+2024-06-26 18:48:13.285 +03:00 [INF] Adding new message ID: 3734
+2024-06-26 18:48:13.286 +03:00 [INF] Adding new message ID: 3733
+2024-06-26 18:48:13.286 +03:00 [INF] Adding new message ID: 3732
+2024-06-26 18:48:13.288 +03:00 [INF] Adding new message ID: 3731
+2024-06-26 18:48:13.289 +03:00 [INF] Adding new message ID: 3730
+2024-06-26 18:48:13.290 +03:00 [INF] Adding new message ID: 3729
+2024-06-26 18:48:13.294 +03:00 [INF] Adding new message ID: 3728
+2024-06-26 18:48:13.295 +03:00 [INF] Adding new message ID: 3727
+2024-06-26 18:48:13.296 +03:00 [INF] Adding new message ID: 3726
+2024-06-26 18:48:13.297 +03:00 [INF] Adding new message ID: 3725
+2024-06-26 18:48:13.298 +03:00 [INF] Adding new message ID: 3724
+2024-06-26 18:48:13.299 +03:00 [INF] Adding new message ID: 3723
+2024-06-26 18:48:13.300 +03:00 [INF] Adding new message ID: 3722
+2024-06-26 18:48:13.301 +03:00 [INF] Adding new message ID: 3721
+2024-06-26 18:48:13.302 +03:00 [INF] Adding new message ID: 3720
+2024-06-26 18:48:13.303 +03:00 [INF] Adding new message ID: 3719
+2024-06-26 18:48:13.304 +03:00 [INF] Adding new message ID: 3718
+2024-06-26 18:48:13.305 +03:00 [INF] Adding new message ID: 3717
+2024-06-26 18:48:13.306 +03:00 [INF] Adding new message ID: 3716
+2024-06-26 18:48:13.310 +03:00 [INF] Updating existing message ID: 3715
+2024-06-26 18:48:13.312 +03:00 [INF] Updating existing message ID: 3714
+2024-06-26 18:48:13.313 +03:00 [INF] Updating existing message ID: 3713
+2024-06-26 18:48:13.314 +03:00 [INF] Updating existing message ID: 3712
+2024-06-26 18:48:13.315 +03:00 [INF] Updating existing message ID: 3711
+2024-06-26 18:48:13.316 +03:00 [INF] Updating existing message ID: 3710
+2024-06-26 18:48:13.317 +03:00 [INF] Updating existing message ID: 3709
+2024-06-26 18:48:13.318 +03:00 [INF] Updating existing message ID: 3708
+2024-06-26 18:48:13.319 +03:00 [INF] Updating existing message ID: 3707
+2024-06-26 18:48:13.320 +03:00 [INF] Updating existing message ID: 3706
+2024-06-26 18:48:13.321 +03:00 [INF] Updating existing message ID: 3705
+2024-06-26 18:48:13.322 +03:00 [INF] Updating existing message ID: 3704
+2024-06-26 18:48:13.326 +03:00 [INF] Updating existing message ID: 3703
+2024-06-26 18:48:13.327 +03:00 [INF] Updating existing message ID: 3702
+2024-06-26 18:48:13.328 +03:00 [INF] Updating existing message ID: 3701
+2024-06-26 18:48:13.328 +03:00 [INF] Updating existing message ID: 3700
+2024-06-26 18:48:13.329 +03:00 [INF] Updating existing message ID: 3699
+2024-06-26 18:48:13.331 +03:00 [INF] Updating existing message ID: 3698
+2024-06-26 18:48:13.332 +03:00 [INF] Updating existing message ID: 3697
+2024-06-26 18:48:13.333 +03:00 [INF] Updating existing message ID: 3696
+2024-06-26 18:48:13.334 +03:00 [INF] Updating existing message ID: 3695
+2024-06-26 18:48:13.335 +03:00 [INF] Updating existing message ID: 3694
+2024-06-26 18:48:13.336 +03:00 [INF] Updating existing message ID: 3693
+2024-06-26 18:48:13.337 +03:00 [INF] Updating existing message ID: 3692
+2024-06-26 18:48:13.338 +03:00 [INF] Updating existing message ID: 3691
+2024-06-26 18:48:13.342 +03:00 [INF] Updating existing message ID: 3690
+2024-06-26 18:48:13.343 +03:00 [INF] Updating existing message ID: 3689
+2024-06-26 18:48:13.344 +03:00 [INF] Updating existing message ID: 3688
+2024-06-26 18:48:13.345 +03:00 [INF] Updating existing message ID: 3687
+2024-06-26 18:48:13.346 +03:00 [INF] Updating existing message ID: 3686
+2024-06-26 18:48:13.347 +03:00 [INF] Updating existing message ID: 3685
+2024-06-26 18:48:13.349 +03:00 [INF] Updating existing message ID: 3684
+2024-06-26 18:48:13.349 +03:00 [INF] Updating existing message ID: 3680
+2024-06-26 18:48:13.350 +03:00 [INF] Updating existing message ID: 3679
+2024-06-26 18:48:13.351 +03:00 [INF] Updating existing message ID: 3678
+2024-06-26 18:48:13.352 +03:00 [INF] Updating existing message ID: 3677
+2024-06-26 18:48:13.353 +03:00 [INF] Updating existing message ID: 3676
+2024-06-26 18:48:13.359 +03:00 [INF] Updating existing message ID: 3675
+2024-06-26 18:48:13.361 +03:00 [INF] Updating existing message ID: 3674
+2024-06-26 18:48:13.362 +03:00 [INF] Updating existing message ID: 3673
+2024-06-26 18:48:13.363 +03:00 [INF] Updating existing message ID: 3672
+2024-06-26 18:48:13.364 +03:00 [INF] Updating existing message ID: 3671
+2024-06-26 18:48:13.365 +03:00 [INF] Updating existing message ID: 3670
+2024-06-26 18:48:13.366 +03:00 [INF] Updating existing message ID: 3669
+2024-06-26 18:48:13.368 +03:00 [INF] Updating existing message ID: 3668
+2024-06-26 18:48:13.368 +03:00 [INF] Updating existing message ID: 3667
+2024-06-26 18:48:13.369 +03:00 [INF] Updating existing message ID: 3666
+2024-06-26 18:48:13.370 +03:00 [INF] Adding 53 new messages.
+2024-06-26 18:48:13.375 +03:00 [INF] Updating 47 messages.
+2024-06-26 18:48:13.376 +03:00 [INF] Saving changes to the database.
+2024-06-26 18:48:13.391 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (DbType = Int64), @p1='?', @p2='?', @p3='?' (DbType = Int32), @p9='?' (DbType = Int32), @p5='?' (DbType = Int64), @p6='?', @p7='?', @p8='?' (DbType = Int32), @p14='?' (DbType = Int32), @p10='?' (DbType = Int64), @p11='?', @p12='?', @p13='?' (DbType = Int32), @p19='?' (DbType = Int32), @p15='?' (DbType = Int64), @p16='?', @p17='?', @p18='?' (DbType = Int32), @p24='?' (DbType = Int32), @p20='?' (DbType = Int64), @p21='?', @p22='?', @p23='?' (DbType = Int32), @p29='?' (DbType = Int32), @p25='?' (DbType = Int64), @p26='?', @p27='?', @p28='?' (DbType = Int32), @p34='?' (DbType = Int32), @p30='?' (DbType = Int64), @p31='?', @p32='?', @p33='?' (DbType = Int32), @p39='?' (DbType = Int32), @p35='?' (DbType = Int64), @p36='?', @p37='?', @p38='?' (DbType = Int32), @p44='?' (DbType = Int32), @p40='?' (DbType = Int64), @p41='?', @p42='?', @p43='?' (DbType = Int32), @p49='?' (DbType = Int32), @p45='?' (DbType = Int64), @p46='?', @p47='?', @p48='?' (DbType = Int32), @p54='?' (DbType = Int32), @p50='?' (DbType = Int64), @p51='?', @p52='?', @p53='?' (DbType = Int32), @p59='?' (DbType = Int32), @p55='?' (DbType = Int64), @p56='?', @p57='?', @p58='?' (DbType = Int32), @p64='?' (DbType = Int32), @p60='?' (DbType = Int64), @p61='?', @p62='?', @p63='?' (DbType = Int32), @p69='?' (DbType = Int32), @p65='?' (DbType = Int64), @p66='?', @p67='?', @p68='?' (DbType = Int32), @p74='?' (DbType = Int32), @p70='?' (DbType = Int64), @p71='?', @p72='?', @p73='?' (DbType = Int32), @p79='?' (DbType = Int32), @p75='?' (DbType = Int64), @p76='?', @p77='?', @p78='?' (DbType = Int32), @p84='?' (DbType = Int32), @p80='?' (DbType = Int64), @p81='?', @p82='?', @p83='?' (DbType = Int32), @p89='?' (DbType = Int32), @p85='?' (DbType = Int64), @p86='?', @p87='?', @p88='?' (DbType = Int32), @p94='?' (DbType = Int32), @p90='?' (DbType = Int64), @p91='?', @p92='?', @p93='?' (DbType = Int32), @p99='?' (DbType = Int32), @p95='?' (DbType = Int64), @p96='?', @p97='?', @p98='?' (DbType = Int32), @p104='?' (DbType = Int32), @p100='?' (DbType = Int64), @p101='?', @p102='?', @p103='?' (DbType = Int32), @p109='?' (DbType = Int32), @p105='?' (DbType = Int64), @p106='?', @p107='?', @p108='?' (DbType = Int32), @p114='?' (DbType = Int32), @p110='?' (DbType = Int64), @p111='?', @p112='?', @p113='?' (DbType = Int32), @p119='?' (DbType = Int32), @p115='?' (DbType = Int64), @p116='?', @p117='?', @p118='?' (DbType = Int32), @p124='?' (DbType = Int32), @p120='?' (DbType = Int64), @p121='?', @p122='?', @p123='?' (DbType = Int32), @p129='?' (DbType = Int32), @p125='?' (DbType = Int64), @p126='?', @p127='?', @p128='?' (DbType = Int32), @p134='?' (DbType = Int32), @p130='?' (DbType = Int64), @p131='?', @p132='?', @p133='?' (DbType = Int32), @p139='?' (DbType = Int32), @p135='?' (DbType = Int64), @p136='?', @p137='?', @p138='?' (DbType = Int32), @p144='?' (DbType = Int32), @p140='?' (DbType = Int64), @p141='?', @p142='?', @p143='?' (DbType = Int32), @p149='?' (DbType = Int32), @p145='?' (DbType = Int64), @p146='?', @p147='?', @p148='?' (DbType = Int32), @p154='?' (DbType = Int32), @p150='?' (DbType = Int64), @p151='?', @p152='?', @p153='?' (DbType = Int32), @p159='?' (DbType = Int32), @p155='?' (DbType = Int64), @p156='?', @p157='?', @p158='?' (DbType = Int32), @p164='?' (DbType = Int32), @p160='?' (DbType = Int64), @p161='?', @p162='?', @p163='?' (DbType = Int32), @p169='?' (DbType = Int32), @p165='?' (DbType = Int64), @p166='?', @p167='?', @p168='?' (DbType = Int32), @p174='?' (DbType = Int32), @p170='?' (DbType = Int64), @p171='?', @p172='?', @p173='?' (DbType = Int32), @p179='?' (DbType = Int32), @p175='?' (DbType = Int64), @p176='?', @p177='?', @p178='?' (DbType = Int32), @p184='?' (DbType = Int32), @p180='?' (DbType = Int64), @p181='?', @p182='?', @p183='?' (DbType = Int32), @p189='?' (DbType = Int32), @p185='?' (DbType = Int64), @p186='?', @p187='?', @p188='?' (DbType = Int32), @p194='?' (DbType = Int32), @p190='?' (DbType = Int64), @p191='?', @p192='?', @p193='?' (DbType = Int32), @p199='?' (DbType = Int32), @p195='?' (DbType = Int64), @p196='?', @p197='?', @p198='?' (DbType = Int32), @p204='?' (DbType = Int32), @p200='?' (DbType = Int64), @p201='?', @p202='?', @p203='?' (DbType = Int32), @p209='?' (DbType = Int32), @p205='?' (DbType = Int64), @p206='?', @p207='?', @p208='?' (DbType = Int32), @p214='?' (DbType = Int32), @p210='?' (DbType = Int64), @p211='?', @p212='?', @p213='?' (DbType = Int32), @p219='?' (DbType = Int32), @p215='?' (DbType = Int64), @p216='?', @p217='?', @p218='?' (DbType = Int32), @p224='?' (DbType = Int32), @p220='?' (DbType = Int64), @p221='?', @p222='?', @p223='?' (DbType = Int32), @p229='?' (DbType = Int32), @p225='?' (DbType = Int64), @p226='?', @p227='?', @p228='?' (DbType = Int32), @p234='?' (DbType = Int32), @p230='?' (DbType = Int64), @p231='?', @p232='?', @p233='?' (DbType = Int32), @p235='?' (DbType = Int32), @p236='?' (DbType = Int64), @p237='?', @p238='?', @p239='?' (DbType = Int32), @p240='?' (DbType = Int32), @p241='?' (DbType = Int64), @p242='?', @p243='?', @p244='?' (DbType = Int32), @p245='?' (DbType = Int32), @p246='?' (DbType = Int64), @p247='?', @p248='?', @p249='?' (DbType = Int32), @p250='?' (DbType = Int32), @p251='?' (DbType = Int64), @p252='?', @p253='?', @p254='?' (DbType = Int32), @p255='?' (DbType = Int32), @p256='?' (DbType = Int64), @p257='?', @p258='?', @p259='?' (DbType = Int32), @p260='?' (DbType = Int32), @p261='?' (DbType = Int64), @p262='?', @p263='?', @p264='?' (DbType = Int32), @p265='?' (DbType = Int32), @p266='?' (DbType = Int64), @p267='?', @p268='?', @p269='?' (DbType = Int32), @p270='?' (DbType = Int32), @p271='?' (DbType = Int64), @p272='?', @p273='?', @p274='?' (DbType = Int32), @p275='?' (DbType = Int32), @p276='?' (DbType = Int64), @p277='?', @p278='?', @p279='?' (DbType = Int32), @p280='?' (DbType = Int32), @p281='?' (DbType = Int64), @p282='?', @p283='?', @p284='?' (DbType = Int32), @p285='?' (DbType = Int32), @p286='?' (DbType = Int64), @p287='?', @p288='?', @p289='?' (DbType = Int32), @p290='?' (DbType = Int32), @p291='?' (DbType = Int64), @p292='?', @p293='?', @p294='?' (DbType = Int32), @p295='?' (DbType = Int32), @p296='?' (DbType = Int64), @p297='?', @p298='?', @p299='?' (DbType = Int32), @p300='?' (DbType = Int32), @p301='?' (DbType = Int64), @p302='?', @p303='?', @p304='?' (DbType = Int32), @p305='?' (DbType = Int32), @p306='?' (DbType = Int64), @p307='?', @p308='?', @p309='?' (DbType = Int32), @p310='?' (DbType = Int32), @p311='?' (DbType = Int64), @p312='?', @p313='?', @p314='?' (DbType = Int32), @p315='?' (DbType = Int32), @p316='?' (DbType = Int64), @p317='?', @p318='?', @p319='?' (DbType = Int32), @p320='?' (DbType = Int32), @p321='?' (DbType = Int64), @p322='?', @p323='?', @p324='?' (DbType = Int32), @p325='?' (DbType = Int32), @p326='?' (DbType = Int64), @p327='?', @p328='?', @p329='?' (DbType = Int32), @p330='?' (DbType = Int32), @p331='?' (DbType = Int64), @p332='?', @p333='?', @p334='?' (DbType = Int32), @p335='?' (DbType = Int32), @p336='?' (DbType = Int64), @p337='?', @p338='?', @p339='?' (DbType = Int32), @p340='?' (DbType = Int32), @p341='?' (DbType = Int64), @p342='?', @p343='?', @p344='?' (DbType = Int32), @p345='?' (DbType = Int32), @p346='?' (DbType = Int64), @p347='?', @p348='?', @p349='?' (DbType = Int32), @p350='?' (DbType = Int32), @p351='?' (DbType = Int64), @p352='?', @p353='?', @p354='?' (DbType = Int32), @p355='?' (DbType = Int32), @p356='?' (DbType = Int64), @p357='?', @p358='?', @p359='?' (DbType = Int32), @p360='?' (DbType = Int32), @p361='?' (DbType = Int64), @p362='?', @p363='?', @p364='?' (DbType = Int32), @p365='?' (DbType = Int32), @p366='?' (DbType = Int64), @p367='?', @p368='?', @p369='?' (DbType = Int32), @p370='?' (DbType = Int32), @p371='?' (DbType = Int64), @p372='?', @p373='?', @p374='?' (DbType = Int32), @p375='?' (DbType = Int32), @p376='?' (DbType = Int64), @p377='?', @p378='?', @p379='?' (DbType = Int32), @p380='?' (DbType = Int32), @p381='?' (DbType = Int64), @p382='?', @p383='?', @p384='?' (DbType = Int32), @p385='?' (DbType = Int32), @p386='?' (DbType = Int64), @p387='?', @p388='?', @p389='?' (DbType = Int32), @p390='?' (DbType = Int32), @p391='?' (DbType = Int64), @p392='?', @p393='?', @p394='?' (DbType = Int32), @p395='?' (DbType = Int32), @p396='?' (DbType = Int64), @p397='?', @p398='?', @p399='?' (DbType = Int32), @p400='?' (DbType = Int32), @p401='?' (DbType = Int64), @p402='?', @p403='?', @p404='?' (DbType = Int32), @p405='?' (DbType = Int32), @p406='?' (DbType = Int64), @p407='?', @p408='?', @p409='?' (DbType = Int32), @p410='?' (DbType = Int32), @p411='?' (DbType = Int64), @p412='?', @p413='?', @p414='?' (DbType = Int32), @p415='?' (DbType = Int32), @p416='?' (DbType = Int64), @p417='?', @p418='?', @p419='?' (DbType = Int32), @p420='?' (DbType = Int32), @p421='?' (DbType = Int64), @p422='?', @p423='?', @p424='?' (DbType = Int32), @p425='?' (DbType = Int32), @p426='?' (DbType = Int64), @p427='?', @p428='?', @p429='?' (DbType = Int32), @p430='?' (DbType = Int32), @p431='?' (DbType = Int64), @p432='?', @p433='?', @p434='?' (DbType = Int32), @p435='?' (DbType = Int32), @p436='?' (DbType = Int64), @p437='?', @p438='?', @p439='?' (DbType = Int32), @p440='?' (DbType = Int32), @p441='?' (DbType = Int64), @p442='?', @p443='?', @p444='?' (DbType = Int32), @p445='?' (DbType = Int32), @p446='?' (DbType = Int64), @p447='?', @p448='?', @p449='?' (DbType = Int32), @p450='?' (DbType = Int32), @p451='?' (DbType = Int64), @p452='?', @p453='?', @p454='?' (DbType = Int32), @p455='?' (DbType = Int32), @p456='?' (DbType = Int64), @p457='?', @p458='?', @p459='?' (DbType = Int32), @p460='?' (DbType = Int32), @p461='?' (DbType = Int64), @p462='?', @p463='?', @p464='?' (DbType = Int32), @p465='?' (DbType = Int32), @p466='?' (DbType = Int64), @p467='?', @p468='?', @p469='?' (DbType = Int32), @p470='?' (DbType = Int32), @p471='?' (DbType = Int64), @p472='?', @p473='?', @p474='?' (DbType = Int32), @p475='?' (DbType = Int32), @p476='?' (DbType = Int64), @p477='?', @p478='?', @p479='?' (DbType = Int32), @p480='?' (DbType = Int32), @p481='?' (DbType = Int64), @p482='?', @p483='?', @p484='?' (DbType = Int32), @p485='?' (DbType = Int32), @p486='?' (DbType = Int64), @p487='?', @p488='?', @p489='?' (DbType = Int32), @p490='?' (DbType = Int32), @p491='?' (DbType = Int64), @p492='?', @p493='?', @p494='?' (DbType = Int32), @p495='?' (DbType = Int32), @p496='?' (DbType = Int64), @p497='?', @p498='?', @p499='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Message" SET channel_telegram_id = @p0, media = @p1, text = @p2, views = @p3
+WHERE id = @p4;
+UPDATE "Message" SET channel_telegram_id = @p5, media = @p6, text = @p7, views = @p8
+WHERE id = @p9;
+UPDATE "Message" SET channel_telegram_id = @p10, media = @p11, text = @p12, views = @p13
+WHERE id = @p14;
+UPDATE "Message" SET channel_telegram_id = @p15, media = @p16, text = @p17, views = @p18
+WHERE id = @p19;
+UPDATE "Message" SET channel_telegram_id = @p20, media = @p21, text = @p22, views = @p23
+WHERE id = @p24;
+UPDATE "Message" SET channel_telegram_id = @p25, media = @p26, text = @p27, views = @p28
+WHERE id = @p29;
+UPDATE "Message" SET channel_telegram_id = @p30, media = @p31, text = @p32, views = @p33
+WHERE id = @p34;
+UPDATE "Message" SET channel_telegram_id = @p35, media = @p36, text = @p37, views = @p38
+WHERE id = @p39;
+UPDATE "Message" SET channel_telegram_id = @p40, media = @p41, text = @p42, views = @p43
+WHERE id = @p44;
+UPDATE "Message" SET channel_telegram_id = @p45, media = @p46, text = @p47, views = @p48
+WHERE id = @p49;
+UPDATE "Message" SET channel_telegram_id = @p50, media = @p51, text = @p52, views = @p53
+WHERE id = @p54;
+UPDATE "Message" SET channel_telegram_id = @p55, media = @p56, text = @p57, views = @p58
+WHERE id = @p59;
+UPDATE "Message" SET channel_telegram_id = @p60, media = @p61, text = @p62, views = @p63
+WHERE id = @p64;
+UPDATE "Message" SET channel_telegram_id = @p65, media = @p66, text = @p67, views = @p68
+WHERE id = @p69;
+UPDATE "Message" SET channel_telegram_id = @p70, media = @p71, text = @p72, views = @p73
+WHERE id = @p74;
+UPDATE "Message" SET channel_telegram_id = @p75, media = @p76, text = @p77, views = @p78
+WHERE id = @p79;
+UPDATE "Message" SET channel_telegram_id = @p80, media = @p81, text = @p82, views = @p83
+WHERE id = @p84;
+UPDATE "Message" SET channel_telegram_id = @p85, media = @p86, text = @p87, views = @p88
+WHERE id = @p89;
+UPDATE "Message" SET channel_telegram_id = @p90, media = @p91, text = @p92, views = @p93
+WHERE id = @p94;
+UPDATE "Message" SET channel_telegram_id = @p95, media = @p96, text = @p97, views = @p98
+WHERE id = @p99;
+UPDATE "Message" SET channel_telegram_id = @p100, media = @p101, text = @p102, views = @p103
+WHERE id = @p104;
+UPDATE "Message" SET channel_telegram_id = @p105, media = @p106, text = @p107, views = @p108
+WHERE id = @p109;
+UPDATE "Message" SET channel_telegram_id = @p110, media = @p111, text = @p112, views = @p113
+WHERE id = @p114;
+UPDATE "Message" SET channel_telegram_id = @p115, media = @p116, text = @p117, views = @p118
+WHERE id = @p119;
+UPDATE "Message" SET channel_telegram_id = @p120, media = @p121, text = @p122, views = @p123
+WHERE id = @p124;
+UPDATE "Message" SET channel_telegram_id = @p125, media = @p126, text = @p127, views = @p128
+WHERE id = @p129;
+UPDATE "Message" SET channel_telegram_id = @p130, media = @p131, text = @p132, views = @p133
+WHERE id = @p134;
+UPDATE "Message" SET channel_telegram_id = @p135, media = @p136, text = @p137, views = @p138
+WHERE id = @p139;
+UPDATE "Message" SET channel_telegram_id = @p140, media = @p141, text = @p142, views = @p143
+WHERE id = @p144;
+UPDATE "Message" SET channel_telegram_id = @p145, media = @p146, text = @p147, views = @p148
+WHERE id = @p149;
+UPDATE "Message" SET channel_telegram_id = @p150, media = @p151, text = @p152, views = @p153
+WHERE id = @p154;
+UPDATE "Message" SET channel_telegram_id = @p155, media = @p156, text = @p157, views = @p158
+WHERE id = @p159;
+UPDATE "Message" SET channel_telegram_id = @p160, media = @p161, text = @p162, views = @p163
+WHERE id = @p164;
+UPDATE "Message" SET channel_telegram_id = @p165, media = @p166, text = @p167, views = @p168
+WHERE id = @p169;
+UPDATE "Message" SET channel_telegram_id = @p170, media = @p171, text = @p172, views = @p173
+WHERE id = @p174;
+UPDATE "Message" SET channel_telegram_id = @p175, media = @p176, text = @p177, views = @p178
+WHERE id = @p179;
+UPDATE "Message" SET channel_telegram_id = @p180, media = @p181, text = @p182, views = @p183
+WHERE id = @p184;
+UPDATE "Message" SET channel_telegram_id = @p185, media = @p186, text = @p187, views = @p188
+WHERE id = @p189;
+UPDATE "Message" SET channel_telegram_id = @p190, media = @p191, text = @p192, views = @p193
+WHERE id = @p194;
+UPDATE "Message" SET channel_telegram_id = @p195, media = @p196, text = @p197, views = @p198
+WHERE id = @p199;
+UPDATE "Message" SET channel_telegram_id = @p200, media = @p201, text = @p202, views = @p203
+WHERE id = @p204;
+UPDATE "Message" SET channel_telegram_id = @p205, media = @p206, text = @p207, views = @p208
+WHERE id = @p209;
+UPDATE "Message" SET channel_telegram_id = @p210, media = @p211, text = @p212, views = @p213
+WHERE id = @p214;
+UPDATE "Message" SET channel_telegram_id = @p215, media = @p216, text = @p217, views = @p218
+WHERE id = @p219;
+UPDATE "Message" SET channel_telegram_id = @p220, media = @p221, text = @p222, views = @p223
+WHERE id = @p224;
+UPDATE "Message" SET channel_telegram_id = @p225, media = @p226, text = @p227, views = @p228
+WHERE id = @p229;
+UPDATE "Message" SET channel_telegram_id = @p230, media = @p231, text = @p232, views = @p233
+WHERE id = @p234;
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p235, @p236, @p237, @p238, @p239);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p240, @p241, @p242, @p243, @p244);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p245, @p246, @p247, @p248, @p249);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p250, @p251, @p252, @p253, @p254);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p255, @p256, @p257, @p258, @p259);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p260, @p261, @p262, @p263, @p264);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p265, @p266, @p267, @p268, @p269);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p270, @p271, @p272, @p273, @p274);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p275, @p276, @p277, @p278, @p279);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p280, @p281, @p282, @p283, @p284);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p285, @p286, @p287, @p288, @p289);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p290, @p291, @p292, @p293, @p294);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p295, @p296, @p297, @p298, @p299);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p300, @p301, @p302, @p303, @p304);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p305, @p306, @p307, @p308, @p309);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p310, @p311, @p312, @p313, @p314);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p315, @p316, @p317, @p318, @p319);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p320, @p321, @p322, @p323, @p324);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p325, @p326, @p327, @p328, @p329);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p330, @p331, @p332, @p333, @p334);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p335, @p336, @p337, @p338, @p339);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p340, @p341, @p342, @p343, @p344);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p345, @p346, @p347, @p348, @p349);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p350, @p351, @p352, @p353, @p354);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p355, @p356, @p357, @p358, @p359);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p360, @p361, @p362, @p363, @p364);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p365, @p366, @p367, @p368, @p369);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p370, @p371, @p372, @p373, @p374);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p375, @p376, @p377, @p378, @p379);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p380, @p381, @p382, @p383, @p384);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p385, @p386, @p387, @p388, @p389);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p390, @p391, @p392, @p393, @p394);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p395, @p396, @p397, @p398, @p399);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p400, @p401, @p402, @p403, @p404);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p405, @p406, @p407, @p408, @p409);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p410, @p411, @p412, @p413, @p414);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p415, @p416, @p417, @p418, @p419);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p420, @p421, @p422, @p423, @p424);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p425, @p426, @p427, @p428, @p429);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p430, @p431, @p432, @p433, @p434);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p435, @p436, @p437, @p438, @p439);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p440, @p441, @p442, @p443, @p444);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p445, @p446, @p447, @p448, @p449);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p450, @p451, @p452, @p453, @p454);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p455, @p456, @p457, @p458, @p459);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p460, @p461, @p462, @p463, @p464);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p465, @p466, @p467, @p468, @p469);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p470, @p471, @p472, @p473, @p474);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p475, @p476, @p477, @p478, @p479);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p480, @p481, @p482, @p483, @p484);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p485, @p486, @p487, @p488, @p489);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p490, @p491, @p492, @p493, @p494);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p495, @p496, @p497, @p498, @p499);
+2024-06-26 18:48:13.445 +03:00 [INF] Processing batch 2 with 66 messages.
+2024-06-26 18:48:13.446 +03:00 [INF] Processing batch of 66 messages.
+2024-06-26 18:48:13.447 +03:00 [INF] Message IDs to process: [3665,3663,3662,3661,3660,3659,3658,3657,3656,3655,3654,3653,3652,3651,3650,3649,3648,3647,3646,3645,3644,3643,3642,3641,3640,3639,3638,3637,3636,3635,3634,3633,3632,3631,3630,3629,3628,3627,3626,3625,3624,3623,3622,3621,3620,3619,3618,3617,3616,3615,3614,3613,3612,3611,3610,3609,3608,3607,3606,3605,3604,3603,3602,3601,3600,3599]
+2024-06-26 18:48:13.470 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__messageIds_0='?' (DbType = Object)], CommandType='"Text"', CommandTimeout='30']
+SELECT m.id, m.channel_telegram_id, m.media, m.text, m.views
+FROM "Message" AS m
+WHERE m.id = ANY (@__messageIds_0)
+2024-06-26 18:48:13.474 +03:00 [INF] Updating existing message ID: 3665
+2024-06-26 18:48:13.475 +03:00 [INF] Updating existing message ID: 3663
+2024-06-26 18:48:13.476 +03:00 [INF] Updating existing message ID: 3662
+2024-06-26 18:48:13.477 +03:00 [INF] Updating existing message ID: 3661
+2024-06-26 18:48:13.478 +03:00 [INF] Updating existing message ID: 3660
+2024-06-26 18:48:13.479 +03:00 [INF] Updating existing message ID: 3659
+2024-06-26 18:48:13.480 +03:00 [INF] Updating existing message ID: 3658
+2024-06-26 18:48:13.484 +03:00 [INF] Updating existing message ID: 3657
+2024-06-26 18:48:13.485 +03:00 [INF] Updating existing message ID: 3656
+2024-06-26 18:48:13.487 +03:00 [INF] Updating existing message ID: 3655
+2024-06-26 18:48:13.489 +03:00 [INF] Updating existing message ID: 3654
+2024-06-26 18:48:13.490 +03:00 [INF] Updating existing message ID: 3653
+2024-06-26 18:48:13.491 +03:00 [INF] Updating existing message ID: 3652
+2024-06-26 18:48:13.492 +03:00 [INF] Updating existing message ID: 3651
+2024-06-26 18:48:13.493 +03:00 [INF] Updating existing message ID: 3650
+2024-06-26 18:48:13.494 +03:00 [INF] Updating existing message ID: 3649
+2024-06-26 18:48:13.495 +03:00 [INF] Updating existing message ID: 3648
+2024-06-26 18:48:13.496 +03:00 [INF] Updating existing message ID: 3647
+2024-06-26 18:48:13.501 +03:00 [INF] Updating existing message ID: 3646
+2024-06-26 18:48:13.502 +03:00 [INF] Updating existing message ID: 3645
+2024-06-26 18:48:13.503 +03:00 [INF] Updating existing message ID: 3644
+2024-06-26 18:48:13.504 +03:00 [INF] Updating existing message ID: 3643
+2024-06-26 18:48:13.505 +03:00 [INF] Updating existing message ID: 3642
+2024-06-26 18:48:13.507 +03:00 [INF] Updating existing message ID: 3641
+2024-06-26 18:48:13.508 +03:00 [INF] Updating existing message ID: 3640
+2024-06-26 18:48:13.508 +03:00 [INF] Updating existing message ID: 3639
+2024-06-26 18:48:13.509 +03:00 [INF] Updating existing message ID: 3638
+2024-06-26 18:48:13.511 +03:00 [INF] Updating existing message ID: 3637
+2024-06-26 18:48:13.514 +03:00 [INF] Updating existing message ID: 3636
+2024-06-26 18:48:13.516 +03:00 [INF] Updating existing message ID: 3635
+2024-06-26 18:48:13.517 +03:00 [INF] Updating existing message ID: 3634
+2024-06-26 18:48:13.518 +03:00 [INF] Updating existing message ID: 3633
+2024-06-26 18:48:13.519 +03:00 [INF] Updating existing message ID: 3632
+2024-06-26 18:48:13.520 +03:00 [INF] Updating existing message ID: 3631
+2024-06-26 18:48:13.521 +03:00 [INF] Updating existing message ID: 3630
+2024-06-26 18:48:13.522 +03:00 [INF] Updating existing message ID: 3629
+2024-06-26 18:48:13.523 +03:00 [INF] Updating existing message ID: 3628
+2024-06-26 18:48:13.524 +03:00 [INF] Updating existing message ID: 3627
+2024-06-26 18:48:13.525 +03:00 [INF] Updating existing message ID: 3626
+2024-06-26 18:48:13.526 +03:00 [INF] Updating existing message ID: 3625
+2024-06-26 18:48:13.527 +03:00 [INF] Updating existing message ID: 3624
+2024-06-26 18:48:13.532 +03:00 [INF] Updating existing message ID: 3623
+2024-06-26 18:48:13.534 +03:00 [INF] Updating existing message ID: 3622
+2024-06-26 18:48:13.535 +03:00 [INF] Updating existing message ID: 3621
+2024-06-26 18:48:13.536 +03:00 [INF] Updating existing message ID: 3620
+2024-06-26 18:48:13.537 +03:00 [INF] Updating existing message ID: 3619
+2024-06-26 18:48:13.538 +03:00 [INF] Updating existing message ID: 3618
+2024-06-26 18:48:13.539 +03:00 [INF] Updating existing message ID: 3617
+2024-06-26 18:48:13.540 +03:00 [INF] Updating existing message ID: 3616
+2024-06-26 18:48:13.541 +03:00 [INF] Updating existing message ID: 3615
+2024-06-26 18:48:13.542 +03:00 [INF] Updating existing message ID: 3614
+2024-06-26 18:48:13.545 +03:00 [INF] Updating existing message ID: 3613
+2024-06-26 18:48:13.547 +03:00 [INF] Updating existing message ID: 3612
+2024-06-26 18:48:13.548 +03:00 [INF] Updating existing message ID: 3611
+2024-06-26 18:48:13.550 +03:00 [INF] Updating existing message ID: 3610
+2024-06-26 18:48:13.550 +03:00 [INF] Updating existing message ID: 3609
+2024-06-26 18:48:13.551 +03:00 [INF] Updating existing message ID: 3608
+2024-06-26 18:48:13.552 +03:00 [INF] Updating existing message ID: 3607
+2024-06-26 18:48:13.553 +03:00 [INF] Updating existing message ID: 3606
+2024-06-26 18:48:13.555 +03:00 [INF] Updating existing message ID: 3605
+2024-06-26 18:48:13.556 +03:00 [INF] Updating existing message ID: 3604
+2024-06-26 18:48:13.557 +03:00 [INF] Updating existing message ID: 3603
+2024-06-26 18:48:13.558 +03:00 [INF] Updating existing message ID: 3602
+2024-06-26 18:48:13.563 +03:00 [INF] Updating existing message ID: 3601
+2024-06-26 18:48:13.564 +03:00 [INF] Updating existing message ID: 3600
+2024-06-26 18:48:13.565 +03:00 [INF] Updating existing message ID: 3599
+2024-06-26 18:48:13.566 +03:00 [INF] Updating 66 messages.
+2024-06-26 18:48:13.568 +03:00 [INF] Saving changes to the database.
+2024-06-26 18:48:13.581 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (DbType = Int64), @p1='?', @p2='?', @p3='?' (DbType = Int32), @p9='?' (DbType = Int32), @p5='?' (DbType = Int64), @p6='?', @p7='?', @p8='?' (DbType = Int32), @p14='?' (DbType = Int32), @p10='?' (DbType = Int64), @p11='?', @p12='?', @p13='?' (DbType = Int32), @p19='?' (DbType = Int32), @p15='?' (DbType = Int64), @p16='?', @p17='?', @p18='?' (DbType = Int32), @p24='?' (DbType = Int32), @p20='?' (DbType = Int64), @p21='?', @p22='?', @p23='?' (DbType = Int32), @p29='?' (DbType = Int32), @p25='?' (DbType = Int64), @p26='?', @p27='?', @p28='?' (DbType = Int32), @p34='?' (DbType = Int32), @p30='?' (DbType = Int64), @p31='?', @p32='?', @p33='?' (DbType = Int32), @p39='?' (DbType = Int32), @p35='?' (DbType = Int64), @p36='?', @p37='?', @p38='?' (DbType = Int32), @p44='?' (DbType = Int32), @p40='?' (DbType = Int64), @p41='?', @p42='?', @p43='?' (DbType = Int32), @p49='?' (DbType = Int32), @p45='?' (DbType = Int64), @p46='?', @p47='?', @p48='?' (DbType = Int32), @p54='?' (DbType = Int32), @p50='?' (DbType = Int64), @p51='?', @p52='?', @p53='?' (DbType = Int32), @p59='?' (DbType = Int32), @p55='?' (DbType = Int64), @p56='?', @p57='?', @p58='?' (DbType = Int32), @p64='?' (DbType = Int32), @p60='?' (DbType = Int64), @p61='?', @p62='?', @p63='?' (DbType = Int32), @p69='?' (DbType = Int32), @p65='?' (DbType = Int64), @p66='?', @p67='?', @p68='?' (DbType = Int32), @p74='?' (DbType = Int32), @p70='?' (DbType = Int64), @p71='?', @p72='?', @p73='?' (DbType = Int32), @p79='?' (DbType = Int32), @p75='?' (DbType = Int64), @p76='?', @p77='?', @p78='?' (DbType = Int32), @p84='?' (DbType = Int32), @p80='?' (DbType = Int64), @p81='?', @p82='?', @p83='?' (DbType = Int32), @p89='?' (DbType = Int32), @p85='?' (DbType = Int64), @p86='?', @p87='?', @p88='?' (DbType = Int32), @p94='?' (DbType = Int32), @p90='?' (DbType = Int64), @p91='?', @p92='?', @p93='?' (DbType = Int32), @p99='?' (DbType = Int32), @p95='?' (DbType = Int64), @p96='?', @p97='?', @p98='?' (DbType = Int32), @p104='?' (DbType = Int32), @p100='?' (DbType = Int64), @p101='?', @p102='?', @p103='?' (DbType = Int32), @p109='?' (DbType = Int32), @p105='?' (DbType = Int64), @p106='?', @p107='?', @p108='?' (DbType = Int32), @p114='?' (DbType = Int32), @p110='?' (DbType = Int64), @p111='?', @p112='?', @p113='?' (DbType = Int32), @p119='?' (DbType = Int32), @p115='?' (DbType = Int64), @p116='?', @p117='?', @p118='?' (DbType = Int32), @p124='?' (DbType = Int32), @p120='?' (DbType = Int64), @p121='?', @p122='?', @p123='?' (DbType = Int32), @p129='?' (DbType = Int32), @p125='?' (DbType = Int64), @p126='?', @p127='?', @p128='?' (DbType = Int32), @p134='?' (DbType = Int32), @p130='?' (DbType = Int64), @p131='?', @p132='?', @p133='?' (DbType = Int32), @p139='?' (DbType = Int32), @p135='?' (DbType = Int64), @p136='?', @p137='?', @p138='?' (DbType = Int32), @p144='?' (DbType = Int32), @p140='?' (DbType = Int64), @p141='?', @p142='?', @p143='?' (DbType = Int32), @p149='?' (DbType = Int32), @p145='?' (DbType = Int64), @p146='?', @p147='?', @p148='?' (DbType = Int32), @p154='?' (DbType = Int32), @p150='?' (DbType = Int64), @p151='?', @p152='?', @p153='?' (DbType = Int32), @p159='?' (DbType = Int32), @p155='?' (DbType = Int64), @p156='?', @p157='?', @p158='?' (DbType = Int32), @p164='?' (DbType = Int32), @p160='?' (DbType = Int64), @p161='?', @p162='?', @p163='?' (DbType = Int32), @p169='?' (DbType = Int32), @p165='?' (DbType = Int64), @p166='?', @p167='?', @p168='?' (DbType = Int32), @p174='?' (DbType = Int32), @p170='?' (DbType = Int64), @p171='?', @p172='?', @p173='?' (DbType = Int32), @p179='?' (DbType = Int32), @p175='?' (DbType = Int64), @p176='?', @p177='?', @p178='?' (DbType = Int32), @p184='?' (DbType = Int32), @p180='?' (DbType = Int64), @p181='?', @p182='?', @p183='?' (DbType = Int32), @p189='?' (DbType = Int32), @p185='?' (DbType = Int64), @p186='?', @p187='?', @p188='?' (DbType = Int32), @p194='?' (DbType = Int32), @p190='?' (DbType = Int64), @p191='?', @p192='?', @p193='?' (DbType = Int32), @p199='?' (DbType = Int32), @p195='?' (DbType = Int64), @p196='?', @p197='?', @p198='?' (DbType = Int32), @p204='?' (DbType = Int32), @p200='?' (DbType = Int64), @p201='?', @p202='?', @p203='?' (DbType = Int32), @p209='?' (DbType = Int32), @p205='?' (DbType = Int64), @p206='?', @p207='?', @p208='?' (DbType = Int32), @p214='?' (DbType = Int32), @p210='?' (DbType = Int64), @p211='?', @p212='?', @p213='?' (DbType = Int32), @p219='?' (DbType = Int32), @p215='?' (DbType = Int64), @p216='?', @p217='?', @p218='?' (DbType = Int32), @p224='?' (DbType = Int32), @p220='?' (DbType = Int64), @p221='?', @p222='?', @p223='?' (DbType = Int32), @p229='?' (DbType = Int32), @p225='?' (DbType = Int64), @p226='?', @p227='?', @p228='?' (DbType = Int32), @p234='?' (DbType = Int32), @p230='?' (DbType = Int64), @p231='?', @p232='?', @p233='?' (DbType = Int32), @p239='?' (DbType = Int32), @p235='?' (DbType = Int64), @p236='?', @p237='?', @p238='?' (DbType = Int32), @p244='?' (DbType = Int32), @p240='?' (DbType = Int64), @p241='?', @p242='?', @p243='?' (DbType = Int32), @p249='?' (DbType = Int32), @p245='?' (DbType = Int64), @p246='?', @p247='?', @p248='?' (DbType = Int32), @p254='?' (DbType = Int32), @p250='?' (DbType = Int64), @p251='?', @p252='?', @p253='?' (DbType = Int32), @p259='?' (DbType = Int32), @p255='?' (DbType = Int64), @p256='?', @p257='?', @p258='?' (DbType = Int32), @p264='?' (DbType = Int32), @p260='?' (DbType = Int64), @p261='?', @p262='?', @p263='?' (DbType = Int32), @p269='?' (DbType = Int32), @p265='?' (DbType = Int64), @p266='?', @p267='?', @p268='?' (DbType = Int32), @p274='?' (DbType = Int32), @p270='?' (DbType = Int64), @p271='?', @p272='?', @p273='?' (DbType = Int32), @p279='?' (DbType = Int32), @p275='?' (DbType = Int64), @p276='?', @p277='?', @p278='?' (DbType = Int32), @p284='?' (DbType = Int32), @p280='?' (DbType = Int64), @p281='?', @p282='?', @p283='?' (DbType = Int32), @p289='?' (DbType = Int32), @p285='?' (DbType = Int64), @p286='?', @p287='?', @p288='?' (DbType = Int32), @p294='?' (DbType = Int32), @p290='?' (DbType = Int64), @p291='?', @p292='?', @p293='?' (DbType = Int32), @p299='?' (DbType = Int32), @p295='?' (DbType = Int64), @p296='?', @p297='?', @p298='?' (DbType = Int32), @p304='?' (DbType = Int32), @p300='?' (DbType = Int64), @p301='?', @p302='?', @p303='?' (DbType = Int32), @p309='?' (DbType = Int32), @p305='?' (DbType = Int64), @p306='?', @p307='?', @p308='?' (DbType = Int32), @p314='?' (DbType = Int32), @p310='?' (DbType = Int64), @p311='?', @p312='?', @p313='?' (DbType = Int32), @p319='?' (DbType = Int32), @p315='?' (DbType = Int64), @p316='?', @p317='?', @p318='?' (DbType = Int32), @p324='?' (DbType = Int32), @p320='?' (DbType = Int64), @p321='?', @p322='?', @p323='?' (DbType = Int32), @p329='?' (DbType = Int32), @p325='?' (DbType = Int64), @p326='?', @p327='?', @p328='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Message" SET channel_telegram_id = @p0, media = @p1, text = @p2, views = @p3
+WHERE id = @p4;
+UPDATE "Message" SET channel_telegram_id = @p5, media = @p6, text = @p7, views = @p8
+WHERE id = @p9;
+UPDATE "Message" SET channel_telegram_id = @p10, media = @p11, text = @p12, views = @p13
+WHERE id = @p14;
+UPDATE "Message" SET channel_telegram_id = @p15, media = @p16, text = @p17, views = @p18
+WHERE id = @p19;
+UPDATE "Message" SET channel_telegram_id = @p20, media = @p21, text = @p22, views = @p23
+WHERE id = @p24;
+UPDATE "Message" SET channel_telegram_id = @p25, media = @p26, text = @p27, views = @p28
+WHERE id = @p29;
+UPDATE "Message" SET channel_telegram_id = @p30, media = @p31, text = @p32, views = @p33
+WHERE id = @p34;
+UPDATE "Message" SET channel_telegram_id = @p35, media = @p36, text = @p37, views = @p38
+WHERE id = @p39;
+UPDATE "Message" SET channel_telegram_id = @p40, media = @p41, text = @p42, views = @p43
+WHERE id = @p44;
+UPDATE "Message" SET channel_telegram_id = @p45, media = @p46, text = @p47, views = @p48
+WHERE id = @p49;
+UPDATE "Message" SET channel_telegram_id = @p50, media = @p51, text = @p52, views = @p53
+WHERE id = @p54;
+UPDATE "Message" SET channel_telegram_id = @p55, media = @p56, text = @p57, views = @p58
+WHERE id = @p59;
+UPDATE "Message" SET channel_telegram_id = @p60, media = @p61, text = @p62, views = @p63
+WHERE id = @p64;
+UPDATE "Message" SET channel_telegram_id = @p65, media = @p66, text = @p67, views = @p68
+WHERE id = @p69;
+UPDATE "Message" SET channel_telegram_id = @p70, media = @p71, text = @p72, views = @p73
+WHERE id = @p74;
+UPDATE "Message" SET channel_telegram_id = @p75, media = @p76, text = @p77, views = @p78
+WHERE id = @p79;
+UPDATE "Message" SET channel_telegram_id = @p80, media = @p81, text = @p82, views = @p83
+WHERE id = @p84;
+UPDATE "Message" SET channel_telegram_id = @p85, media = @p86, text = @p87, views = @p88
+WHERE id = @p89;
+UPDATE "Message" SET channel_telegram_id = @p90, media = @p91, text = @p92, views = @p93
+WHERE id = @p94;
+UPDATE "Message" SET channel_telegram_id = @p95, media = @p96, text = @p97, views = @p98
+WHERE id = @p99;
+UPDATE "Message" SET channel_telegram_id = @p100, media = @p101, text = @p102, views = @p103
+WHERE id = @p104;
+UPDATE "Message" SET channel_telegram_id = @p105, media = @p106, text = @p107, views = @p108
+WHERE id = @p109;
+UPDATE "Message" SET channel_telegram_id = @p110, media = @p111, text = @p112, views = @p113
+WHERE id = @p114;
+UPDATE "Message" SET channel_telegram_id = @p115, media = @p116, text = @p117, views = @p118
+WHERE id = @p119;
+UPDATE "Message" SET channel_telegram_id = @p120, media = @p121, text = @p122, views = @p123
+WHERE id = @p124;
+UPDATE "Message" SET channel_telegram_id = @p125, media = @p126, text = @p127, views = @p128
+WHERE id = @p129;
+UPDATE "Message" SET channel_telegram_id = @p130, media = @p131, text = @p132, views = @p133
+WHERE id = @p134;
+UPDATE "Message" SET channel_telegram_id = @p135, media = @p136, text = @p137, views = @p138
+WHERE id = @p139;
+UPDATE "Message" SET channel_telegram_id = @p140, media = @p141, text = @p142, views = @p143
+WHERE id = @p144;
+UPDATE "Message" SET channel_telegram_id = @p145, media = @p146, text = @p147, views = @p148
+WHERE id = @p149;
+UPDATE "Message" SET channel_telegram_id = @p150, media = @p151, text = @p152, views = @p153
+WHERE id = @p154;
+UPDATE "Message" SET channel_telegram_id = @p155, media = @p156, text = @p157, views = @p158
+WHERE id = @p159;
+UPDATE "Message" SET channel_telegram_id = @p160, media = @p161, text = @p162, views = @p163
+WHERE id = @p164;
+UPDATE "Message" SET channel_telegram_id = @p165, media = @p166, text = @p167, views = @p168
+WHERE id = @p169;
+UPDATE "Message" SET channel_telegram_id = @p170, media = @p171, text = @p172, views = @p173
+WHERE id = @p174;
+UPDATE "Message" SET channel_telegram_id = @p175, media = @p176, text = @p177, views = @p178
+WHERE id = @p179;
+UPDATE "Message" SET channel_telegram_id = @p180, media = @p181, text = @p182, views = @p183
+WHERE id = @p184;
+UPDATE "Message" SET channel_telegram_id = @p185, media = @p186, text = @p187, views = @p188
+WHERE id = @p189;
+UPDATE "Message" SET channel_telegram_id = @p190, media = @p191, text = @p192, views = @p193
+WHERE id = @p194;
+UPDATE "Message" SET channel_telegram_id = @p195, media = @p196, text = @p197, views = @p198
+WHERE id = @p199;
+UPDATE "Message" SET channel_telegram_id = @p200, media = @p201, text = @p202, views = @p203
+WHERE id = @p204;
+UPDATE "Message" SET channel_telegram_id = @p205, media = @p206, text = @p207, views = @p208
+WHERE id = @p209;
+UPDATE "Message" SET channel_telegram_id = @p210, media = @p211, text = @p212, views = @p213
+WHERE id = @p214;
+UPDATE "Message" SET channel_telegram_id = @p215, media = @p216, text = @p217, views = @p218
+WHERE id = @p219;
+UPDATE "Message" SET channel_telegram_id = @p220, media = @p221, text = @p222, views = @p223
+WHERE id = @p224;
+UPDATE "Message" SET channel_telegram_id = @p225, media = @p226, text = @p227, views = @p228
+WHERE id = @p229;
+UPDATE "Message" SET channel_telegram_id = @p230, media = @p231, text = @p232, views = @p233
+WHERE id = @p234;
+UPDATE "Message" SET channel_telegram_id = @p235, media = @p236, text = @p237, views = @p238
+WHERE id = @p239;
+UPDATE "Message" SET channel_telegram_id = @p240, media = @p241, text = @p242, views = @p243
+WHERE id = @p244;
+UPDATE "Message" SET channel_telegram_id = @p245, media = @p246, text = @p247, views = @p248
+WHERE id = @p249;
+UPDATE "Message" SET channel_telegram_id = @p250, media = @p251, text = @p252, views = @p253
+WHERE id = @p254;
+UPDATE "Message" SET channel_telegram_id = @p255, media = @p256, text = @p257, views = @p258
+WHERE id = @p259;
+UPDATE "Message" SET channel_telegram_id = @p260, media = @p261, text = @p262, views = @p263
+WHERE id = @p264;
+UPDATE "Message" SET channel_telegram_id = @p265, media = @p266, text = @p267, views = @p268
+WHERE id = @p269;
+UPDATE "Message" SET channel_telegram_id = @p270, media = @p271, text = @p272, views = @p273
+WHERE id = @p274;
+UPDATE "Message" SET channel_telegram_id = @p275, media = @p276, text = @p277, views = @p278
+WHERE id = @p279;
+UPDATE "Message" SET channel_telegram_id = @p280, media = @p281, text = @p282, views = @p283
+WHERE id = @p284;
+UPDATE "Message" SET channel_telegram_id = @p285, media = @p286, text = @p287, views = @p288
+WHERE id = @p289;
+UPDATE "Message" SET channel_telegram_id = @p290, media = @p291, text = @p292, views = @p293
+WHERE id = @p294;
+UPDATE "Message" SET channel_telegram_id = @p295, media = @p296, text = @p297, views = @p298
+WHERE id = @p299;
+UPDATE "Message" SET channel_telegram_id = @p300, media = @p301, text = @p302, views = @p303
+WHERE id = @p304;
+UPDATE "Message" SET channel_telegram_id = @p305, media = @p306, text = @p307, views = @p308
+WHERE id = @p309;
+UPDATE "Message" SET channel_telegram_id = @p310, media = @p311, text = @p312, views = @p313
+WHERE id = @p314;
+UPDATE "Message" SET channel_telegram_id = @p315, media = @p316, text = @p317, views = @p318
+WHERE id = @p319;
+UPDATE "Message" SET channel_telegram_id = @p320, media = @p321, text = @p322, views = @p323
+WHERE id = @p324;
+UPDATE "Message" SET channel_telegram_id = @p325, media = @p326, text = @p327, views = @p328
+WHERE id = @p329;
+2024-06-26 18:48:13.637 +03:00 [INF] Total number of batches processed: 2
+2024-06-26 18:48:13.641 +03:00 [INF] Fetched 278 messages from the queue.
+2024-06-26 18:48:13.684 +03:00 [INF] Processing batch 1 with 100 messages.
+2024-06-26 18:48:13.686 +03:00 [INF] Processing batch of 100 messages.
+2024-06-26 18:48:13.687 +03:00 [INF] Message IDs to process: [51916,51915,51914,51913,51912,51911,51910,51909,51908,51907,51906,51905,51904,51903,51902,51901,51900,51899,51898,51897,51896,51895,51894,51893,51892,51891,51890,51889,51888,51887,51886,51885,51884,51883,51882,51881,51880,51879,51878,51877,51876,51875,51874,51873,51872,51871,51870,51869,51867,51866,51865,51864,51863,51862,51861,51860,51859,51858,51857,51856,51855,51854,51853,51852,51851,51850,51849,51848,51847,51846,51845,51844,51843,51842,51841,51840,51839,51838,51837,51836,51835,51834,51833,51832,51831,51830,51829,51828,51827,51826,51825,51824,51823,51822,51821,51820,51819,51818,51817,51816]
+2024-06-26 18:48:13.713 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__messageIds_0='?' (DbType = Object)], CommandType='"Text"', CommandTimeout='30']
+SELECT m.id, m.channel_telegram_id, m.media, m.text, m.views
+FROM "Message" AS m
+WHERE m.id = ANY (@__messageIds_0)
+2024-06-26 18:48:13.719 +03:00 [INF] Adding new message ID: 51916
+2024-06-26 18:48:13.720 +03:00 [INF] Adding new message ID: 51915
+2024-06-26 18:48:13.721 +03:00 [INF] Adding new message ID: 51914
+2024-06-26 18:48:13.722 +03:00 [INF] Adding new message ID: 51913
+2024-06-26 18:48:13.723 +03:00 [INF] Adding new message ID: 51912
+2024-06-26 18:48:13.724 +03:00 [INF] Adding new message ID: 51911
+2024-06-26 18:48:13.725 +03:00 [INF] Adding new message ID: 51910
+2024-06-26 18:48:13.726 +03:00 [INF] Adding new message ID: 51909
+2024-06-26 18:48:13.727 +03:00 [INF] Adding new message ID: 51908
+2024-06-26 18:48:13.728 +03:00 [INF] Adding new message ID: 51907
+2024-06-26 18:48:13.729 +03:00 [INF] Adding new message ID: 51906
+2024-06-26 18:48:13.733 +03:00 [INF] Adding new message ID: 51905
+2024-06-26 18:48:13.734 +03:00 [INF] Adding new message ID: 51904
+2024-06-26 18:48:13.736 +03:00 [INF] Adding new message ID: 51903
+2024-06-26 18:48:13.737 +03:00 [INF] Adding new message ID: 51902
+2024-06-26 18:48:13.738 +03:00 [INF] Adding new message ID: 51901
+2024-06-26 18:48:13.739 +03:00 [INF] Adding new message ID: 51900
+2024-06-26 18:48:13.740 +03:00 [INF] Adding new message ID: 51899
+2024-06-26 18:48:13.741 +03:00 [INF] Adding new message ID: 51898
+2024-06-26 18:48:13.743 +03:00 [INF] Adding new message ID: 51897
+2024-06-26 18:48:13.744 +03:00 [INF] Adding new message ID: 51896
+2024-06-26 18:48:13.745 +03:00 [INF] Adding new message ID: 51895
+2024-06-26 18:48:13.748 +03:00 [INF] Adding new message ID: 51894
+2024-06-26 18:48:13.750 +03:00 [INF] Adding new message ID: 51893
+2024-06-26 18:48:13.750 +03:00 [INF] Adding new message ID: 51892
+2024-06-26 18:48:13.751 +03:00 [INF] Adding new message ID: 51891
+2024-06-26 18:48:13.752 +03:00 [INF] Adding new message ID: 51890
+2024-06-26 18:48:13.753 +03:00 [INF] Adding new message ID: 51889
+2024-06-26 18:48:13.755 +03:00 [INF] Adding new message ID: 51888
+2024-06-26 18:48:13.756 +03:00 [INF] Adding new message ID: 51887
+2024-06-26 18:48:13.757 +03:00 [INF] Adding new message ID: 51886
+2024-06-26 18:48:13.757 +03:00 [INF] Adding new message ID: 51885
+2024-06-26 18:48:13.758 +03:00 [INF] Adding new message ID: 51884
+2024-06-26 18:48:13.759 +03:00 [INF] Adding new message ID: 51883
+2024-06-26 18:48:13.763 +03:00 [INF] Adding new message ID: 51882
+2024-06-26 18:48:13.764 +03:00 [INF] Adding new message ID: 51881
+2024-06-26 18:48:13.766 +03:00 [INF] Adding new message ID: 51880
+2024-06-26 18:48:13.768 +03:00 [INF] Adding new message ID: 51879
+2024-06-26 18:48:13.769 +03:00 [INF] Adding new message ID: 51878
+2024-06-26 18:48:13.770 +03:00 [INF] Adding new message ID: 51877
+2024-06-26 18:48:13.770 +03:00 [INF] Adding new message ID: 51876
+2024-06-26 18:48:13.771 +03:00 [INF] Adding new message ID: 51875
+2024-06-26 18:48:13.773 +03:00 [INF] Adding new message ID: 51874
+2024-06-26 18:48:13.774 +03:00 [INF] Adding new message ID: 51873
+2024-06-26 18:48:13.775 +03:00 [INF] Adding new message ID: 51872
+2024-06-26 18:48:13.776 +03:00 [INF] Adding new message ID: 51871
+2024-06-26 18:48:13.780 +03:00 [INF] Adding new message ID: 51870
+2024-06-26 18:48:13.781 +03:00 [INF] Adding new message ID: 51869
+2024-06-26 18:48:13.782 +03:00 [INF] Adding new message ID: 51867
+2024-06-26 18:48:13.783 +03:00 [INF] Adding new message ID: 51866
+2024-06-26 18:48:13.784 +03:00 [INF] Adding new message ID: 51865
+2024-06-26 18:48:13.786 +03:00 [INF] Adding new message ID: 51864
+2024-06-26 18:48:13.787 +03:00 [INF] Adding new message ID: 51863
+2024-06-26 18:48:13.788 +03:00 [INF] Adding new message ID: 51862
+2024-06-26 18:48:13.789 +03:00 [INF] Adding new message ID: 51861
+2024-06-26 18:48:13.791 +03:00 [INF] Adding new message ID: 51860
+2024-06-26 18:48:13.795 +03:00 [INF] Adding new message ID: 51859
+2024-06-26 18:48:13.797 +03:00 [INF] Adding new message ID: 51858
+2024-06-26 18:48:13.798 +03:00 [INF] Adding new message ID: 51857
+2024-06-26 18:48:13.799 +03:00 [INF] Adding new message ID: 51856
+2024-06-26 18:48:13.800 +03:00 [INF] Adding new message ID: 51855
+2024-06-26 18:48:13.801 +03:00 [INF] Adding new message ID: 51854
+2024-06-26 18:48:13.802 +03:00 [INF] Adding new message ID: 51853
+2024-06-26 18:48:13.804 +03:00 [INF] Adding new message ID: 51852
+2024-06-26 18:48:13.805 +03:00 [INF] Adding new message ID: 51851
+2024-06-26 18:48:13.806 +03:00 [INF] Adding new message ID: 51850
+2024-06-26 18:48:13.810 +03:00 [INF] Adding new message ID: 51849
+2024-06-26 18:48:13.811 +03:00 [INF] Adding new message ID: 51848
+2024-06-26 18:48:13.812 +03:00 [INF] Adding new message ID: 51847
+2024-06-26 18:48:13.813 +03:00 [INF] Adding new message ID: 51846
+2024-06-26 18:48:13.814 +03:00 [INF] Adding new message ID: 51845
+2024-06-26 18:48:13.815 +03:00 [INF] Adding new message ID: 51844
+2024-06-26 18:48:13.816 +03:00 [INF] Adding new message ID: 51843
+2024-06-26 18:48:13.817 +03:00 [INF] Adding new message ID: 51842
+2024-06-26 18:48:13.818 +03:00 [INF] Adding new message ID: 51841
+2024-06-26 18:48:13.820 +03:00 [INF] Adding new message ID: 51840
+2024-06-26 18:48:13.821 +03:00 [INF] Adding new message ID: 51839
+2024-06-26 18:48:13.825 +03:00 [INF] Adding new message ID: 51838
+2024-06-26 18:48:13.826 +03:00 [INF] Adding new message ID: 51837
+2024-06-26 18:48:13.828 +03:00 [INF] Adding new message ID: 51836
+2024-06-26 18:48:13.829 +03:00 [INF] Adding new message ID: 51835
+2024-06-26 18:48:13.830 +03:00 [INF] Adding new message ID: 51834
+2024-06-26 18:48:13.831 +03:00 [INF] Adding new message ID: 51833
+2024-06-26 18:48:13.832 +03:00 [INF] Adding new message ID: 51832
+2024-06-26 18:48:13.833 +03:00 [INF] Adding new message ID: 51831
+2024-06-26 18:48:13.834 +03:00 [INF] Adding new message ID: 51830
+2024-06-26 18:48:13.835 +03:00 [INF] Adding new message ID: 51829
+2024-06-26 18:48:13.836 +03:00 [INF] Adding new message ID: 51828
+2024-06-26 18:48:13.837 +03:00 [INF] Adding new message ID: 51827
+2024-06-26 18:48:13.841 +03:00 [INF] Adding new message ID: 51826
+2024-06-26 18:48:13.842 +03:00 [INF] Adding new message ID: 51825
+2024-06-26 18:48:13.843 +03:00 [INF] Adding new message ID: 51824
+2024-06-26 18:48:13.844 +03:00 [INF] Adding new message ID: 51823
+2024-06-26 18:48:13.845 +03:00 [INF] Adding new message ID: 51822
+2024-06-26 18:48:13.846 +03:00 [INF] Updating existing message ID: 51821
+2024-06-26 18:48:13.847 +03:00 [INF] Updating existing message ID: 51820
+2024-06-26 18:48:13.848 +03:00 [INF] Updating existing message ID: 51819
+2024-06-26 18:48:13.849 +03:00 [INF] Updating existing message ID: 51818
+2024-06-26 18:48:13.850 +03:00 [INF] Updating existing message ID: 51817
+2024-06-26 18:48:13.851 +03:00 [INF] Updating existing message ID: 51816
+2024-06-26 18:48:13.852 +03:00 [INF] Adding 94 new messages.
+2024-06-26 18:48:13.858 +03:00 [INF] Updating 6 messages.
+2024-06-26 18:48:13.859 +03:00 [INF] Saving changes to the database.
+2024-06-26 18:48:13.880 +03:00 [INF] Executed DbCommand (16ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (DbType = Int64), @p1='?', @p2='?', @p3='?' (DbType = Int32), @p9='?' (DbType = Int32), @p5='?' (DbType = Int64), @p6='?', @p7='?', @p8='?' (DbType = Int32), @p14='?' (DbType = Int32), @p10='?' (DbType = Int64), @p11='?', @p12='?', @p13='?' (DbType = Int32), @p19='?' (DbType = Int32), @p15='?' (DbType = Int64), @p16='?', @p17='?', @p18='?' (DbType = Int32), @p24='?' (DbType = Int32), @p20='?' (DbType = Int64), @p21='?', @p22='?', @p23='?' (DbType = Int32), @p29='?' (DbType = Int32), @p25='?' (DbType = Int64), @p26='?', @p27='?', @p28='?' (DbType = Int32), @p30='?' (DbType = Int32), @p31='?' (DbType = Int64), @p32='?', @p33='?', @p34='?' (DbType = Int32), @p35='?' (DbType = Int32), @p36='?' (DbType = Int64), @p37='?', @p38='?', @p39='?' (DbType = Int32), @p40='?' (DbType = Int32), @p41='?' (DbType = Int64), @p42='?', @p43='?', @p44='?' (DbType = Int32), @p45='?' (DbType = Int32), @p46='?' (DbType = Int64), @p47='?', @p48='?', @p49='?' (DbType = Int32), @p50='?' (DbType = Int32), @p51='?' (DbType = Int64), @p52='?', @p53='?', @p54='?' (DbType = Int32), @p55='?' (DbType = Int32), @p56='?' (DbType = Int64), @p57='?', @p58='?', @p59='?' (DbType = Int32), @p60='?' (DbType = Int32), @p61='?' (DbType = Int64), @p62='?', @p63='?', @p64='?' (DbType = Int32), @p65='?' (DbType = Int32), @p66='?' (DbType = Int64), @p67='?', @p68='?', @p69='?' (DbType = Int32), @p70='?' (DbType = Int32), @p71='?' (DbType = Int64), @p72='?', @p73='?', @p74='?' (DbType = Int32), @p75='?' (DbType = Int32), @p76='?' (DbType = Int64), @p77='?', @p78='?', @p79='?' (DbType = Int32), @p80='?' (DbType = Int32), @p81='?' (DbType = Int64), @p82='?', @p83='?', @p84='?' (DbType = Int32), @p85='?' (DbType = Int32), @p86='?' (DbType = Int64), @p87='?', @p88='?', @p89='?' (DbType = Int32), @p90='?' (DbType = Int32), @p91='?' (DbType = Int64), @p92='?', @p93='?', @p94='?' (DbType = Int32), @p95='?' (DbType = Int32), @p96='?' (DbType = Int64), @p97='?', @p98='?', @p99='?' (DbType = Int32), @p100='?' (DbType = Int32), @p101='?' (DbType = Int64), @p102='?', @p103='?', @p104='?' (DbType = Int32), @p105='?' (DbType = Int32), @p106='?' (DbType = Int64), @p107='?', @p108='?', @p109='?' (DbType = Int32), @p110='?' (DbType = Int32), @p111='?' (DbType = Int64), @p112='?', @p113='?', @p114='?' (DbType = Int32), @p115='?' (DbType = Int32), @p116='?' (DbType = Int64), @p117='?', @p118='?', @p119='?' (DbType = Int32), @p120='?' (DbType = Int32), @p121='?' (DbType = Int64), @p122='?', @p123='?', @p124='?' (DbType = Int32), @p125='?' (DbType = Int32), @p126='?' (DbType = Int64), @p127='?', @p128='?', @p129='?' (DbType = Int32), @p130='?' (DbType = Int32), @p131='?' (DbType = Int64), @p132='?', @p133='?', @p134='?' (DbType = Int32), @p135='?' (DbType = Int32), @p136='?' (DbType = Int64), @p137='?', @p138='?', @p139='?' (DbType = Int32), @p140='?' (DbType = Int32), @p141='?' (DbType = Int64), @p142='?', @p143='?', @p144='?' (DbType = Int32), @p145='?' (DbType = Int32), @p146='?' (DbType = Int64), @p147='?', @p148='?', @p149='?' (DbType = Int32), @p150='?' (DbType = Int32), @p151='?' (DbType = Int64), @p152='?', @p153='?', @p154='?' (DbType = Int32), @p155='?' (DbType = Int32), @p156='?' (DbType = Int64), @p157='?', @p158='?', @p159='?' (DbType = Int32), @p160='?' (DbType = Int32), @p161='?' (DbType = Int64), @p162='?', @p163='?', @p164='?' (DbType = Int32), @p165='?' (DbType = Int32), @p166='?' (DbType = Int64), @p167='?', @p168='?', @p169='?' (DbType = Int32), @p170='?' (DbType = Int32), @p171='?' (DbType = Int64), @p172='?', @p173='?', @p174='?' (DbType = Int32), @p175='?' (DbType = Int32), @p176='?' (DbType = Int64), @p177='?', @p178='?', @p179='?' (DbType = Int32), @p180='?' (DbType = Int32), @p181='?' (DbType = Int64), @p182='?', @p183='?', @p184='?' (DbType = Int32), @p185='?' (DbType = Int32), @p186='?' (DbType = Int64), @p187='?', @p188='?', @p189='?' (DbType = Int32), @p190='?' (DbType = Int32), @p191='?' (DbType = Int64), @p192='?', @p193='?', @p194='?' (DbType = Int32), @p195='?' (DbType = Int32), @p196='?' (DbType = Int64), @p197='?', @p198='?', @p199='?' (DbType = Int32), @p200='?' (DbType = Int32), @p201='?' (DbType = Int64), @p202='?', @p203='?', @p204='?' (DbType = Int32), @p205='?' (DbType = Int32), @p206='?' (DbType = Int64), @p207='?', @p208='?', @p209='?' (DbType = Int32), @p210='?' (DbType = Int32), @p211='?' (DbType = Int64), @p212='?', @p213='?', @p214='?' (DbType = Int32), @p215='?' (DbType = Int32), @p216='?' (DbType = Int64), @p217='?', @p218='?', @p219='?' (DbType = Int32), @p220='?' (DbType = Int32), @p221='?' (DbType = Int64), @p222='?', @p223='?', @p224='?' (DbType = Int32), @p225='?' (DbType = Int32), @p226='?' (DbType = Int64), @p227='?', @p228='?', @p229='?' (DbType = Int32), @p230='?' (DbType = Int32), @p231='?' (DbType = Int64), @p232='?', @p233='?', @p234='?' (DbType = Int32), @p235='?' (DbType = Int32), @p236='?' (DbType = Int64), @p237='?', @p238='?', @p239='?' (DbType = Int32), @p240='?' (DbType = Int32), @p241='?' (DbType = Int64), @p242='?', @p243='?', @p244='?' (DbType = Int32), @p245='?' (DbType = Int32), @p246='?' (DbType = Int64), @p247='?', @p248='?', @p249='?' (DbType = Int32), @p250='?' (DbType = Int32), @p251='?' (DbType = Int64), @p252='?', @p253='?', @p254='?' (DbType = Int32), @p255='?' (DbType = Int32), @p256='?' (DbType = Int64), @p257='?', @p258='?', @p259='?' (DbType = Int32), @p260='?' (DbType = Int32), @p261='?' (DbType = Int64), @p262='?', @p263='?', @p264='?' (DbType = Int32), @p265='?' (DbType = Int32), @p266='?' (DbType = Int64), @p267='?', @p268='?', @p269='?' (DbType = Int32), @p270='?' (DbType = Int32), @p271='?' (DbType = Int64), @p272='?', @p273='?', @p274='?' (DbType = Int32), @p275='?' (DbType = Int32), @p276='?' (DbType = Int64), @p277='?', @p278='?', @p279='?' (DbType = Int32), @p280='?' (DbType = Int32), @p281='?' (DbType = Int64), @p282='?', @p283='?', @p284='?' (DbType = Int32), @p285='?' (DbType = Int32), @p286='?' (DbType = Int64), @p287='?', @p288='?', @p289='?' (DbType = Int32), @p290='?' (DbType = Int32), @p291='?' (DbType = Int64), @p292='?', @p293='?', @p294='?' (DbType = Int32), @p295='?' (DbType = Int32), @p296='?' (DbType = Int64), @p297='?', @p298='?', @p299='?' (DbType = Int32), @p300='?' (DbType = Int32), @p301='?' (DbType = Int64), @p302='?', @p303='?', @p304='?' (DbType = Int32), @p305='?' (DbType = Int32), @p306='?' (DbType = Int64), @p307='?', @p308='?', @p309='?' (DbType = Int32), @p310='?' (DbType = Int32), @p311='?' (DbType = Int64), @p312='?', @p313='?', @p314='?' (DbType = Int32), @p315='?' (DbType = Int32), @p316='?' (DbType = Int64), @p317='?', @p318='?', @p319='?' (DbType = Int32), @p320='?' (DbType = Int32), @p321='?' (DbType = Int64), @p322='?', @p323='?', @p324='?' (DbType = Int32), @p325='?' (DbType = Int32), @p326='?' (DbType = Int64), @p327='?', @p328='?', @p329='?' (DbType = Int32), @p330='?' (DbType = Int32), @p331='?' (DbType = Int64), @p332='?', @p333='?', @p334='?' (DbType = Int32), @p335='?' (DbType = Int32), @p336='?' (DbType = Int64), @p337='?', @p338='?', @p339='?' (DbType = Int32), @p340='?' (DbType = Int32), @p341='?' (DbType = Int64), @p342='?', @p343='?', @p344='?' (DbType = Int32), @p345='?' (DbType = Int32), @p346='?' (DbType = Int64), @p347='?', @p348='?', @p349='?' (DbType = Int32), @p350='?' (DbType = Int32), @p351='?' (DbType = Int64), @p352='?', @p353='?', @p354='?' (DbType = Int32), @p355='?' (DbType = Int32), @p356='?' (DbType = Int64), @p357='?', @p358='?', @p359='?' (DbType = Int32), @p360='?' (DbType = Int32), @p361='?' (DbType = Int64), @p362='?', @p363='?', @p364='?' (DbType = Int32), @p365='?' (DbType = Int32), @p366='?' (DbType = Int64), @p367='?', @p368='?', @p369='?' (DbType = Int32), @p370='?' (DbType = Int32), @p371='?' (DbType = Int64), @p372='?', @p373='?', @p374='?' (DbType = Int32), @p375='?' (DbType = Int32), @p376='?' (DbType = Int64), @p377='?', @p378='?', @p379='?' (DbType = Int32), @p380='?' (DbType = Int32), @p381='?' (DbType = Int64), @p382='?', @p383='?', @p384='?' (DbType = Int32), @p385='?' (DbType = Int32), @p386='?' (DbType = Int64), @p387='?', @p388='?', @p389='?' (DbType = Int32), @p390='?' (DbType = Int32), @p391='?' (DbType = Int64), @p392='?', @p393='?', @p394='?' (DbType = Int32), @p395='?' (DbType = Int32), @p396='?' (DbType = Int64), @p397='?', @p398='?', @p399='?' (DbType = Int32), @p400='?' (DbType = Int32), @p401='?' (DbType = Int64), @p402='?', @p403='?', @p404='?' (DbType = Int32), @p405='?' (DbType = Int32), @p406='?' (DbType = Int64), @p407='?', @p408='?', @p409='?' (DbType = Int32), @p410='?' (DbType = Int32), @p411='?' (DbType = Int64), @p412='?', @p413='?', @p414='?' (DbType = Int32), @p415='?' (DbType = Int32), @p416='?' (DbType = Int64), @p417='?', @p418='?', @p419='?' (DbType = Int32), @p420='?' (DbType = Int32), @p421='?' (DbType = Int64), @p422='?', @p423='?', @p424='?' (DbType = Int32), @p425='?' (DbType = Int32), @p426='?' (DbType = Int64), @p427='?', @p428='?', @p429='?' (DbType = Int32), @p430='?' (DbType = Int32), @p431='?' (DbType = Int64), @p432='?', @p433='?', @p434='?' (DbType = Int32), @p435='?' (DbType = Int32), @p436='?' (DbType = Int64), @p437='?', @p438='?', @p439='?' (DbType = Int32), @p440='?' (DbType = Int32), @p441='?' (DbType = Int64), @p442='?', @p443='?', @p444='?' (DbType = Int32), @p445='?' (DbType = Int32), @p446='?' (DbType = Int64), @p447='?', @p448='?', @p449='?' (DbType = Int32), @p450='?' (DbType = Int32), @p451='?' (DbType = Int64), @p452='?', @p453='?', @p454='?' (DbType = Int32), @p455='?' (DbType = Int32), @p456='?' (DbType = Int64), @p457='?', @p458='?', @p459='?' (DbType = Int32), @p460='?' (DbType = Int32), @p461='?' (DbType = Int64), @p462='?', @p463='?', @p464='?' (DbType = Int32), @p465='?' (DbType = Int32), @p466='?' (DbType = Int64), @p467='?', @p468='?', @p469='?' (DbType = Int32), @p470='?' (DbType = Int32), @p471='?' (DbType = Int64), @p472='?', @p473='?', @p474='?' (DbType = Int32), @p475='?' (DbType = Int32), @p476='?' (DbType = Int64), @p477='?', @p478='?', @p479='?' (DbType = Int32), @p480='?' (DbType = Int32), @p481='?' (DbType = Int64), @p482='?', @p483='?', @p484='?' (DbType = Int32), @p485='?' (DbType = Int32), @p486='?' (DbType = Int64), @p487='?', @p488='?', @p489='?' (DbType = Int32), @p490='?' (DbType = Int32), @p491='?' (DbType = Int64), @p492='?', @p493='?', @p494='?' (DbType = Int32), @p495='?' (DbType = Int32), @p496='?' (DbType = Int64), @p497='?', @p498='?', @p499='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Message" SET channel_telegram_id = @p0, media = @p1, text = @p2, views = @p3
+WHERE id = @p4;
+UPDATE "Message" SET channel_telegram_id = @p5, media = @p6, text = @p7, views = @p8
+WHERE id = @p9;
+UPDATE "Message" SET channel_telegram_id = @p10, media = @p11, text = @p12, views = @p13
+WHERE id = @p14;
+UPDATE "Message" SET channel_telegram_id = @p15, media = @p16, text = @p17, views = @p18
+WHERE id = @p19;
+UPDATE "Message" SET channel_telegram_id = @p20, media = @p21, text = @p22, views = @p23
+WHERE id = @p24;
+UPDATE "Message" SET channel_telegram_id = @p25, media = @p26, text = @p27, views = @p28
+WHERE id = @p29;
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p30, @p31, @p32, @p33, @p34);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p35, @p36, @p37, @p38, @p39);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p40, @p41, @p42, @p43, @p44);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p45, @p46, @p47, @p48, @p49);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p50, @p51, @p52, @p53, @p54);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p55, @p56, @p57, @p58, @p59);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p60, @p61, @p62, @p63, @p64);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p65, @p66, @p67, @p68, @p69);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p70, @p71, @p72, @p73, @p74);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p75, @p76, @p77, @p78, @p79);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p80, @p81, @p82, @p83, @p84);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p85, @p86, @p87, @p88, @p89);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p90, @p91, @p92, @p93, @p94);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p95, @p96, @p97, @p98, @p99);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p100, @p101, @p102, @p103, @p104);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p105, @p106, @p107, @p108, @p109);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p110, @p111, @p112, @p113, @p114);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p115, @p116, @p117, @p118, @p119);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p120, @p121, @p122, @p123, @p124);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p125, @p126, @p127, @p128, @p129);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p130, @p131, @p132, @p133, @p134);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p135, @p136, @p137, @p138, @p139);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p140, @p141, @p142, @p143, @p144);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p145, @p146, @p147, @p148, @p149);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p150, @p151, @p152, @p153, @p154);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p155, @p156, @p157, @p158, @p159);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p160, @p161, @p162, @p163, @p164);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p165, @p166, @p167, @p168, @p169);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p170, @p171, @p172, @p173, @p174);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p175, @p176, @p177, @p178, @p179);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p180, @p181, @p182, @p183, @p184);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p185, @p186, @p187, @p188, @p189);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p190, @p191, @p192, @p193, @p194);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p195, @p196, @p197, @p198, @p199);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p200, @p201, @p202, @p203, @p204);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p205, @p206, @p207, @p208, @p209);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p210, @p211, @p212, @p213, @p214);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p215, @p216, @p217, @p218, @p219);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p220, @p221, @p222, @p223, @p224);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p225, @p226, @p227, @p228, @p229);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p230, @p231, @p232, @p233, @p234);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p235, @p236, @p237, @p238, @p239);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p240, @p241, @p242, @p243, @p244);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p245, @p246, @p247, @p248, @p249);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p250, @p251, @p252, @p253, @p254);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p255, @p256, @p257, @p258, @p259);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p260, @p261, @p262, @p263, @p264);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p265, @p266, @p267, @p268, @p269);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p270, @p271, @p272, @p273, @p274);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p275, @p276, @p277, @p278, @p279);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p280, @p281, @p282, @p283, @p284);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p285, @p286, @p287, @p288, @p289);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p290, @p291, @p292, @p293, @p294);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p295, @p296, @p297, @p298, @p299);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p300, @p301, @p302, @p303, @p304);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p305, @p306, @p307, @p308, @p309);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p310, @p311, @p312, @p313, @p314);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p315, @p316, @p317, @p318, @p319);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p320, @p321, @p322, @p323, @p324);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p325, @p326, @p327, @p328, @p329);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p330, @p331, @p332, @p333, @p334);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p335, @p336, @p337, @p338, @p339);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p340, @p341, @p342, @p343, @p344);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p345, @p346, @p347, @p348, @p349);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p350, @p351, @p352, @p353, @p354);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p355, @p356, @p357, @p358, @p359);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p360, @p361, @p362, @p363, @p364);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p365, @p366, @p367, @p368, @p369);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p370, @p371, @p372, @p373, @p374);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p375, @p376, @p377, @p378, @p379);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p380, @p381, @p382, @p383, @p384);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p385, @p386, @p387, @p388, @p389);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p390, @p391, @p392, @p393, @p394);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p395, @p396, @p397, @p398, @p399);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p400, @p401, @p402, @p403, @p404);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p405, @p406, @p407, @p408, @p409);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p410, @p411, @p412, @p413, @p414);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p415, @p416, @p417, @p418, @p419);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p420, @p421, @p422, @p423, @p424);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p425, @p426, @p427, @p428, @p429);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p430, @p431, @p432, @p433, @p434);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p435, @p436, @p437, @p438, @p439);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p440, @p441, @p442, @p443, @p444);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p445, @p446, @p447, @p448, @p449);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p450, @p451, @p452, @p453, @p454);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p455, @p456, @p457, @p458, @p459);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p460, @p461, @p462, @p463, @p464);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p465, @p466, @p467, @p468, @p469);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p470, @p471, @p472, @p473, @p474);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p475, @p476, @p477, @p478, @p479);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p480, @p481, @p482, @p483, @p484);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p485, @p486, @p487, @p488, @p489);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p490, @p491, @p492, @p493, @p494);
+INSERT INTO "Message" (id, channel_telegram_id, media, text, views)
+VALUES (@p495, @p496, @p497, @p498, @p499);
+2024-06-26 18:48:13.956 +03:00 [INF] Processing batch 2 with 100 messages.
+2024-06-26 18:48:13.957 +03:00 [INF] Processing batch of 100 messages.
+2024-06-26 18:48:13.958 +03:00 [INF] Message IDs to process: [51815,51814,51813,51812,51811,51810,51809,51808,51807,51806,51805,51804,51803,51802,51801,51800,51799,51798,51797,51796,51795,51794,51793,51792,51791,51789,51788,51787,51786,51785,51784,51783,51782,51781,51780,51779,51778,51777,51776,51775,51774,51773,51772,51771,51770,51769,51768,51767,51766,51765,51764,51763,51762,51761,51760,51759,51758,51757,51756,51755,51754,51753,51752,51751,51749,51748,51747,51746,51745,51744,51743,51742,51741,51740,51739,51738,51737,51736,51735,51734,51733,51732,51731,51730,51729,51728,51727,51726,51725,51724,51723,51722,51721,51720,51719,51718,51717,51716,51715,51714]
+2024-06-26 18:48:13.989 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__messageIds_0='?' (DbType = Object)], CommandType='"Text"', CommandTimeout='30']
+SELECT m.id, m.channel_telegram_id, m.media, m.text, m.views
+FROM "Message" AS m
+WHERE m.id = ANY (@__messageIds_0)
+2024-06-26 18:48:13.992 +03:00 [INF] Updating existing message ID: 51815
+2024-06-26 18:48:13.995 +03:00 [INF] Updating existing message ID: 51814
+2024-06-26 18:48:13.997 +03:00 [INF] Updating existing message ID: 51813
+2024-06-26 18:48:13.998 +03:00 [INF] Updating existing message ID: 51812
+2024-06-26 18:48:13.999 +03:00 [INF] Updating existing message ID: 51811
+2024-06-26 18:48:14.000 +03:00 [INF] Updating existing message ID: 51810
+2024-06-26 18:48:14.001 +03:00 [INF] Updating existing message ID: 51809
+2024-06-26 18:48:14.002 +03:00 [INF] Updating existing message ID: 51808
+2024-06-26 18:48:14.003 +03:00 [INF] Updating existing message ID: 51807
+2024-06-26 18:48:14.004 +03:00 [INF] Updating existing message ID: 51806
+2024-06-26 18:48:14.005 +03:00 [INF] Updating existing message ID: 51805
+2024-06-26 18:48:14.006 +03:00 [INF] Updating existing message ID: 51804
+2024-06-26 18:48:14.007 +03:00 [INF] Updating existing message ID: 51803
+2024-06-26 18:48:14.008 +03:00 [INF] Updating existing message ID: 51802
+2024-06-26 18:48:14.012 +03:00 [INF] Updating existing message ID: 51801
+2024-06-26 18:48:14.014 +03:00 [INF] Updating existing message ID: 51800
+2024-06-26 18:48:14.015 +03:00 [INF] Updating existing message ID: 51799
+2024-06-26 18:48:14.016 +03:00 [INF] Updating existing message ID: 51798
+2024-06-26 18:48:14.017 +03:00 [INF] Updating existing message ID: 51797
+2024-06-26 18:48:14.018 +03:00 [INF] Updating existing message ID: 51796
+2024-06-26 18:48:14.019 +03:00 [INF] Updating existing message ID: 51795
+2024-06-26 18:48:14.020 +03:00 [INF] Updating existing message ID: 51794
+2024-06-26 18:48:14.021 +03:00 [INF] Updating existing message ID: 51793
+2024-06-26 18:48:14.022 +03:00 [INF] Updating existing message ID: 51792
+2024-06-26 18:48:14.023 +03:00 [INF] Updating existing message ID: 51791
+2024-06-26 18:48:14.027 +03:00 [INF] Updating existing message ID: 51789
+2024-06-26 18:48:14.029 +03:00 [INF] Updating existing message ID: 51788
+2024-06-26 18:48:14.030 +03:00 [INF] Updating existing message ID: 51787
+2024-06-26 18:48:14.030 +03:00 [INF] Updating existing message ID: 51786
+2024-06-26 18:48:14.031 +03:00 [INF] Updating existing message ID: 51785
+2024-06-26 18:48:14.032 +03:00 [INF] Updating existing message ID: 51784
+2024-06-26 18:48:14.033 +03:00 [INF] Updating existing message ID: 51783
+2024-06-26 18:48:14.035 +03:00 [INF] Updating existing message ID: 51782
+2024-06-26 18:48:14.036 +03:00 [INF] Updating existing message ID: 51781
+2024-06-26 18:48:14.036 +03:00 [INF] Updating existing message ID: 51780
+2024-06-26 18:48:14.037 +03:00 [INF] Updating existing message ID: 51779
+2024-06-26 18:48:14.038 +03:00 [INF] Updating existing message ID: 51778
+2024-06-26 18:48:14.040 +03:00 [INF] Updating existing message ID: 51777
+2024-06-26 18:48:14.044 +03:00 [INF] Updating existing message ID: 51776
+2024-06-26 18:48:14.045 +03:00 [INF] Updating existing message ID: 51775
+2024-06-26 18:48:14.046 +03:00 [INF] Updating existing message ID: 51774
+2024-06-26 18:48:14.047 +03:00 [INF] Updating existing message ID: 51773
+2024-06-26 18:48:14.048 +03:00 [INF] Updating existing message ID: 51772
+2024-06-26 18:48:14.049 +03:00 [INF] Updating existing message ID: 51771
+2024-06-26 18:48:14.050 +03:00 [INF] Updating existing message ID: 51770
+2024-06-26 18:48:14.051 +03:00 [INF] Updating existing message ID: 51769
+2024-06-26 18:48:14.052 +03:00 [INF] Updating existing message ID: 51768
+2024-06-26 18:48:14.053 +03:00 [INF] Updating existing message ID: 51767
+2024-06-26 18:48:14.054 +03:00 [INF] Updating existing message ID: 51766
+2024-06-26 18:48:14.058 +03:00 [INF] Updating existing message ID: 51765
+2024-06-26 18:48:14.060 +03:00 [INF] Updating existing message ID: 51764
+2024-06-26 18:48:14.061 +03:00 [INF] Updating existing message ID: 51763
+2024-06-26 18:48:14.062 +03:00 [INF] Updating existing message ID: 51762
+2024-06-26 18:48:14.063 +03:00 [INF] Updating existing message ID: 51761
+2024-06-26 18:48:14.064 +03:00 [INF] Updating existing message ID: 51760
+2024-06-26 18:48:14.065 +03:00 [INF] Updating existing message ID: 51759
+2024-06-26 18:48:14.066 +03:00 [INF] Updating existing message ID: 51758
+2024-06-26 18:48:14.067 +03:00 [INF] Updating existing message ID: 51757
+2024-06-26 18:48:14.068 +03:00 [INF] Updating existing message ID: 51756
+2024-06-26 18:48:14.069 +03:00 [INF] Updating existing message ID: 51755
+2024-06-26 18:48:14.070 +03:00 [INF] Updating existing message ID: 51754
+2024-06-26 18:48:14.071 +03:00 [INF] Updating existing message ID: 51753
+2024-06-26 18:48:14.075 +03:00 [INF] Updating existing message ID: 51752
+2024-06-26 18:48:14.076 +03:00 [INF] Updating existing message ID: 51751
+2024-06-26 18:48:14.077 +03:00 [INF] Updating existing message ID: 51749
+2024-06-26 18:48:14.078 +03:00 [INF] Updating existing message ID: 51748
+2024-06-26 18:48:14.079 +03:00 [INF] Updating existing message ID: 51747
+2024-06-26 18:48:14.080 +03:00 [INF] Updating existing message ID: 51746
+2024-06-26 18:48:14.081 +03:00 [INF] Updating existing message ID: 51745
+2024-06-26 18:48:14.082 +03:00 [INF] Updating existing message ID: 51744
+2024-06-26 18:48:14.083 +03:00 [INF] Updating existing message ID: 51743
+2024-06-26 18:48:14.084 +03:00 [INF] Updating existing message ID: 51742
+2024-06-26 18:48:14.085 +03:00 [INF] Updating existing message ID: 51741
+2024-06-26 18:48:14.086 +03:00 [INF] Updating existing message ID: 51740
+2024-06-26 18:48:14.090 +03:00 [INF] Updating existing message ID: 51739
+2024-06-26 18:48:14.092 +03:00 [INF] Updating existing message ID: 51738
+2024-06-26 18:48:14.093 +03:00 [INF] Updating existing message ID: 51737
+2024-06-26 18:48:14.094 +03:00 [INF] Updating existing message ID: 51736
+2024-06-26 18:48:14.095 +03:00 [INF] Updating existing message ID: 51735
+2024-06-26 18:48:14.096 +03:00 [INF] Updating existing message ID: 51734
+2024-06-26 18:48:14.097 +03:00 [INF] Updating existing message ID: 51733
+2024-06-26 18:48:14.098 +03:00 [INF] Updating existing message ID: 51732
+2024-06-26 18:48:14.099 +03:00 [INF] Updating existing message ID: 51731
+2024-06-26 18:48:14.100 +03:00 [INF] Updating existing message ID: 51730
+2024-06-26 18:48:14.101 +03:00 [INF] Updating existing message ID: 51729
+2024-06-26 18:48:14.102 +03:00 [INF] Updating existing message ID: 51728
+2024-06-26 18:48:14.107 +03:00 [INF] Updating existing message ID: 51727
+2024-06-26 18:48:14.108 +03:00 [INF] Updating existing message ID: 51726
+2024-06-26 18:48:14.109 +03:00 [INF] Updating existing message ID: 51725
+2024-06-26 18:48:14.110 +03:00 [INF] Updating existing message ID: 51724
+2024-06-26 18:48:14.111 +03:00 [INF] Updating existing message ID: 51723
+2024-06-26 18:48:14.112 +03:00 [INF] Updating existing message ID: 51722
+2024-06-26 18:48:14.113 +03:00 [INF] Updating existing message ID: 51721
+2024-06-26 18:48:14.114 +03:00 [INF] Updating existing message ID: 51720
+2024-06-26 18:48:14.115 +03:00 [INF] Updating existing message ID: 51719
+2024-06-26 18:48:14.116 +03:00 [INF] Updating existing message ID: 51718
+2024-06-26 18:48:14.117 +03:00 [INF] Updating existing message ID: 51717
+2024-06-26 18:48:14.121 +03:00 [INF] Updating existing message ID: 51716
+2024-06-26 18:48:14.122 +03:00 [INF] Updating existing message ID: 51715
+2024-06-26 18:48:14.123 +03:00 [INF] Updating existing message ID: 51714
+2024-06-26 18:48:14.124 +03:00 [INF] Updating 100 messages.
+2024-06-26 18:48:14.126 +03:00 [INF] Saving changes to the database.
+2024-06-26 18:48:14.150 +03:00 [INF] Executed DbCommand (20ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (DbType = Int64), @p1='?', @p2='?', @p3='?' (DbType = Int32), @p9='?' (DbType = Int32), @p5='?' (DbType = Int64), @p6='?', @p7='?', @p8='?' (DbType = Int32), @p14='?' (DbType = Int32), @p10='?' (DbType = Int64), @p11='?', @p12='?', @p13='?' (DbType = Int32), @p19='?' (DbType = Int32), @p15='?' (DbType = Int64), @p16='?', @p17='?', @p18='?' (DbType = Int32), @p24='?' (DbType = Int32), @p20='?' (DbType = Int64), @p21='?', @p22='?', @p23='?' (DbType = Int32), @p29='?' (DbType = Int32), @p25='?' (DbType = Int64), @p26='?', @p27='?', @p28='?' (DbType = Int32), @p34='?' (DbType = Int32), @p30='?' (DbType = Int64), @p31='?', @p32='?', @p33='?' (DbType = Int32), @p39='?' (DbType = Int32), @p35='?' (DbType = Int64), @p36='?', @p37='?', @p38='?' (DbType = Int32), @p44='?' (DbType = Int32), @p40='?' (DbType = Int64), @p41='?', @p42='?', @p43='?' (DbType = Int32), @p49='?' (DbType = Int32), @p45='?' (DbType = Int64), @p46='?', @p47='?', @p48='?' (DbType = Int32), @p54='?' (DbType = Int32), @p50='?' (DbType = Int64), @p51='?', @p52='?', @p53='?' (DbType = Int32), @p59='?' (DbType = Int32), @p55='?' (DbType = Int64), @p56='?', @p57='?', @p58='?' (DbType = Int32), @p64='?' (DbType = Int32), @p60='?' (DbType = Int64), @p61='?', @p62='?', @p63='?' (DbType = Int32), @p69='?' (DbType = Int32), @p65='?' (DbType = Int64), @p66='?', @p67='?', @p68='?' (DbType = Int32), @p74='?' (DbType = Int32), @p70='?' (DbType = Int64), @p71='?', @p72='?', @p73='?' (DbType = Int32), @p79='?' (DbType = Int32), @p75='?' (DbType = Int64), @p76='?', @p77='?', @p78='?' (DbType = Int32), @p84='?' (DbType = Int32), @p80='?' (DbType = Int64), @p81='?', @p82='?', @p83='?' (DbType = Int32), @p89='?' (DbType = Int32), @p85='?' (DbType = Int64), @p86='?', @p87='?', @p88='?' (DbType = Int32), @p94='?' (DbType = Int32), @p90='?' (DbType = Int64), @p91='?', @p92='?', @p93='?' (DbType = Int32), @p99='?' (DbType = Int32), @p95='?' (DbType = Int64), @p96='?', @p97='?', @p98='?' (DbType = Int32), @p104='?' (DbType = Int32), @p100='?' (DbType = Int64), @p101='?', @p102='?', @p103='?' (DbType = Int32), @p109='?' (DbType = Int32), @p105='?' (DbType = Int64), @p106='?', @p107='?', @p108='?' (DbType = Int32), @p114='?' (DbType = Int32), @p110='?' (DbType = Int64), @p111='?', @p112='?', @p113='?' (DbType = Int32), @p119='?' (DbType = Int32), @p115='?' (DbType = Int64), @p116='?', @p117='?', @p118='?' (DbType = Int32), @p124='?' (DbType = Int32), @p120='?' (DbType = Int64), @p121='?', @p122='?', @p123='?' (DbType = Int32), @p129='?' (DbType = Int32), @p125='?' (DbType = Int64), @p126='?', @p127='?', @p128='?' (DbType = Int32), @p134='?' (DbType = Int32), @p130='?' (DbType = Int64), @p131='?', @p132='?', @p133='?' (DbType = Int32), @p139='?' (DbType = Int32), @p135='?' (DbType = Int64), @p136='?', @p137='?', @p138='?' (DbType = Int32), @p144='?' (DbType = Int32), @p140='?' (DbType = Int64), @p141='?', @p142='?', @p143='?' (DbType = Int32), @p149='?' (DbType = Int32), @p145='?' (DbType = Int64), @p146='?', @p147='?', @p148='?' (DbType = Int32), @p154='?' (DbType = Int32), @p150='?' (DbType = Int64), @p151='?', @p152='?', @p153='?' (DbType = Int32), @p159='?' (DbType = Int32), @p155='?' (DbType = Int64), @p156='?', @p157='?', @p158='?' (DbType = Int32), @p164='?' (DbType = Int32), @p160='?' (DbType = Int64), @p161='?', @p162='?', @p163='?' (DbType = Int32), @p169='?' (DbType = Int32), @p165='?' (DbType = Int64), @p166='?', @p167='?', @p168='?' (DbType = Int32), @p174='?' (DbType = Int32), @p170='?' (DbType = Int64), @p171='?', @p172='?', @p173='?' (DbType = Int32), @p179='?' (DbType = Int32), @p175='?' (DbType = Int64), @p176='?', @p177='?', @p178='?' (DbType = Int32), @p184='?' (DbType = Int32), @p180='?' (DbType = Int64), @p181='?', @p182='?', @p183='?' (DbType = Int32), @p189='?' (DbType = Int32), @p185='?' (DbType = Int64), @p186='?', @p187='?', @p188='?' (DbType = Int32), @p194='?' (DbType = Int32), @p190='?' (DbType = Int64), @p191='?', @p192='?', @p193='?' (DbType = Int32), @p199='?' (DbType = Int32), @p195='?' (DbType = Int64), @p196='?', @p197='?', @p198='?' (DbType = Int32), @p204='?' (DbType = Int32), @p200='?' (DbType = Int64), @p201='?', @p202='?', @p203='?' (DbType = Int32), @p209='?' (DbType = Int32), @p205='?' (DbType = Int64), @p206='?', @p207='?', @p208='?' (DbType = Int32), @p214='?' (DbType = Int32), @p210='?' (DbType = Int64), @p211='?', @p212='?', @p213='?' (DbType = Int32), @p219='?' (DbType = Int32), @p215='?' (DbType = Int64), @p216='?', @p217='?', @p218='?' (DbType = Int32), @p224='?' (DbType = Int32), @p220='?' (DbType = Int64), @p221='?', @p222='?', @p223='?' (DbType = Int32), @p229='?' (DbType = Int32), @p225='?' (DbType = Int64), @p226='?', @p227='?', @p228='?' (DbType = Int32), @p234='?' (DbType = Int32), @p230='?' (DbType = Int64), @p231='?', @p232='?', @p233='?' (DbType = Int32), @p239='?' (DbType = Int32), @p235='?' (DbType = Int64), @p236='?', @p237='?', @p238='?' (DbType = Int32), @p244='?' (DbType = Int32), @p240='?' (DbType = Int64), @p241='?', @p242='?', @p243='?' (DbType = Int32), @p249='?' (DbType = Int32), @p245='?' (DbType = Int64), @p246='?', @p247='?', @p248='?' (DbType = Int32), @p254='?' (DbType = Int32), @p250='?' (DbType = Int64), @p251='?', @p252='?', @p253='?' (DbType = Int32), @p259='?' (DbType = Int32), @p255='?' (DbType = Int64), @p256='?', @p257='?', @p258='?' (DbType = Int32), @p264='?' (DbType = Int32), @p260='?' (DbType = Int64), @p261='?', @p262='?', @p263='?' (DbType = Int32), @p269='?' (DbType = Int32), @p265='?' (DbType = Int64), @p266='?', @p267='?', @p268='?' (DbType = Int32), @p274='?' (DbType = Int32), @p270='?' (DbType = Int64), @p271='?', @p272='?', @p273='?' (DbType = Int32), @p279='?' (DbType = Int32), @p275='?' (DbType = Int64), @p276='?', @p277='?', @p278='?' (DbType = Int32), @p284='?' (DbType = Int32), @p280='?' (DbType = Int64), @p281='?', @p282='?', @p283='?' (DbType = Int32), @p289='?' (DbType = Int32), @p285='?' (DbType = Int64), @p286='?', @p287='?', @p288='?' (DbType = Int32), @p294='?' (DbType = Int32), @p290='?' (DbType = Int64), @p291='?', @p292='?', @p293='?' (DbType = Int32), @p299='?' (DbType = Int32), @p295='?' (DbType = Int64), @p296='?', @p297='?', @p298='?' (DbType = Int32), @p304='?' (DbType = Int32), @p300='?' (DbType = Int64), @p301='?', @p302='?', @p303='?' (DbType = Int32), @p309='?' (DbType = Int32), @p305='?' (DbType = Int64), @p306='?', @p307='?', @p308='?' (DbType = Int32), @p314='?' (DbType = Int32), @p310='?' (DbType = Int64), @p311='?', @p312='?', @p313='?' (DbType = Int32), @p319='?' (DbType = Int32), @p315='?' (DbType = Int64), @p316='?', @p317='?', @p318='?' (DbType = Int32), @p324='?' (DbType = Int32), @p320='?' (DbType = Int64), @p321='?', @p322='?', @p323='?' (DbType = Int32), @p329='?' (DbType = Int32), @p325='?' (DbType = Int64), @p326='?', @p327='?', @p328='?' (DbType = Int32), @p334='?' (DbType = Int32), @p330='?' (DbType = Int64), @p331='?', @p332='?', @p333='?' (DbType = Int32), @p339='?' (DbType = Int32), @p335='?' (DbType = Int64), @p336='?', @p337='?', @p338='?' (DbType = Int32), @p344='?' (DbType = Int32), @p340='?' (DbType = Int64), @p341='?', @p342='?', @p343='?' (DbType = Int32), @p349='?' (DbType = Int32), @p345='?' (DbType = Int64), @p346='?', @p347='?', @p348='?' (DbType = Int32), @p354='?' (DbType = Int32), @p350='?' (DbType = Int64), @p351='?', @p352='?', @p353='?' (DbType = Int32), @p359='?' (DbType = Int32), @p355='?' (DbType = Int64), @p356='?', @p357='?', @p358='?' (DbType = Int32), @p364='?' (DbType = Int32), @p360='?' (DbType = Int64), @p361='?', @p362='?', @p363='?' (DbType = Int32), @p369='?' (DbType = Int32), @p365='?' (DbType = Int64), @p366='?', @p367='?', @p368='?' (DbType = Int32), @p374='?' (DbType = Int32), @p370='?' (DbType = Int64), @p371='?', @p372='?', @p373='?' (DbType = Int32), @p379='?' (DbType = Int32), @p375='?' (DbType = Int64), @p376='?', @p377='?', @p378='?' (DbType = Int32), @p384='?' (DbType = Int32), @p380='?' (DbType = Int64), @p381='?', @p382='?', @p383='?' (DbType = Int32), @p389='?' (DbType = Int32), @p385='?' (DbType = Int64), @p386='?', @p387='?', @p388='?' (DbType = Int32), @p394='?' (DbType = Int32), @p390='?' (DbType = Int64), @p391='?', @p392='?', @p393='?' (DbType = Int32), @p399='?' (DbType = Int32), @p395='?' (DbType = Int64), @p396='?', @p397='?', @p398='?' (DbType = Int32), @p404='?' (DbType = Int32), @p400='?' (DbType = Int64), @p401='?', @p402='?', @p403='?' (DbType = Int32), @p409='?' (DbType = Int32), @p405='?' (DbType = Int64), @p406='?', @p407='?', @p408='?' (DbType = Int32), @p414='?' (DbType = Int32), @p410='?' (DbType = Int64), @p411='?', @p412='?', @p413='?' (DbType = Int32), @p419='?' (DbType = Int32), @p415='?' (DbType = Int64), @p416='?', @p417='?', @p418='?' (DbType = Int32), @p424='?' (DbType = Int32), @p420='?' (DbType = Int64), @p421='?', @p422='?', @p423='?' (DbType = Int32), @p429='?' (DbType = Int32), @p425='?' (DbType = Int64), @p426='?', @p427='?', @p428='?' (DbType = Int32), @p434='?' (DbType = Int32), @p430='?' (DbType = Int64), @p431='?', @p432='?', @p433='?' (DbType = Int32), @p439='?' (DbType = Int32), @p435='?' (DbType = Int64), @p436='?', @p437='?', @p438='?' (DbType = Int32), @p444='?' (DbType = Int32), @p440='?' (DbType = Int64), @p441='?', @p442='?', @p443='?' (DbType = Int32), @p449='?' (DbType = Int32), @p445='?' (DbType = Int64), @p446='?', @p447='?', @p448='?' (DbType = Int32), @p454='?' (DbType = Int32), @p450='?' (DbType = Int64), @p451='?', @p452='?', @p453='?' (DbType = Int32), @p459='?' (DbType = Int32), @p455='?' (DbType = Int64), @p456='?', @p457='?', @p458='?' (DbType = Int32), @p464='?' (DbType = Int32), @p460='?' (DbType = Int64), @p461='?', @p462='?', @p463='?' (DbType = Int32), @p469='?' (DbType = Int32), @p465='?' (DbType = Int64), @p466='?', @p467='?', @p468='?' (DbType = Int32), @p474='?' (DbType = Int32), @p470='?' (DbType = Int64), @p471='?', @p472='?', @p473='?' (DbType = Int32), @p479='?' (DbType = Int32), @p475='?' (DbType = Int64), @p476='?', @p477='?', @p478='?' (DbType = Int32), @p484='?' (DbType = Int32), @p480='?' (DbType = Int64), @p481='?', @p482='?', @p483='?' (DbType = Int32), @p489='?' (DbType = Int32), @p485='?' (DbType = Int64), @p486='?', @p487='?', @p488='?' (DbType = Int32), @p494='?' (DbType = Int32), @p490='?' (DbType = Int64), @p491='?', @p492='?', @p493='?' (DbType = Int32), @p499='?' (DbType = Int32), @p495='?' (DbType = Int64), @p496='?', @p497='?', @p498='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Message" SET channel_telegram_id = @p0, media = @p1, text = @p2, views = @p3
+WHERE id = @p4;
+UPDATE "Message" SET channel_telegram_id = @p5, media = @p6, text = @p7, views = @p8
+WHERE id = @p9;
+UPDATE "Message" SET channel_telegram_id = @p10, media = @p11, text = @p12, views = @p13
+WHERE id = @p14;
+UPDATE "Message" SET channel_telegram_id = @p15, media = @p16, text = @p17, views = @p18
+WHERE id = @p19;
+UPDATE "Message" SET channel_telegram_id = @p20, media = @p21, text = @p22, views = @p23
+WHERE id = @p24;
+UPDATE "Message" SET channel_telegram_id = @p25, media = @p26, text = @p27, views = @p28
+WHERE id = @p29;
+UPDATE "Message" SET channel_telegram_id = @p30, media = @p31, text = @p32, views = @p33
+WHERE id = @p34;
+UPDATE "Message" SET channel_telegram_id = @p35, media = @p36, text = @p37, views = @p38
+WHERE id = @p39;
+UPDATE "Message" SET channel_telegram_id = @p40, media = @p41, text = @p42, views = @p43
+WHERE id = @p44;
+UPDATE "Message" SET channel_telegram_id = @p45, media = @p46, text = @p47, views = @p48
+WHERE id = @p49;
+UPDATE "Message" SET channel_telegram_id = @p50, media = @p51, text = @p52, views = @p53
+WHERE id = @p54;
+UPDATE "Message" SET channel_telegram_id = @p55, media = @p56, text = @p57, views = @p58
+WHERE id = @p59;
+UPDATE "Message" SET channel_telegram_id = @p60, media = @p61, text = @p62, views = @p63
+WHERE id = @p64;
+UPDATE "Message" SET channel_telegram_id = @p65, media = @p66, text = @p67, views = @p68
+WHERE id = @p69;
+UPDATE "Message" SET channel_telegram_id = @p70, media = @p71, text = @p72, views = @p73
+WHERE id = @p74;
+UPDATE "Message" SET channel_telegram_id = @p75, media = @p76, text = @p77, views = @p78
+WHERE id = @p79;
+UPDATE "Message" SET channel_telegram_id = @p80, media = @p81, text = @p82, views = @p83
+WHERE id = @p84;
+UPDATE "Message" SET channel_telegram_id = @p85, media = @p86, text = @p87, views = @p88
+WHERE id = @p89;
+UPDATE "Message" SET channel_telegram_id = @p90, media = @p91, text = @p92, views = @p93
+WHERE id = @p94;
+UPDATE "Message" SET channel_telegram_id = @p95, media = @p96, text = @p97, views = @p98
+WHERE id = @p99;
+UPDATE "Message" SET channel_telegram_id = @p100, media = @p101, text = @p102, views = @p103
+WHERE id = @p104;
+UPDATE "Message" SET channel_telegram_id = @p105, media = @p106, text = @p107, views = @p108
+WHERE id = @p109;
+UPDATE "Message" SET channel_telegram_id = @p110, media = @p111, text = @p112, views = @p113
+WHERE id = @p114;
+UPDATE "Message" SET channel_telegram_id = @p115, media = @p116, text = @p117, views = @p118
+WHERE id = @p119;
+UPDATE "Message" SET channel_telegram_id = @p120, media = @p121, text = @p122, views = @p123
+WHERE id = @p124;
+UPDATE "Message" SET channel_telegram_id = @p125, media = @p126, text = @p127, views = @p128
+WHERE id = @p129;
+UPDATE "Message" SET channel_telegram_id = @p130, media = @p131, text = @p132, views = @p133
+WHERE id = @p134;
+UPDATE "Message" SET channel_telegram_id = @p135, media = @p136, text = @p137, views = @p138
+WHERE id = @p139;
+UPDATE "Message" SET channel_telegram_id = @p140, media = @p141, text = @p142, views = @p143
+WHERE id = @p144;
+UPDATE "Message" SET channel_telegram_id = @p145, media = @p146, text = @p147, views = @p148
+WHERE id = @p149;
+UPDATE "Message" SET channel_telegram_id = @p150, media = @p151, text = @p152, views = @p153
+WHERE id = @p154;
+UPDATE "Message" SET channel_telegram_id = @p155, media = @p156, text = @p157, views = @p158
+WHERE id = @p159;
+UPDATE "Message" SET channel_telegram_id = @p160, media = @p161, text = @p162, views = @p163
+WHERE id = @p164;
+UPDATE "Message" SET channel_telegram_id = @p165, media = @p166, text = @p167, views = @p168
+WHERE id = @p169;
+UPDATE "Message" SET channel_telegram_id = @p170, media = @p171, text = @p172, views = @p173
+WHERE id = @p174;
+UPDATE "Message" SET channel_telegram_id = @p175, media = @p176, text = @p177, views = @p178
+WHERE id = @p179;
+UPDATE "Message" SET channel_telegram_id = @p180, media = @p181, text = @p182, views = @p183
+WHERE id = @p184;
+UPDATE "Message" SET channel_telegram_id = @p185, media = @p186, text = @p187, views = @p188
+WHERE id = @p189;
+UPDATE "Message" SET channel_telegram_id = @p190, media = @p191, text = @p192, views = @p193
+WHERE id = @p194;
+UPDATE "Message" SET channel_telegram_id = @p195, media = @p196, text = @p197, views = @p198
+WHERE id = @p199;
+UPDATE "Message" SET channel_telegram_id = @p200, media = @p201, text = @p202, views = @p203
+WHERE id = @p204;
+UPDATE "Message" SET channel_telegram_id = @p205, media = @p206, text = @p207, views = @p208
+WHERE id = @p209;
+UPDATE "Message" SET channel_telegram_id = @p210, media = @p211, text = @p212, views = @p213
+WHERE id = @p214;
+UPDATE "Message" SET channel_telegram_id = @p215, media = @p216, text = @p217, views = @p218
+WHERE id = @p219;
+UPDATE "Message" SET channel_telegram_id = @p220, media = @p221, text = @p222, views = @p223
+WHERE id = @p224;
+UPDATE "Message" SET channel_telegram_id = @p225, media = @p226, text = @p227, views = @p228
+WHERE id = @p229;
+UPDATE "Message" SET channel_telegram_id = @p230, media = @p231, text = @p232, views = @p233
+WHERE id = @p234;
+UPDATE "Message" SET channel_telegram_id = @p235, media = @p236, text = @p237, views = @p238
+WHERE id = @p239;
+UPDATE "Message" SET channel_telegram_id = @p240, media = @p241, text = @p242, views = @p243
+WHERE id = @p244;
+UPDATE "Message" SET channel_telegram_id = @p245, media = @p246, text = @p247, views = @p248
+WHERE id = @p249;
+UPDATE "Message" SET channel_telegram_id = @p250, media = @p251, text = @p252, views = @p253
+WHERE id = @p254;
+UPDATE "Message" SET channel_telegram_id = @p255, media = @p256, text = @p257, views = @p258
+WHERE id = @p259;
+UPDATE "Message" SET channel_telegram_id = @p260, media = @p261, text = @p262, views = @p263
+WHERE id = @p264;
+UPDATE "Message" SET channel_telegram_id = @p265, media = @p266, text = @p267, views = @p268
+WHERE id = @p269;
+UPDATE "Message" SET channel_telegram_id = @p270, media = @p271, text = @p272, views = @p273
+WHERE id = @p274;
+UPDATE "Message" SET channel_telegram_id = @p275, media = @p276, text = @p277, views = @p278
+WHERE id = @p279;
+UPDATE "Message" SET channel_telegram_id = @p280, media = @p281, text = @p282, views = @p283
+WHERE id = @p284;
+UPDATE "Message" SET channel_telegram_id = @p285, media = @p286, text = @p287, views = @p288
+WHERE id = @p289;
+UPDATE "Message" SET channel_telegram_id = @p290, media = @p291, text = @p292, views = @p293
+WHERE id = @p294;
+UPDATE "Message" SET channel_telegram_id = @p295, media = @p296, text = @p297, views = @p298
+WHERE id = @p299;
+UPDATE "Message" SET channel_telegram_id = @p300, media = @p301, text = @p302, views = @p303
+WHERE id = @p304;
+UPDATE "Message" SET channel_telegram_id = @p305, media = @p306, text = @p307, views = @p308
+WHERE id = @p309;
+UPDATE "Message" SET channel_telegram_id = @p310, media = @p311, text = @p312, views = @p313
+WHERE id = @p314;
+UPDATE "Message" SET channel_telegram_id = @p315, media = @p316, text = @p317, views = @p318
+WHERE id = @p319;
+UPDATE "Message" SET channel_telegram_id = @p320, media = @p321, text = @p322, views = @p323
+WHERE id = @p324;
+UPDATE "Message" SET channel_telegram_id = @p325, media = @p326, text = @p327, views = @p328
+WHERE id = @p329;
+UPDATE "Message" SET channel_telegram_id = @p330, media = @p331, text = @p332, views = @p333
+WHERE id = @p334;
+UPDATE "Message" SET channel_telegram_id = @p335, media = @p336, text = @p337, views = @p338
+WHERE id = @p339;
+UPDATE "Message" SET channel_telegram_id = @p340, media = @p341, text = @p342, views = @p343
+WHERE id = @p344;
+UPDATE "Message" SET channel_telegram_id = @p345, media = @p346, text = @p347, views = @p348
+WHERE id = @p349;
+UPDATE "Message" SET channel_telegram_id = @p350, media = @p351, text = @p352, views = @p353
+WHERE id = @p354;
+UPDATE "Message" SET channel_telegram_id = @p355, media = @p356, text = @p357, views = @p358
+WHERE id = @p359;
+UPDATE "Message" SET channel_telegram_id = @p360, media = @p361, text = @p362, views = @p363
+WHERE id = @p364;
+UPDATE "Message" SET channel_telegram_id = @p365, media = @p366, text = @p367, views = @p368
+WHERE id = @p369;
+UPDATE "Message" SET channel_telegram_id = @p370, media = @p371, text = @p372, views = @p373
+WHERE id = @p374;
+UPDATE "Message" SET channel_telegram_id = @p375, media = @p376, text = @p377, views = @p378
+WHERE id = @p379;
+UPDATE "Message" SET channel_telegram_id = @p380, media = @p381, text = @p382, views = @p383
+WHERE id = @p384;
+UPDATE "Message" SET channel_telegram_id = @p385, media = @p386, text = @p387, views = @p388
+WHERE id = @p389;
+UPDATE "Message" SET channel_telegram_id = @p390, media = @p391, text = @p392, views = @p393
+WHERE id = @p394;
+UPDATE "Message" SET channel_telegram_id = @p395, media = @p396, text = @p397, views = @p398
+WHERE id = @p399;
+UPDATE "Message" SET channel_telegram_id = @p400, media = @p401, text = @p402, views = @p403
+WHERE id = @p404;
+UPDATE "Message" SET channel_telegram_id = @p405, media = @p406, text = @p407, views = @p408
+WHERE id = @p409;
+UPDATE "Message" SET channel_telegram_id = @p410, media = @p411, text = @p412, views = @p413
+WHERE id = @p414;
+UPDATE "Message" SET channel_telegram_id = @p415, media = @p416, text = @p417, views = @p418
+WHERE id = @p419;
+UPDATE "Message" SET channel_telegram_id = @p420, media = @p421, text = @p422, views = @p423
+WHERE id = @p424;
+UPDATE "Message" SET channel_telegram_id = @p425, media = @p426, text = @p427, views = @p428
+WHERE id = @p429;
+UPDATE "Message" SET channel_telegram_id = @p430, media = @p431, text = @p432, views = @p433
+WHERE id = @p434;
+UPDATE "Message" SET channel_telegram_id = @p435, media = @p436, text = @p437, views = @p438
+WHERE id = @p439;
+UPDATE "Message" SET channel_telegram_id = @p440, media = @p441, text = @p442, views = @p443
+WHERE id = @p444;
+UPDATE "Message" SET channel_telegram_id = @p445, media = @p446, text = @p447, views = @p448
+WHERE id = @p449;
+UPDATE "Message" SET channel_telegram_id = @p450, media = @p451, text = @p452, views = @p453
+WHERE id = @p454;
+UPDATE "Message" SET channel_telegram_id = @p455, media = @p456, text = @p457, views = @p458
+WHERE id = @p459;
+UPDATE "Message" SET channel_telegram_id = @p460, media = @p461, text = @p462, views = @p463
+WHERE id = @p464;
+UPDATE "Message" SET channel_telegram_id = @p465, media = @p466, text = @p467, views = @p468
+WHERE id = @p469;
+UPDATE "Message" SET channel_telegram_id = @p470, media = @p471, text = @p472, views = @p473
+WHERE id = @p474;
+UPDATE "Message" SET channel_telegram_id = @p475, media = @p476, text = @p477, views = @p478
+WHERE id = @p479;
+UPDATE "Message" SET channel_telegram_id = @p480, media = @p481, text = @p482, views = @p483
+WHERE id = @p484;
+UPDATE "Message" SET channel_telegram_id = @p485, media = @p486, text = @p487, views = @p488
+WHERE id = @p489;
+UPDATE "Message" SET channel_telegram_id = @p490, media = @p491, text = @p492, views = @p493
+WHERE id = @p494;
+UPDATE "Message" SET channel_telegram_id = @p495, media = @p496, text = @p497, views = @p498
+WHERE id = @p499;
+2024-06-26 18:48:14.219 +03:00 [INF] Processing batch 3 with 78 messages.
+2024-06-26 18:48:14.221 +03:00 [INF] Processing batch of 78 messages.
+2024-06-26 18:48:14.222 +03:00 [INF] Message IDs to process: [51713,51712,51711,51710,51709,51708,51707,51706,51704,51703,51702,51701,51700,51699,51698,51697,51696,51695,51694,51693,51692,51691,51690,51689,51688,51687,51686,51685,51684,51683,51682,51681,51680,51679,51678,51677,51676,51675,51674,51673,51672,51671,51670,51669,51668,51667,51666,51665,51664,51663,51662,51661,51660,51659,51658,51657,51656,51655,51654,51653,51652,51651,51650,51649,51648,51647,51646,51645,51644,51643,51642,51641,51640,51639,51638,51637,51636,51635]
+2024-06-26 18:48:14.244 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__messageIds_0='?' (DbType = Object)], CommandType='"Text"', CommandTimeout='30']
+SELECT m.id, m.channel_telegram_id, m.media, m.text, m.views
+FROM "Message" AS m
+WHERE m.id = ANY (@__messageIds_0)
+2024-06-26 18:48:14.251 +03:00 [INF] Updating existing message ID: 51713
+2024-06-26 18:48:14.252 +03:00 [INF] Updating existing message ID: 51712
+2024-06-26 18:48:14.253 +03:00 [INF] Updating existing message ID: 51711
+2024-06-26 18:48:14.254 +03:00 [INF] Updating existing message ID: 51710
+2024-06-26 18:48:14.255 +03:00 [INF] Updating existing message ID: 51709
+2024-06-26 18:48:14.256 +03:00 [INF] Updating existing message ID: 51708
+2024-06-26 18:48:14.257 +03:00 [INF] Updating existing message ID: 51707
+2024-06-26 18:48:14.258 +03:00 [INF] Updating existing message ID: 51706
+2024-06-26 18:48:14.262 +03:00 [INF] Updating existing message ID: 51704
+2024-06-26 18:48:14.263 +03:00 [INF] Updating existing message ID: 51703
+2024-06-26 18:48:14.264 +03:00 [INF] Updating existing message ID: 51702
+2024-06-26 18:48:14.265 +03:00 [INF] Updating existing message ID: 51701
+2024-06-26 18:48:14.266 +03:00 [INF] Updating existing message ID: 51700
+2024-06-26 18:48:14.267 +03:00 [INF] Updating existing message ID: 51699
+2024-06-26 18:48:14.268 +03:00 [INF] Updating existing message ID: 51698
+2024-06-26 18:48:14.269 +03:00 [INF] Updating existing message ID: 51697
+2024-06-26 18:48:14.270 +03:00 [INF] Updating existing message ID: 51696
+2024-06-26 18:48:14.271 +03:00 [INF] Updating existing message ID: 51695
+2024-06-26 18:48:14.272 +03:00 [INF] Updating existing message ID: 51694
+2024-06-26 18:48:14.273 +03:00 [INF] Updating existing message ID: 51693
+2024-06-26 18:48:14.273 +03:00 [INF] Updating existing message ID: 51692
+2024-06-26 18:48:14.277 +03:00 [INF] Updating existing message ID: 51691
+2024-06-26 18:48:14.279 +03:00 [INF] Updating existing message ID: 51690
+2024-06-26 18:48:14.280 +03:00 [INF] Updating existing message ID: 51689
+2024-06-26 18:48:14.280 +03:00 [INF] Updating existing message ID: 51688
+2024-06-26 18:48:14.282 +03:00 [INF] Updating existing message ID: 51687
+2024-06-26 18:48:14.283 +03:00 [INF] Updating existing message ID: 51686
+2024-06-26 18:48:14.283 +03:00 [INF] Updating existing message ID: 51685
+2024-06-26 18:48:14.284 +03:00 [INF] Updating existing message ID: 51684
+2024-06-26 18:48:14.285 +03:00 [INF] Updating existing message ID: 51683
+2024-06-26 18:48:14.286 +03:00 [INF] Updating existing message ID: 51682
+2024-06-26 18:48:14.288 +03:00 [INF] Updating existing message ID: 51681
+2024-06-26 18:48:14.290 +03:00 [INF] Updating existing message ID: 51680
+2024-06-26 18:48:14.295 +03:00 [INF] Updating existing message ID: 51679
+2024-06-26 18:48:14.296 +03:00 [INF] Updating existing message ID: 51678
+2024-06-26 18:48:14.297 +03:00 [INF] Updating existing message ID: 51677
+2024-06-26 18:48:14.298 +03:00 [INF] Updating existing message ID: 51676
+2024-06-26 18:48:14.299 +03:00 [INF] Updating existing message ID: 51675
+2024-06-26 18:48:14.299 +03:00 [INF] Updating existing message ID: 51674
+2024-06-26 18:48:14.300 +03:00 [INF] Updating existing message ID: 51673
+2024-06-26 18:48:14.301 +03:00 [INF] Updating existing message ID: 51672
+2024-06-26 18:48:14.302 +03:00 [INF] Updating existing message ID: 51671
+2024-06-26 18:48:14.303 +03:00 [INF] Updating existing message ID: 51670
+2024-06-26 18:48:14.304 +03:00 [INF] Updating existing message ID: 51669
+2024-06-26 18:48:14.305 +03:00 [INF] Updating existing message ID: 51668
+2024-06-26 18:48:14.306 +03:00 [INF] Updating existing message ID: 51667
+2024-06-26 18:48:14.310 +03:00 [INF] Updating existing message ID: 51666
+2024-06-26 18:48:14.312 +03:00 [INF] Updating existing message ID: 51665
+2024-06-26 18:48:14.313 +03:00 [INF] Updating existing message ID: 51664
+2024-06-26 18:48:14.314 +03:00 [INF] Updating existing message ID: 51663
+2024-06-26 18:48:14.315 +03:00 [INF] Updating existing message ID: 51662
+2024-06-26 18:48:14.316 +03:00 [INF] Updating existing message ID: 51661
+2024-06-26 18:48:14.317 +03:00 [INF] Updating existing message ID: 51660
+2024-06-26 18:48:14.318 +03:00 [INF] Updating existing message ID: 51659
+2024-06-26 18:48:14.319 +03:00 [INF] Updating existing message ID: 51658
+2024-06-26 18:48:14.320 +03:00 [INF] Updating existing message ID: 51657
+2024-06-26 18:48:14.321 +03:00 [INF] Updating existing message ID: 51656
+2024-06-26 18:48:14.322 +03:00 [INF] Updating existing message ID: 51655
+2024-06-26 18:48:14.326 +03:00 [INF] Updating existing message ID: 51654
+2024-06-26 18:48:14.328 +03:00 [INF] Updating existing message ID: 51653
+2024-06-26 18:48:14.329 +03:00 [INF] Updating existing message ID: 51652
+2024-06-26 18:48:14.330 +03:00 [INF] Updating existing message ID: 51651
+2024-06-26 18:48:14.331 +03:00 [INF] Updating existing message ID: 51650
+2024-06-26 18:48:14.332 +03:00 [INF] Updating existing message ID: 51649
+2024-06-26 18:48:14.333 +03:00 [INF] Updating existing message ID: 51648
+2024-06-26 18:48:14.334 +03:00 [INF] Updating existing message ID: 51647
+2024-06-26 18:48:14.335 +03:00 [INF] Updating existing message ID: 51646
+2024-06-26 18:48:14.337 +03:00 [INF] Updating existing message ID: 51645
+2024-06-26 18:48:14.338 +03:00 [INF] Updating existing message ID: 51644
+2024-06-26 18:48:14.342 +03:00 [INF] Updating existing message ID: 51643
+2024-06-26 18:48:14.343 +03:00 [INF] Updating existing message ID: 51642
+2024-06-26 18:48:14.344 +03:00 [INF] Updating existing message ID: 51641
+2024-06-26 18:48:14.345 +03:00 [INF] Updating existing message ID: 51640
+2024-06-26 18:48:14.346 +03:00 [INF] Updating existing message ID: 51639
+2024-06-26 18:48:14.347 +03:00 [INF] Updating existing message ID: 51638
+2024-06-26 18:48:14.348 +03:00 [INF] Updating existing message ID: 51637
+2024-06-26 18:48:14.350 +03:00 [INF] Updating existing message ID: 51636
+2024-06-26 18:48:14.351 +03:00 [INF] Updating existing message ID: 51635
+2024-06-26 18:48:14.352 +03:00 [INF] Updating 78 messages.
+2024-06-26 18:48:14.354 +03:00 [INF] Saving changes to the database.
+2024-06-26 18:48:14.377 +03:00 [INF] Executed DbCommand (16ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (DbType = Int64), @p1='?', @p2='?', @p3='?' (DbType = Int32), @p9='?' (DbType = Int32), @p5='?' (DbType = Int64), @p6='?', @p7='?', @p8='?' (DbType = Int32), @p14='?' (DbType = Int32), @p10='?' (DbType = Int64), @p11='?', @p12='?', @p13='?' (DbType = Int32), @p19='?' (DbType = Int32), @p15='?' (DbType = Int64), @p16='?', @p17='?', @p18='?' (DbType = Int32), @p24='?' (DbType = Int32), @p20='?' (DbType = Int64), @p21='?', @p22='?', @p23='?' (DbType = Int32), @p29='?' (DbType = Int32), @p25='?' (DbType = Int64), @p26='?', @p27='?', @p28='?' (DbType = Int32), @p34='?' (DbType = Int32), @p30='?' (DbType = Int64), @p31='?', @p32='?', @p33='?' (DbType = Int32), @p39='?' (DbType = Int32), @p35='?' (DbType = Int64), @p36='?', @p37='?', @p38='?' (DbType = Int32), @p44='?' (DbType = Int32), @p40='?' (DbType = Int64), @p41='?', @p42='?', @p43='?' (DbType = Int32), @p49='?' (DbType = Int32), @p45='?' (DbType = Int64), @p46='?', @p47='?', @p48='?' (DbType = Int32), @p54='?' (DbType = Int32), @p50='?' (DbType = Int64), @p51='?', @p52='?', @p53='?' (DbType = Int32), @p59='?' (DbType = Int32), @p55='?' (DbType = Int64), @p56='?', @p57='?', @p58='?' (DbType = Int32), @p64='?' (DbType = Int32), @p60='?' (DbType = Int64), @p61='?', @p62='?', @p63='?' (DbType = Int32), @p69='?' (DbType = Int32), @p65='?' (DbType = Int64), @p66='?', @p67='?', @p68='?' (DbType = Int32), @p74='?' (DbType = Int32), @p70='?' (DbType = Int64), @p71='?', @p72='?', @p73='?' (DbType = Int32), @p79='?' (DbType = Int32), @p75='?' (DbType = Int64), @p76='?', @p77='?', @p78='?' (DbType = Int32), @p84='?' (DbType = Int32), @p80='?' (DbType = Int64), @p81='?', @p82='?', @p83='?' (DbType = Int32), @p89='?' (DbType = Int32), @p85='?' (DbType = Int64), @p86='?', @p87='?', @p88='?' (DbType = Int32), @p94='?' (DbType = Int32), @p90='?' (DbType = Int64), @p91='?', @p92='?', @p93='?' (DbType = Int32), @p99='?' (DbType = Int32), @p95='?' (DbType = Int64), @p96='?', @p97='?', @p98='?' (DbType = Int32), @p104='?' (DbType = Int32), @p100='?' (DbType = Int64), @p101='?', @p102='?', @p103='?' (DbType = Int32), @p109='?' (DbType = Int32), @p105='?' (DbType = Int64), @p106='?', @p107='?', @p108='?' (DbType = Int32), @p114='?' (DbType = Int32), @p110='?' (DbType = Int64), @p111='?', @p112='?', @p113='?' (DbType = Int32), @p119='?' (DbType = Int32), @p115='?' (DbType = Int64), @p116='?', @p117='?', @p118='?' (DbType = Int32), @p124='?' (DbType = Int32), @p120='?' (DbType = Int64), @p121='?', @p122='?', @p123='?' (DbType = Int32), @p129='?' (DbType = Int32), @p125='?' (DbType = Int64), @p126='?', @p127='?', @p128='?' (DbType = Int32), @p134='?' (DbType = Int32), @p130='?' (DbType = Int64), @p131='?', @p132='?', @p133='?' (DbType = Int32), @p139='?' (DbType = Int32), @p135='?' (DbType = Int64), @p136='?', @p137='?', @p138='?' (DbType = Int32), @p144='?' (DbType = Int32), @p140='?' (DbType = Int64), @p141='?', @p142='?', @p143='?' (DbType = Int32), @p149='?' (DbType = Int32), @p145='?' (DbType = Int64), @p146='?', @p147='?', @p148='?' (DbType = Int32), @p154='?' (DbType = Int32), @p150='?' (DbType = Int64), @p151='?', @p152='?', @p153='?' (DbType = Int32), @p159='?' (DbType = Int32), @p155='?' (DbType = Int64), @p156='?', @p157='?', @p158='?' (DbType = Int32), @p164='?' (DbType = Int32), @p160='?' (DbType = Int64), @p161='?', @p162='?', @p163='?' (DbType = Int32), @p169='?' (DbType = Int32), @p165='?' (DbType = Int64), @p166='?', @p167='?', @p168='?' (DbType = Int32), @p174='?' (DbType = Int32), @p170='?' (DbType = Int64), @p171='?', @p172='?', @p173='?' (DbType = Int32), @p179='?' (DbType = Int32), @p175='?' (DbType = Int64), @p176='?', @p177='?', @p178='?' (DbType = Int32), @p184='?' (DbType = Int32), @p180='?' (DbType = Int64), @p181='?', @p182='?', @p183='?' (DbType = Int32), @p189='?' (DbType = Int32), @p185='?' (DbType = Int64), @p186='?', @p187='?', @p188='?' (DbType = Int32), @p194='?' (DbType = Int32), @p190='?' (DbType = Int64), @p191='?', @p192='?', @p193='?' (DbType = Int32), @p199='?' (DbType = Int32), @p195='?' (DbType = Int64), @p196='?', @p197='?', @p198='?' (DbType = Int32), @p204='?' (DbType = Int32), @p200='?' (DbType = Int64), @p201='?', @p202='?', @p203='?' (DbType = Int32), @p209='?' (DbType = Int32), @p205='?' (DbType = Int64), @p206='?', @p207='?', @p208='?' (DbType = Int32), @p214='?' (DbType = Int32), @p210='?' (DbType = Int64), @p211='?', @p212='?', @p213='?' (DbType = Int32), @p219='?' (DbType = Int32), @p215='?' (DbType = Int64), @p216='?', @p217='?', @p218='?' (DbType = Int32), @p224='?' (DbType = Int32), @p220='?' (DbType = Int64), @p221='?', @p222='?', @p223='?' (DbType = Int32), @p229='?' (DbType = Int32), @p225='?' (DbType = Int64), @p226='?', @p227='?', @p228='?' (DbType = Int32), @p234='?' (DbType = Int32), @p230='?' (DbType = Int64), @p231='?', @p232='?', @p233='?' (DbType = Int32), @p239='?' (DbType = Int32), @p235='?' (DbType = Int64), @p236='?', @p237='?', @p238='?' (DbType = Int32), @p244='?' (DbType = Int32), @p240='?' (DbType = Int64), @p241='?', @p242='?', @p243='?' (DbType = Int32), @p249='?' (DbType = Int32), @p245='?' (DbType = Int64), @p246='?', @p247='?', @p248='?' (DbType = Int32), @p254='?' (DbType = Int32), @p250='?' (DbType = Int64), @p251='?', @p252='?', @p253='?' (DbType = Int32), @p259='?' (DbType = Int32), @p255='?' (DbType = Int64), @p256='?', @p257='?', @p258='?' (DbType = Int32), @p264='?' (DbType = Int32), @p260='?' (DbType = Int64), @p261='?', @p262='?', @p263='?' (DbType = Int32), @p269='?' (DbType = Int32), @p265='?' (DbType = Int64), @p266='?', @p267='?', @p268='?' (DbType = Int32), @p274='?' (DbType = Int32), @p270='?' (DbType = Int64), @p271='?', @p272='?', @p273='?' (DbType = Int32), @p279='?' (DbType = Int32), @p275='?' (DbType = Int64), @p276='?', @p277='?', @p278='?' (DbType = Int32), @p284='?' (DbType = Int32), @p280='?' (DbType = Int64), @p281='?', @p282='?', @p283='?' (DbType = Int32), @p289='?' (DbType = Int32), @p285='?' (DbType = Int64), @p286='?', @p287='?', @p288='?' (DbType = Int32), @p294='?' (DbType = Int32), @p290='?' (DbType = Int64), @p291='?', @p292='?', @p293='?' (DbType = Int32), @p299='?' (DbType = Int32), @p295='?' (DbType = Int64), @p296='?', @p297='?', @p298='?' (DbType = Int32), @p304='?' (DbType = Int32), @p300='?' (DbType = Int64), @p301='?', @p302='?', @p303='?' (DbType = Int32), @p309='?' (DbType = Int32), @p305='?' (DbType = Int64), @p306='?', @p307='?', @p308='?' (DbType = Int32), @p314='?' (DbType = Int32), @p310='?' (DbType = Int64), @p311='?', @p312='?', @p313='?' (DbType = Int32), @p319='?' (DbType = Int32), @p315='?' (DbType = Int64), @p316='?', @p317='?', @p318='?' (DbType = Int32), @p324='?' (DbType = Int32), @p320='?' (DbType = Int64), @p321='?', @p322='?', @p323='?' (DbType = Int32), @p329='?' (DbType = Int32), @p325='?' (DbType = Int64), @p326='?', @p327='?', @p328='?' (DbType = Int32), @p334='?' (DbType = Int32), @p330='?' (DbType = Int64), @p331='?', @p332='?', @p333='?' (DbType = Int32), @p339='?' (DbType = Int32), @p335='?' (DbType = Int64), @p336='?', @p337='?', @p338='?' (DbType = Int32), @p344='?' (DbType = Int32), @p340='?' (DbType = Int64), @p341='?', @p342='?', @p343='?' (DbType = Int32), @p349='?' (DbType = Int32), @p345='?' (DbType = Int64), @p346='?', @p347='?', @p348='?' (DbType = Int32), @p354='?' (DbType = Int32), @p350='?' (DbType = Int64), @p351='?', @p352='?', @p353='?' (DbType = Int32), @p359='?' (DbType = Int32), @p355='?' (DbType = Int64), @p356='?', @p357='?', @p358='?' (DbType = Int32), @p364='?' (DbType = Int32), @p360='?' (DbType = Int64), @p361='?', @p362='?', @p363='?' (DbType = Int32), @p369='?' (DbType = Int32), @p365='?' (DbType = Int64), @p366='?', @p367='?', @p368='?' (DbType = Int32), @p374='?' (DbType = Int32), @p370='?' (DbType = Int64), @p371='?', @p372='?', @p373='?' (DbType = Int32), @p379='?' (DbType = Int32), @p375='?' (DbType = Int64), @p376='?', @p377='?', @p378='?' (DbType = Int32), @p384='?' (DbType = Int32), @p380='?' (DbType = Int64), @p381='?', @p382='?', @p383='?' (DbType = Int32), @p389='?' (DbType = Int32), @p385='?' (DbType = Int64), @p386='?', @p387='?', @p388='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Message" SET channel_telegram_id = @p0, media = @p1, text = @p2, views = @p3
+WHERE id = @p4;
+UPDATE "Message" SET channel_telegram_id = @p5, media = @p6, text = @p7, views = @p8
+WHERE id = @p9;
+UPDATE "Message" SET channel_telegram_id = @p10, media = @p11, text = @p12, views = @p13
+WHERE id = @p14;
+UPDATE "Message" SET channel_telegram_id = @p15, media = @p16, text = @p17, views = @p18
+WHERE id = @p19;
+UPDATE "Message" SET channel_telegram_id = @p20, media = @p21, text = @p22, views = @p23
+WHERE id = @p24;
+UPDATE "Message" SET channel_telegram_id = @p25, media = @p26, text = @p27, views = @p28
+WHERE id = @p29;
+UPDATE "Message" SET channel_telegram_id = @p30, media = @p31, text = @p32, views = @p33
+WHERE id = @p34;
+UPDATE "Message" SET channel_telegram_id = @p35, media = @p36, text = @p37, views = @p38
+WHERE id = @p39;
+UPDATE "Message" SET channel_telegram_id = @p40, media = @p41, text = @p42, views = @p43
+WHERE id = @p44;
+UPDATE "Message" SET channel_telegram_id = @p45, media = @p46, text = @p47, views = @p48
+WHERE id = @p49;
+UPDATE "Message" SET channel_telegram_id = @p50, media = @p51, text = @p52, views = @p53
+WHERE id = @p54;
+UPDATE "Message" SET channel_telegram_id = @p55, media = @p56, text = @p57, views = @p58
+WHERE id = @p59;
+UPDATE "Message" SET channel_telegram_id = @p60, media = @p61, text = @p62, views = @p63
+WHERE id = @p64;
+UPDATE "Message" SET channel_telegram_id = @p65, media = @p66, text = @p67, views = @p68
+WHERE id = @p69;
+UPDATE "Message" SET channel_telegram_id = @p70, media = @p71, text = @p72, views = @p73
+WHERE id = @p74;
+UPDATE "Message" SET channel_telegram_id = @p75, media = @p76, text = @p77, views = @p78
+WHERE id = @p79;
+UPDATE "Message" SET channel_telegram_id = @p80, media = @p81, text = @p82, views = @p83
+WHERE id = @p84;
+UPDATE "Message" SET channel_telegram_id = @p85, media = @p86, text = @p87, views = @p88
+WHERE id = @p89;
+UPDATE "Message" SET channel_telegram_id = @p90, media = @p91, text = @p92, views = @p93
+WHERE id = @p94;
+UPDATE "Message" SET channel_telegram_id = @p95, media = @p96, text = @p97, views = @p98
+WHERE id = @p99;
+UPDATE "Message" SET channel_telegram_id = @p100, media = @p101, text = @p102, views = @p103
+WHERE id = @p104;
+UPDATE "Message" SET channel_telegram_id = @p105, media = @p106, text = @p107, views = @p108
+WHERE id = @p109;
+UPDATE "Message" SET channel_telegram_id = @p110, media = @p111, text = @p112, views = @p113
+WHERE id = @p114;
+UPDATE "Message" SET channel_telegram_id = @p115, media = @p116, text = @p117, views = @p118
+WHERE id = @p119;
+UPDATE "Message" SET channel_telegram_id = @p120, media = @p121, text = @p122, views = @p123
+WHERE id = @p124;
+UPDATE "Message" SET channel_telegram_id = @p125, media = @p126, text = @p127, views = @p128
+WHERE id = @p129;
+UPDATE "Message" SET channel_telegram_id = @p130, media = @p131, text = @p132, views = @p133
+WHERE id = @p134;
+UPDATE "Message" SET channel_telegram_id = @p135, media = @p136, text = @p137, views = @p138
+WHERE id = @p139;
+UPDATE "Message" SET channel_telegram_id = @p140, media = @p141, text = @p142, views = @p143
+WHERE id = @p144;
+UPDATE "Message" SET channel_telegram_id = @p145, media = @p146, text = @p147, views = @p148
+WHERE id = @p149;
+UPDATE "Message" SET channel_telegram_id = @p150, media = @p151, text = @p152, views = @p153
+WHERE id = @p154;
+UPDATE "Message" SET channel_telegram_id = @p155, media = @p156, text = @p157, views = @p158
+WHERE id = @p159;
+UPDATE "Message" SET channel_telegram_id = @p160, media = @p161, text = @p162, views = @p163
+WHERE id = @p164;
+UPDATE "Message" SET channel_telegram_id = @p165, media = @p166, text = @p167, views = @p168
+WHERE id = @p169;
+UPDATE "Message" SET channel_telegram_id = @p170, media = @p171, text = @p172, views = @p173
+WHERE id = @p174;
+UPDATE "Message" SET channel_telegram_id = @p175, media = @p176, text = @p177, views = @p178
+WHERE id = @p179;
+UPDATE "Message" SET channel_telegram_id = @p180, media = @p181, text = @p182, views = @p183
+WHERE id = @p184;
+UPDATE "Message" SET channel_telegram_id = @p185, media = @p186, text = @p187, views = @p188
+WHERE id = @p189;
+UPDATE "Message" SET channel_telegram_id = @p190, media = @p191, text = @p192, views = @p193
+WHERE id = @p194;
+UPDATE "Message" SET channel_telegram_id = @p195, media = @p196, text = @p197, views = @p198
+WHERE id = @p199;
+UPDATE "Message" SET channel_telegram_id = @p200, media = @p201, text = @p202, views = @p203
+WHERE id = @p204;
+UPDATE "Message" SET channel_telegram_id = @p205, media = @p206, text = @p207, views = @p208
+WHERE id = @p209;
+UPDATE "Message" SET channel_telegram_id = @p210, media = @p211, text = @p212, views = @p213
+WHERE id = @p214;
+UPDATE "Message" SET channel_telegram_id = @p215, media = @p216, text = @p217, views = @p218
+WHERE id = @p219;
+UPDATE "Message" SET channel_telegram_id = @p220, media = @p221, text = @p222, views = @p223
+WHERE id = @p224;
+UPDATE "Message" SET channel_telegram_id = @p225, media = @p226, text = @p227, views = @p228
+WHERE id = @p229;
+UPDATE "Message" SET channel_telegram_id = @p230, media = @p231, text = @p232, views = @p233
+WHERE id = @p234;
+UPDATE "Message" SET channel_telegram_id = @p235, media = @p236, text = @p237, views = @p238
+WHERE id = @p239;
+UPDATE "Message" SET channel_telegram_id = @p240, media = @p241, text = @p242, views = @p243
+WHERE id = @p244;
+UPDATE "Message" SET channel_telegram_id = @p245, media = @p246, text = @p247, views = @p248
+WHERE id = @p249;
+UPDATE "Message" SET channel_telegram_id = @p250, media = @p251, text = @p252, views = @p253
+WHERE id = @p254;
+UPDATE "Message" SET channel_telegram_id = @p255, media = @p256, text = @p257, views = @p258
+WHERE id = @p259;
+UPDATE "Message" SET channel_telegram_id = @p260, media = @p261, text = @p262, views = @p263
+WHERE id = @p264;
+UPDATE "Message" SET channel_telegram_id = @p265, media = @p266, text = @p267, views = @p268
+WHERE id = @p269;
+UPDATE "Message" SET channel_telegram_id = @p270, media = @p271, text = @p272, views = @p273
+WHERE id = @p274;
+UPDATE "Message" SET channel_telegram_id = @p275, media = @p276, text = @p277, views = @p278
+WHERE id = @p279;
+UPDATE "Message" SET channel_telegram_id = @p280, media = @p281, text = @p282, views = @p283
+WHERE id = @p284;
+UPDATE "Message" SET channel_telegram_id = @p285, media = @p286, text = @p287, views = @p288
+WHERE id = @p289;
+UPDATE "Message" SET channel_telegram_id = @p290, media = @p291, text = @p292, views = @p293
+WHERE id = @p294;
+UPDATE "Message" SET channel_telegram_id = @p295, media = @p296, text = @p297, views = @p298
+WHERE id = @p299;
+UPDATE "Message" SET channel_telegram_id = @p300, media = @p301, text = @p302, views = @p303
+WHERE id = @p304;
+UPDATE "Message" SET channel_telegram_id = @p305, media = @p306, text = @p307, views = @p308
+WHERE id = @p309;
+UPDATE "Message" SET channel_telegram_id = @p310, media = @p311, text = @p312, views = @p313
+WHERE id = @p314;
+UPDATE "Message" SET channel_telegram_id = @p315, media = @p316, text = @p317, views = @p318
+WHERE id = @p319;
+UPDATE "Message" SET channel_telegram_id = @p320, media = @p321, text = @p322, views = @p323
+WHERE id = @p324;
+UPDATE "Message" SET channel_telegram_id = @p325, media = @p326, text = @p327, views = @p328
+WHERE id = @p329;
+UPDATE "Message" SET channel_telegram_id = @p330, media = @p331, text = @p332, views = @p333
+WHERE id = @p334;
+UPDATE "Message" SET channel_telegram_id = @p335, media = @p336, text = @p337, views = @p338
+WHERE id = @p339;
+UPDATE "Message" SET channel_telegram_id = @p340, media = @p341, text = @p342, views = @p343
+WHERE id = @p344;
+UPDATE "Message" SET channel_telegram_id = @p345, media = @p346, text = @p347, views = @p348
+WHERE id = @p349;
+UPDATE "Message" SET channel_telegram_id = @p350, media = @p351, text = @p352, views = @p353
+WHERE id = @p354;
+UPDATE "Message" SET channel_telegram_id = @p355, media = @p356, text = @p357, views = @p358
+WHERE id = @p359;
+UPDATE "Message" SET channel_telegram_id = @p360, media = @p361, text = @p362, views = @p363
+WHERE id = @p364;
+UPDATE "Message" SET channel_telegram_id = @p365, media = @p366, text = @p367, views = @p368
+WHERE id = @p369;
+UPDATE "Message" SET channel_telegram_id = @p370, media = @p371, text = @p372, views = @p373
+WHERE id = @p374;
+UPDATE "Message" SET channel_telegram_id = @p375, media = @p376, text = @p377, views = @p378
+WHERE id = @p379;
+UPDATE "Message" SET channel_telegram_id = @p380, media = @p381, text = @p382, views = @p383
+WHERE id = @p384;
+UPDATE "Message" SET channel_telegram_id = @p385, media = @p386, text = @p387, views = @p388
+WHERE id = @p389;
+2024-06-26 18:48:14.429 +03:00 [INF] Total number of batches processed: 3

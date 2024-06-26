@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace TgSearchStatistics.Models.TempScaffold;
+﻿namespace TgSearchStatistics.Models.TempScaffold;
 
 public partial class MonthViewsRecord
 {

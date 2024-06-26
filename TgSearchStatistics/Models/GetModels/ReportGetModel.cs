@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using TgSearchStatistics.Models.BaseModels;
+﻿using TgSearchStatistics.Models.BaseModels;
 
 namespace TgSearchStatistics.Models.GetModels
 {

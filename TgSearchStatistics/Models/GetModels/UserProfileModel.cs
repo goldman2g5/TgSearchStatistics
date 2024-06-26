@@ -1,6 +1,4 @@
-﻿using System.Net;
-
-namespace TgSearchStatistics.Models.GetModels
+﻿namespace TgSearchStatistics.Models.GetModels
 {
     public class UserProfileModel
     {

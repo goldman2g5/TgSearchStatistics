@@ -1,18 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.SignalR;
-using TgSearchStatistics.Models.BaseModels;
-using WTelegram;
-using TL;
-using System.Linq;
-using TgSearchStatistics.Utility;
-using TgSearchStatistics.Services;
-using System.Text.Json;
-using System.Security.Cryptography.Xml;
-using Newtonsoft.Json;
-using Microsoft.EntityFrameworkCore;
-using System.Text.RegularExpressions;
 using TgSearchStatistics.Interfaces;
-using TgSearchStatistics.Queues;
+using TgSearchStatistics.Models.BaseModels;
+using TgSearchStatistics.Services;
+using TgSearchStatistics.Utility;
+using TL;
 //using Nest;
 
 namespace TgCheckerApi.Controllers
@@ -65,46 +56,11 @@ namespace TgCheckerApi.Controllers
                     return NotFound("No active client found for that channel");
                 }
 
-                var channelInfo = await _tgclientService.GetChannelAccessHash(channelId, _client);
-                if (!channelInfo.HasValue)
+                var allMessages = await _tgclientService.GetMessagesByPeriodAsync(_client, channelId, startDate, endDate);
+                if (allMessages == null)
                 {
-                    _logger.LogWarning("Channel not found or access hash unavailable for channel {ChannelId}", channelId);
-                    return NotFound("Channel not found or access hash unavailable.");
-                }
-
-                var (resolvedChannelId, accessHash) = channelInfo.Value;
-                var inputPeer = new InputPeerChannel(resolvedChannelId, accessHash);
-
-                var allMessages = new List<TL.Message>();
-                int limit = 100;
-                DateTime offsetDate = DateTime.UtcNow;
-                int lastMessageId = 0;
-
-                // Fetch messages from Telegram
-                while (offsetDate > startDate)
-                {
-                    var messagesBatch = await _client.Messages_GetHistory(inputPeer, offset_id: lastMessageId, limit: limit, offset_date: offsetDate);
-                    var messages = messagesBatch.Messages.OfType<TL.Message>()
-                        .Where(m => m.Date >= startDate && m.Date <= endDate)
-                        .ToList();
-
-                    if (messages.Count == 0)
-                    {
-                        _logger.LogInformation("No more messages found for channel {ChannelId} in the specified date range", channelId);
-                        break;
-                    }
-
-                    allMessages.AddRange(messages);
-                    var earliestMessageInBatch = messages.OrderBy(m => m.Date).FirstOrDefault();
-
-                    if (earliestMessageInBatch == null || earliestMessageInBatch.Date <= startDate)
-                    {
-                        _logger.LogInformation("Reached the start date for channel {ChannelId}, stopping fetch", channelId);
-                        break;
-                    }
-
-                    offsetDate = earliestMessageInBatch.Date;
-                    lastMessageId = earliestMessageInBatch.id;
+                    _logger.LogWarning("Failed to retrieve messages for channel {ChannelId}", channelId);
+                    return NotFound("Failed to retrieve messages.");
                 }
 
                 _logger.LogInformation("Fetched {Count} messages for channel {ChannelId}", allMessages.Count, channelId);
@@ -119,7 +75,6 @@ namespace TgCheckerApi.Controllers
                     _logger.LogError("Failed to queue messages for update: {Message}", e.Message);
                 }
 
-                // Return fetched messages
                 var result = allMessages.Select(m => new { m.id, m.Date, m.views, m.reactions }).OrderByDescending(m => m.Date);
                 _logger.LogInformation("Returning {Count} messages for channel {ChannelId}", result.Count(), channelId);
 
@@ -143,7 +98,7 @@ namespace TgCheckerApi.Controllers
 
             try
             {
-               
+
                 var _client = await _tgclientService.GetClientByTelegramId(channelId);
                 channelId = TelegramIdConverter.ToWTelegramClient(channelId);
                 if (_client == null)
@@ -154,8 +109,8 @@ namespace TgCheckerApi.Controllers
                 // WTelegramClient's method to get messages by IDs
                 var channelInfo = await _tgclientService.GetChannelAccessHash(channelId, _client);
                 var (resolvedChannelId, accessHash) = channelInfo.Value;
-                var result = await _client.Channels_GetMessages(new InputChannel(resolvedChannelId, accessHash), 
-                    messageIds.Select(x => new InputMessageID() {id = x}).ToArray());
+                var result = await _client.Channels_GetMessages(new InputChannel(resolvedChannelId, accessHash),
+                    messageIds.Select(x => new InputMessageID() { id = x }).ToArray());
                 if (result is not TL.Messages_MessagesBase messagesBase)
                 {
                     return NotFound("Messages not found.");

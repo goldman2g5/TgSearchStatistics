@@ -1,6 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using TgSearchStatistics.Services;
 
 namespace TgSearchStatistics.Models.BaseModels
 {

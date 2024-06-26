@@ -1,11 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Diagnostics;
-using System.IO;
-using System.Net.Http;
-using System.Threading.Tasks;
 
 namespace TgSearchStatistics.Controllers
 {
@@ -40,10 +34,10 @@ namespace TgSearchStatistics.Controllers
             var requestDataList = new List<RequestData>
             {
                                 //new RequestData { ChannelId = -1001135818819, StartDate = now.AddDays(-10), EndDate = now }, // 3 months ago to nownew RequestData { ChannelId = -1001135818819, StartDate = now.AddDays(-10), EndDate = now }, // 3 months ago to now
-                //new RequestData { ChannelId = -1001075423523, StartDate = now.AddDays(-10), EndDate = now },
+                new RequestData { ChannelId = -1001075423523, StartDate = now.AddDays(-10), EndDate = now },
 
-                new RequestData { ChannelId = -1001135818819, StartDate = now.AddDays(-60), EndDate = now },
-                //new RequestData { ChannelId = -1001703721750, StartDate = now.AddDays(-10), EndDate = now },
+                new RequestData { ChannelId = -1001135818819, StartDate = now.AddDays(-10), EndDate = now },
+                new RequestData { ChannelId = -1001703721750, StartDate = now.AddDays(-10), EndDate = now },
 
 
                                                                                                              // Add more data sets as needed

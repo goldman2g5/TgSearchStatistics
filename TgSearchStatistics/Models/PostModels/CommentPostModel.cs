@@ -1,5 +1,4 @@
 ﻿using TgSearchStatistics.Models.BaseModels;
-using Newtonsoft.Json;
 
 namespace TgSearchStatistics.Models
 {
@@ -20,7 +19,8 @@ namespace TgSearchStatistics.Models
         }
 
         [System.Text.Json.Serialization.JsonIgnore]
-        new public virtual int UserId {
+        new public virtual int UserId
+        {
             get { return base.UserId; }
             set { base.UserId = value; }
         }

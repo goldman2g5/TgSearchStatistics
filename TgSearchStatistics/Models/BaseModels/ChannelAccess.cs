@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace TgSearchStatistics.Models.BaseModels;
+﻿namespace TgSearchStatistics.Models.BaseModels;
 
 public partial class ChannelAccess
 {

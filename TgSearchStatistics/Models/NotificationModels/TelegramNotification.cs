@@ -1,5 +1,5 @@
-﻿using TgSearchStatistics.Models.BaseModels;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using TgSearchStatistics.Models.BaseModels;
 
 namespace TgSearchStatistics.Models.NotificationModels
 {
