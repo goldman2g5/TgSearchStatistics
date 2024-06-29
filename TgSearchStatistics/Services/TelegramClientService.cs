@@ -13,12 +13,14 @@ namespace TgSearchStatistics.Services
     {
         private readonly TgClientFactory _tgClientFactory;
         private readonly IDbContextFactory<TgDbContext> _dbContextFactory;
+        private readonly ILogger<TelegramClientService> _logger;
         public static List<TelegramClientWrapper> Clients { get; private set; } = new List<TelegramClientWrapper>();
 
-        public TelegramClientService(TgClientFactory tgClientFactory, IDbContextFactory<TgDbContext> dbContextFactory)
+        public TelegramClientService(TgClientFactory tgClientFactory, ILogger<TelegramClientService> logger, IDbContextFactory<TgDbContext> dbContextFactory)
         {
             _tgClientFactory = tgClientFactory;
             _dbContextFactory = dbContextFactory;
+            _logger = logger;
         }
 
         public async Task InitializeAsync()
@@ -75,7 +77,7 @@ namespace TgSearchStatistics.Services
                             else
                             {
                                 Console.WriteLine("Failed to get verification code.");
-                                return; // Handle the failure appropriately
+                                return;
                             }
                             break;
                         default:
@@ -98,7 +100,6 @@ namespace TgSearchStatistics.Services
                 var chats = await wrapper.Client.Messages_GetAllChats();
                 using var dbContext = _dbContextFactory.CreateDbContext();
 
-                // Use a HashSet to track unique channel IDs to avoid duplicates
                 HashSet<long> uniqueChannelIds = new HashSet<long>();
 
                 foreach (var (id, chat) in chats.chats)
@@ -118,29 +119,25 @@ namespace TgSearchStatistics.Services
                     }
                 }
 
-                // After associating channels, update the ChannelCount for this client in the database
                 var tgClient = await dbContext.TgClients.FindAsync(wrapper.DatabaseId);
                 if (tgClient != null)
                 {
-                    tgClient.ChannelCount = uniqueChannelIds.Count; // Set the channel count
-                    dbContext.TgClients.Update(tgClient); // Mark the entity as modified
+                    tgClient.ChannelCount = uniqueChannelIds.Count;
+                    dbContext.TgClients.Update(tgClient);
                 }
 
-                // Save changes to the database
                 await dbContext.SaveChangesAsync();
             }
         }
 
         async public Task<Client?> GetClient()
         {
-            // Find the first TelegramClientWrapper instance with a matching DatabaseId
             var clientWrapper = Clients.FirstOrDefault();
             return clientWrapper?.Client;
         }
 
         async public Task<Client?> GetClientByDatabaseId(int databaseId)
         {
-            // Find the first TelegramClientWrapper instance with a matching DatabaseId
             var clientWrapper = Clients.FirstOrDefault(c => c.DatabaseId == databaseId);
             return clientWrapper?.Client;
         }
@@ -151,14 +148,13 @@ namespace TgSearchStatistics.Services
 
             var pyrogramChannelId = TelegramIdConverter.ToPyrogram(telegramChannelId);
 
-            // Attempt to find the channel in the database
             var dbChannel = await dbContext.Channels
                 .Where(c => c.TelegramId == pyrogramChannelId)
                 .FirstOrDefaultAsync();
 
             if (dbChannel == null)
             {
-                Console.WriteLine($"Channel with Telegram ID {telegramChannelId} not found in database.");
+                _logger.LogInformation($"Channel with Telegram ID {telegramChannelId} not found in database.");
                 return null;
             }
 
@@ -168,53 +164,45 @@ namespace TgSearchStatistics.Services
                 var clientsDbIds = Clients.Select(x => x.DatabaseId).ToList();
                 if (clientsDbIds.Count == 0)
                 {
-                    Console.WriteLine("No clients available to join the channel.");
+                    _logger.LogInformation("No clients available to join the channel.");
                     return null;
                 }
 
-                // Fetch clients with the lowest channel count from the database
-                var lowestChannelCountClient = await dbContext.TgClients
-                    .Where(x => clientsDbIds.Contains(x.Id))
-                    .OrderBy(c => c.ChannelCount)
-                    .FirstOrDefaultAsync();
-
-                if (lowestChannelCountClient == null)
+                foreach (var client in Clients)
                 {
-                    Console.WriteLine("No matching clients found in database with provided IDs.");
-                    return null;
+                    _logger.LogInformation($"Client {client.DatabaseId}: Total busy time: {client.GetTotalBusyTime().TotalSeconds} seconds.");
                 }
 
-                clientWrapper = Clients.FirstOrDefault(x => x.DatabaseId == lowestChannelCountClient.Id);
+                clientWrapper = Clients.OrderBy(c => c.GetTotalBusyTime())
+                                       .FirstOrDefault();
 
                 if (clientWrapper == null)
                 {
-                    Console.WriteLine($"Client wrapper for the lowest channel count client with ID: {lowestChannelCountClient.Id} not found.");
+                    _logger.LogInformation("No matching clients found based on load time.");
                     return null;
                 }
+
+                _logger.LogInformation($"Selected Client {clientWrapper.DatabaseId} with the lowest busy time: {clientWrapper.GetTotalBusyTime().TotalSeconds} seconds.");
 
                 var channelNameOrUsername = RemoveTMeUrl(dbChannel.Url);
                 if (string.IsNullOrEmpty(channelNameOrUsername))
                 {
-                    Console.WriteLine("Channel name or username is required but not found.");
+                    _logger.LogInformation("Channel name or username is required but not found.");
                     return null;
                 }
 
-                // Now attempt to join the channel
                 await TryJoinChannel(clientWrapper.Client, pyrogramChannelId, dbContext, channelNameOrUsername);
 
-                // After joining, increment the channel count
-                lowestChannelCountClient.ChannelCount++;
-                dbContext.UpdateRange(lowestChannelCountClient, dbChannel);
+                dbChannel.TgclientId = clientWrapper.DatabaseId;
+                dbContext.Channels.Update(dbChannel);
                 await dbContext.SaveChangesAsync();
-
-                // Synchronize the local state
-                //clientWrapper.ChannelsCount = lowestChannelCountClient.ChannelCount;
 
                 return clientWrapper.Client;
             }
 
             return clientWrapper.Client;
         }
+
 
         // Auxiliary method assuming existence, implement with appropriate exception handling and logging
 
@@ -302,20 +290,20 @@ namespace TgSearchStatistics.Services
 
             return null;
         }
-        public async Task<T> ExecuteWithClientAsync<T>(TelegramClientWrapper clientWrapper, Func<Client, Task<T>> task)
+        private async Task<T> ExecuteWithClientAsync<T>(TelegramClientWrapper clientWrapper, Func<Client, Task<T>> task)
         {
-            if (clientWrapper == null)
-            {
-                throw new ArgumentNullException(nameof(clientWrapper));
-            }
+            ArgumentNullException.ThrowIfNull(clientWrapper);
 
             try
             {
                 clientWrapper.IsBusy = true;
-                return await task(clientWrapper.Client);
+                clientWrapper.AddTaskStart();
+                var result = await task(clientWrapper.Client);
+                return result;
             }
             finally
             {
+                clientWrapper.AddTaskEnd();
                 clientWrapper.IsBusy = false;
             }
         }
@@ -371,10 +359,15 @@ namespace TgSearchStatistics.Services
                 throw new InvalidOperationException("Client wrapper not found.");
             }
 
-            return await ExecuteWithClientAsync(
+            var result = await ExecuteWithClientAsync(
                 clientWrapper,
                 async client => await GetMessagesByPeriodInternalAsync(client, channelId, startDate, endDate)
             );
+
+            var busyTimeLast10Seconds = clientWrapper.GetTotalBusyTime();
+            _logger.LogInformation($"Client {clientWrapper.DatabaseId} busy time in the last 10 seconds: {busyTimeLast10Seconds.TotalSeconds} seconds");
+
+            return result;
         }
 
 

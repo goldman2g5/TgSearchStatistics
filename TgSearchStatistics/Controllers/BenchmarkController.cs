@@ -23,8 +23,8 @@ namespace TgSearchStatistics.Controllers
             System.IO.File.Create(_logFilePath).Dispose();
         }
 
-        [HttpPost("run-benchmark")]
-        public async Task<IActionResult> RunBenchmark()
+        [HttpPost("run-benchmark-async")]
+        public async Task<IActionResult> RunBenchmarkAsync()
         {
             var requests = new List<Task<BenchmarkLog>>();
 
@@ -53,6 +53,33 @@ namespace TgSearchStatistics.Controllers
 
             foreach (var log in results)
             {
+                LogBenchmarkResult(log);
+            }
+
+            return Ok(results);
+        }
+
+        [HttpPost("run-benchmark")]
+        public async Task<IActionResult> RunBenchmark()
+        {
+            var now = DateTime.UtcNow;
+
+            // Define different data sets for requests
+            var requestDataList = new List<RequestData>
+    {
+        new RequestData { ChannelId = -1001075423523, StartDate = now.AddDays(-30), EndDate = now },
+        new RequestData { ChannelId = -1001135818819, StartDate = now.AddDays(-30), EndDate = now },
+        new RequestData { ChannelId = -1001703721750, StartDate = now.AddDays(-30), EndDate = now },
+        // Add more data sets as needed
+    };
+
+            var results = new List<BenchmarkLog>();
+
+            // Send requests sequentially
+            foreach (var requestData in requestDataList)
+            {
+                var log = await SendRequest(requestData);
+                results.Add(log);
                 LogBenchmarkResult(log);
             }
 
