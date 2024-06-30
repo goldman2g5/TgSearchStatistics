@@ -56,7 +56,7 @@ namespace TgCheckerApi.Controllers
                     return NotFound("No active client found for that channel");
                 }
 
-                var allMessages = await _tgclientService.GetMessagesByPeriodAsync(_client, channelId, startDate, endDate);
+                var allMessages = await _tgclientService.GetMessagesByPeriodAsync(channelId, startDate, endDate);
                 if (allMessages == null)
                 {
                     _logger.LogWarning("Failed to retrieve messages for channel {ChannelId}", channelId);
@@ -100,7 +100,7 @@ namespace TgCheckerApi.Controllers
             {
 
                 var _client = await _tgclientService.GetClientByTelegramId(channelId);
-                channelId = TelegramIdConverter.ToWTelegramClient(channelId);
+                channelId = TelegramUtility.ToWTelegramClient(channelId);
                 if (_client == null)
                 {
                     return NotFound("No active client found for that channel");

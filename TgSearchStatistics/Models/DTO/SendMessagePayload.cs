@@ -1,4 +1,4 @@
-﻿namespace TgSearchStatistics.Models
+﻿namespace TgSearchStatistics.Models.DTO
 {
     public class SendMessagePayload
     {

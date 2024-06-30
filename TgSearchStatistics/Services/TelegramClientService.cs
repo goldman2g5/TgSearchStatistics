@@ -38,19 +38,17 @@ namespace TgSearchStatistics.Services
                     switch (await client.Login(loginInfo))
                     {
                         case "verification_code":
-                            // Trigger the bot to ask for the verification code via FastAPI
                             var userId = clientConfig.TelegramId;
                             await httpClient.PostAsync($"/trigger_verification/{userId}", new StringContent(""));
 
 
-                            // Wait for the verification code to be sent by the user
                             HttpResponseMessage response;
                             string verificationCode = null;
                             do
                             {
                                 try
                                 {
-                                    await Task.Delay(5000); // Check every 5 seconds
+                                    await Task.Delay(5000);
                                     response = await httpClient.GetAsync($"/get_verification_code/{userId}");
                                     Console.WriteLine(userId);
                                     Console.WriteLine(response.StatusCode);
@@ -86,57 +84,17 @@ namespace TgSearchStatistics.Services
                 }
                 Console.WriteLine($"We are logged-in as {client.User} (id {client.User.id})");
 
-                // Store the client with its database ID
                 Clients.Add(new TelegramClientWrapper(client, clientConfig.DatabaseId, clientConfig.TelegramId));
             }
-
-            await SyncClientsToChannelsAsync();
         }
 
-        public async Task SyncClientsToChannelsAsync()
-        {
-            foreach (var wrapper in Clients)
-            {
-                var chats = await wrapper.Client.Messages_GetAllChats();
-                using var dbContext = _dbContextFactory.CreateDbContext();
-
-                HashSet<long> uniqueChannelIds = new HashSet<long>();
-
-                foreach (var (id, chat) in chats.chats)
-                {
-                    if (!chat.IsActive) continue;
-                    var pyrogramChannelId = TelegramIdConverter.ToPyrogram(id);
-                    uniqueChannelIds.Add(pyrogramChannelId);
-
-                    var channel = await dbContext.Channels
-                                    .Where(c => c.TelegramId == pyrogramChannelId)
-                                    .FirstOrDefaultAsync();
-
-                    if (channel != null)
-                    {
-                        channel.TgclientId = wrapper.DatabaseId; // Associate channel with the client in the database
-                        dbContext.Channels.Update(channel);
-                    }
-                }
-
-                var tgClient = await dbContext.TgClients.FindAsync(wrapper.DatabaseId);
-                if (tgClient != null)
-                {
-                    tgClient.ChannelCount = uniqueChannelIds.Count;
-                    dbContext.TgClients.Update(tgClient);
-                }
-
-                await dbContext.SaveChangesAsync();
-            }
-        }
-
-        async public Task<Client?> GetClient()
+        public async Task<Client?> GetClient()
         {
             var clientWrapper = Clients.FirstOrDefault();
             return clientWrapper?.Client;
         }
 
-        async public Task<Client?> GetClientByDatabaseId(int databaseId)
+        public async Task<Client?> GetClientByDatabaseId(int databaseId)
         {
             var clientWrapper = Clients.FirstOrDefault(c => c.DatabaseId == databaseId);
             return clientWrapper?.Client;
@@ -146,7 +104,7 @@ namespace TgSearchStatistics.Services
         {
             using var dbContext = _dbContextFactory.CreateDbContext();
 
-            var pyrogramChannelId = TelegramIdConverter.ToPyrogram(telegramChannelId);
+            var pyrogramChannelId = TelegramUtility.ToPyrogram(telegramChannelId);
 
             var dbChannel = await dbContext.Channels
                 .Where(c => c.TelegramId == pyrogramChannelId)
@@ -183,134 +141,68 @@ namespace TgSearchStatistics.Services
                 }
 
                 _logger.LogInformation($"Selected Client {clientWrapper.DatabaseId} with the lowest busy time: {clientWrapper.GetTotalBusyTime().TotalSeconds} seconds.");
-
-                var channelNameOrUsername = RemoveTMeUrl(dbChannel.Url);
-                if (string.IsNullOrEmpty(channelNameOrUsername))
-                {
-                    _logger.LogInformation("Channel name or username is required but not found.");
-                    return null;
-                }
-
-                await TryJoinChannel(clientWrapper.Client, pyrogramChannelId, dbContext, channelNameOrUsername);
-
-                dbChannel.TgclientId = clientWrapper.DatabaseId;
-                dbContext.Channels.Update(dbChannel);
-                await dbContext.SaveChangesAsync();
-
-                return clientWrapper.Client;
             }
 
             return clientWrapper.Client;
         }
 
-
-        // Auxiliary method assuming existence, implement with appropriate exception handling and logging
-
-        public static string RemoveTMeUrl(string input)
+        public async Task<List<TL.Message>> GetMessagesByPeriodAsync(long channelId, DateTime startDate, DateTime endDate)
         {
-            // Define the pattern to match the URL
-            string pattern = @"https?:\/\/t\.me\/";
+            var client = await GetClientByTelegramId(channelId);
+            if (client == null)
+            {
+                throw new InvalidOperationException("No available client found for the specified channel.");
+            }
 
-            // Replace the matched pattern with an empty string
-            string result = Regex.Replace(input, pattern, string.Empty);
+            var clientWrapper = Clients.FirstOrDefault(c => c.Client == client);
+            if (clientWrapper == null)
+            {
+                throw new InvalidOperationException("Client wrapper not found.");
+            }
 
-            return result;
+            var tcs = new TaskCompletionSource<List<TL.Message>>();
+
+            var taskRequest = new TaskRequest
+            {
+                ChannelId = channelId,
+                ChannelUsername = await GetChannelUsername(channelId, clientWrapper),
+                TaskToExecute = async client =>
+                {
+                    var messages = await GetMessagesByPeriodInternalAsync(client, channelId, startDate, endDate);
+                    return messages;
+                },
+                TaskCompletionSource = tcs
+            };
+
+            clientWrapper.EnqueueTask(taskRequest);
+
+            var busyTimeLast10Seconds = clientWrapper.GetTotalBusyTime();
+            _logger.LogInformation($"Client {clientWrapper.DatabaseId} busy time in the last 10 seconds: {busyTimeLast10Seconds.TotalSeconds} seconds");
+
+            return await tcs.Task;
         }
 
-        private async Task TryJoinChannel(Client client, long telegramChannelId, TgDbContext context, string channelUsername)
+        private async Task<string> GetChannelUsername(long channelId, TelegramClientWrapper clientWrapper)
         {
-            try
-            {
-                var resolveResult = await client.Contacts_ResolveUsername(channelUsername);
-                if (resolveResult?.Channel == null)
-                {
-                    Console.WriteLine($"Channel with username {channelUsername} could not be resolved.");
-                    return;
-                }
+            using var dbContext = _dbContextFactory.CreateDbContext();
+            var pyrogramChannelId = TelegramUtility.ToPyrogram(channelId);
 
-                var inputChannel = new InputChannel(resolveResult.Channel.ID, resolveResult.Channel.access_hash);
-                await client.Channels_JoinChannel(inputChannel);
-                Console.WriteLine($"Successfully joined channel: {channelUsername}");
-            }
-            catch (Exception ex)
+            var dbChannel = await dbContext.Channels
+                .Where(c => c.TelegramId == pyrogramChannelId)
+                .FirstOrDefaultAsync();
+
+            if (dbChannel == null)
             {
-                Console.WriteLine($"Failed to join channel {channelUsername}: {ex.Message}");
+                throw new InvalidOperationException($"Channel with Telegram ID {channelId} not found in database.");
             }
+
+            return TelegramUtility.RemoveTMeUrl(dbChannel.Url); // Assuming URL contains the username
         }
 
-        public async Task<(long channelId, long accessHash)?> GetChannelAccessHash(long telegramChannelId, Client _client)
+        private async Task<List<TL.Message>> GetMessagesByPeriodInternalAsync(Client client, long channelId, DateTime startDate, DateTime endDate)
         {
-            try
-            {
-                if (_client == null)
-                {
-                    Console.WriteLine("Failed to get Telegram client.");
-                    return null;
-                }
-
-                // Convert the channel ID to the expected format
-                var pyrogramChannelId = TelegramIdConverter.ToPyrogram(telegramChannelId);
-
-                // Fetch the channel from the database to obtain its username
-                var dbChannel = await _dbContextFactory.CreateDbContext().Channels
-                                .Where(c => c.TelegramId == pyrogramChannelId)
-                                .FirstOrDefaultAsync();
-
-                if (dbChannel == null)
-                {
-                    Console.WriteLine($"Channel with Telegram ID {telegramChannelId} not found in the database.");
-                    return null;
-                }
-
-                var channelUsername = RemoveTMeUrl(dbChannel.Url); // Assuming this method extracts the username from the channel URL
-                if (string.IsNullOrEmpty(channelUsername))
-                {
-                    Console.WriteLine("Channel name or username is required but not found.");
-                    return null;
-                }
-
-                // Resolve the channel using its username to get the access hash
-                var resolveResult = await _client.Contacts_ResolveUsername(channelUsername);
-                var channel = resolveResult.Channel;
-
-                if (channel != null)
-                {
-                    Console.WriteLine($"Successfully resolved channel: {channelUsername} with access hash {channel.access_hash}");
-                    return (channel.ID, channel.access_hash);
-                }
-                else
-                {
-                    Console.WriteLine($"Failed to resolve channel or mismatch in channel ID for username: {channelUsername}");
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"An error occurred while trying to resolve the channel access hash: {ex.Message}");
-            }
-
-            return null;
-        }
-        private async Task<T> ExecuteWithClientAsync<T>(TelegramClientWrapper clientWrapper, Func<Client, Task<T>> task)
-        {
-            ArgumentNullException.ThrowIfNull(clientWrapper);
-
-            try
-            {
-                clientWrapper.IsBusy = true;
-                clientWrapper.AddTaskStart();
-                var result = await task(clientWrapper.Client);
-                return result;
-            }
-            finally
-            {
-                clientWrapper.AddTaskEnd();
-                clientWrapper.IsBusy = false;
-            }
-        }
-
-        private async Task<List<TL.Message>> GetMessagesByPeriodInternalAsync(Client _client, long channelId, DateTime startDate, DateTime endDate)
-        {
-            var channelInfo = await GetChannelAccessHash(channelId, _client);
+            var allMessages = new List<TL.Message>();
+            var channelInfo = await GetChannelAccessHash(channelId, client);
             if (!channelInfo.HasValue)
             {
                 throw new InvalidOperationException("Channel not found or access hash unavailable.");
@@ -319,14 +211,13 @@ namespace TgSearchStatistics.Services
             var (resolvedChannelId, accessHash) = channelInfo.Value;
             var inputPeer = new InputPeerChannel(resolvedChannelId, accessHash);
 
-            var allMessages = new List<TL.Message>();
             int limit = 100;
             DateTime offsetDate = DateTime.UtcNow;
             int lastMessageId = 0;
 
             while (offsetDate > startDate)
             {
-                var messagesBatch = await _client.Messages_GetHistory(inputPeer, offset_id: lastMessageId, limit: limit, offset_date: offsetDate);
+                var messagesBatch = await client.Messages_GetHistory(inputPeer, offset_id: lastMessageId, limit: limit, offset_date: offsetDate);
                 var messages = messagesBatch.Messages.OfType<TL.Message>()
                     .Where(m => m.Date >= startDate && m.Date <= endDate)
                     .ToList();
@@ -351,25 +242,51 @@ namespace TgSearchStatistics.Services
             return allMessages;
         }
 
-        public async Task<List<TL.Message>> GetMessagesByPeriodAsync(Client _client, long channelId, DateTime startDate, DateTime endDate)
+        public async Task<(long channelId, long accessHash)?> GetChannelAccessHash(long telegramChannelId, Client client)
         {
-            var clientWrapper = Clients.FirstOrDefault(c => c.Client == _client);
-            if (clientWrapper == null)
+            try
             {
-                throw new InvalidOperationException("Client wrapper not found.");
+                if (client == null)
+                {
+                    _logger.LogError("Failed to get Telegram client.");
+                    return null;
+                }
+
+                using var dbContext = _dbContextFactory.CreateDbContext();
+                var pyrogramChannelId = TelegramUtility.ToPyrogram(telegramChannelId);
+
+                var dbChannel = await dbContext.Channels
+                    .Where(c => c.TelegramId == pyrogramChannelId)
+                    .FirstOrDefaultAsync();
+
+                if (dbChannel == null)
+                {
+                    _logger.LogError($"Channel with Telegram ID {telegramChannelId} not found in the database.");
+                    return null;
+                }
+
+                var channelUsername = TelegramUtility.RemoveTMeUrl(dbChannel.Url);
+
+                var resolveResult = await client.Contacts_ResolveUsername(channelUsername);
+                var channel = resolveResult.Channel;
+
+                if (channel != null)
+                {
+                    _logger.LogInformation($"Successfully resolved channel: {channelUsername} with access hash {channel.access_hash}");
+                    return (channel.ID, channel.access_hash);
+                }
+                else
+                {
+                    _logger.LogError($"Failed to resolve channel or mismatch in channel ID for username: {channelUsername}");
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"An error occurred while trying to resolve the channel access hash: {ex.Message}");
             }
 
-            var result = await ExecuteWithClientAsync(
-                clientWrapper,
-                async client => await GetMessagesByPeriodInternalAsync(client, channelId, startDate, endDate)
-            );
-
-            var busyTimeLast10Seconds = clientWrapper.GetTotalBusyTime();
-            _logger.LogInformation($"Client {clientWrapper.DatabaseId} busy time in the last 10 seconds: {busyTimeLast10Seconds.TotalSeconds} seconds");
-
-            return result;
+            return null;
         }
-
 
         public static void DisposeClients()
         {

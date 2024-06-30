@@ -1,6 +1,8 @@
-﻿namespace TgSearchStatistics.Utility
+﻿using System.Text.RegularExpressions;
+
+namespace TgSearchStatistics.Utility
 {
-    public static class TelegramIdConverter
+    public static class TelegramUtility
     {
         public static long ToPyrogram(long wTelegramChannelId)
         {
@@ -46,6 +48,17 @@
                 // It's already in WTelegramClient format or doesn't require conversion
                 return pyrogramChannelId;
             }
+        }
+
+        public static string RemoveTMeUrl(string input)
+        {
+            // Define the pattern to match the URL
+            string pattern = @"https?:\/\/t\.me\/";
+
+            // Replace the matched pattern with an empty string
+            string result = Regex.Replace(input, pattern, string.Empty);
+
+            return result;
         }
     }
 }

@@ -99,7 +99,7 @@ namespace TgSearchStatistics.Services
                     newMessages.Add(new TgSearchStatistics.Models.BaseModels.Message
                     {
                         Id = tlMessage.id,
-                        ChannelTelegramId = TelegramIdConverter.ToPyrogram(tlMessage.peer_id),
+                        ChannelTelegramId = TelegramUtility.ToPyrogram(tlMessage.peer_id),
                         Views = tlMessage.views,
                         Text = tlMessage.message,
                     });
@@ -111,13 +111,38 @@ namespace TgSearchStatistics.Services
                 if (newMessages.Any())
                 {
                     _logger.LogInformation("Adding {Count} new messages.", newMessages.Count);
-                    await context.Messages.AddRangeAsync(newMessages, stoppingToken);
+                    var localMessagesDict = context.Messages.Local.ToDictionary(m => m.Id);
+
+                    foreach (var updatedMessage in updatedMessages)
+                    {
+                        if (localMessagesDict.TryGetValue(updatedMessage.Id, out var trackedMessage))
+                        {
+                            // If the message is already being tracked, update its values
+                            context.Entry(trackedMessage).CurrentValues.SetValues(updatedMessage);
+                        }
+                        else
+                        {
+                            // If the message is not being tracked, attach it for update
+                            context.Messages.Update(updatedMessage);
+                        }
+                    }
                 }
 
                 if (updatedMessages.Any())
                 {
                     _logger.LogInformation("Updating {Count} messages.", updatedMessages.Count);
-                    context.Messages.UpdateRange(updatedMessages);
+                    foreach (var updatedMessage in updatedMessages)
+                    {
+                        var trackedMessage = context.Messages.Local.FirstOrDefault(m => m.Id == updatedMessage.Id);
+                        if (trackedMessage == null)
+                        {
+                            context.Messages.Update(updatedMessage);
+                        }
+                        else
+                        {
+                            context.Entry(trackedMessage).CurrentValues.SetValues(updatedMessage);
+                        }
+                    }
                 }
 
                 _logger.LogInformation("Saving changes to the database.");

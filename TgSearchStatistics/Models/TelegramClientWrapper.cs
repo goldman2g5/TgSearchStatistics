@@ -1,11 +1,17 @@
 ﻿using WTelegram;
 using System.Collections.Concurrent;
+using TL;
 
 namespace TgSearchStatistics.Models
 {
     public class TelegramClientWrapper
     {
-        public static ILogger<TelegramClientWrapper> Logger { private get; set; }
+        private static ILogger<TelegramClientWrapper> _logger;
+
+        public static void SetLogger(ILogger<TelegramClientWrapper> logger)
+        {
+            _logger = logger;
+        }
 
         public Client Client { get; set; }
         public int DatabaseId { get; set; }
@@ -14,6 +20,9 @@ namespace TgSearchStatistics.Models
         private ConcurrentQueue<(DateTime start, DateTime? end)> taskDurations;
         public TimeSpan TotalBusyTime { get; private set; }
         private Timer busyTimeUpdateTimer;
+        private readonly TimeSpan busyTimeWindow;
+        private readonly ConcurrentQueue<TaskRequest> taskQueue = new();
+        private readonly object lockObj = new object();
 
         public TelegramClientWrapper(Client client, int databaseId, long telegramId, TimeSpan? busyTimeWindow = null)
         {
@@ -23,15 +32,17 @@ namespace TgSearchStatistics.Models
             IsBusy = false;
             taskDurations = new ConcurrentQueue<(DateTime start, DateTime? end)>();
             TotalBusyTime = TimeSpan.Zero;
+            this.busyTimeWindow = busyTimeWindow ?? TimeSpan.FromSeconds(10);
 
             busyTimeUpdateTimer = new Timer(UpdateTotalBusyTime, null, TimeSpan.Zero, TimeSpan.FromMilliseconds(500));
+            Task.Run(() => ProcessTasks());
         }
 
         public void AddTaskStart()
         {
             var startTime = DateTime.UtcNow;
             taskDurations.Enqueue((startTime, null));
-            Console.WriteLine($"Client {DatabaseId}: Task started at {startTime}. Total busy time: {TotalBusyTime.TotalSeconds} seconds.");
+            _logger?.LogInformation($"Client {DatabaseId}: Task started at {startTime}. Total busy time: {TotalBusyTime.TotalSeconds} seconds.");
         }
 
         public void AddTaskEnd()
@@ -39,28 +50,29 @@ namespace TgSearchStatistics.Models
             var endTime = DateTime.UtcNow;
             bool updated = false;
 
-            var updatedQueue = new ConcurrentQueue<(DateTime start, DateTime? end)>();
-            while (taskDurations.TryDequeue(out var task))
+            var tasks = taskDurations.ToArray();
+            taskDurations = new ConcurrentQueue<(DateTime start, DateTime? end)>();
+
+            foreach (var task in tasks)
             {
                 if (!task.end.HasValue && !updated)
                 {
-                    updatedQueue.Enqueue((task.start, endTime));
+                    taskDurations.Enqueue((task.start, endTime));
                     updated = true;
                 }
                 else
                 {
-                    updatedQueue.Enqueue(task);
+                    taskDurations.Enqueue(task);
                 }
             }
-            taskDurations = updatedQueue;
 
             if (updated)
             {
-                Console.WriteLine($"Client {DatabaseId}: Task ended at {endTime}. Total busy time: {TotalBusyTime.TotalSeconds} seconds.");
+                _logger?.LogInformation($"Client {DatabaseId}: Task ended at {endTime}. Total busy time: {TotalBusyTime.TotalSeconds} seconds.");
             }
             else
             {
-                Console.WriteLine($"Client {DatabaseId}: Attempted to end a task when no tasks were recorded or task already ended.");
+                _logger?.LogInformation($"Client {DatabaseId}: Attempted to end a task when no tasks were recorded or task already ended.");
             }
         }
 
@@ -72,8 +84,7 @@ namespace TgSearchStatistics.Models
         private void UpdateTotalBusyTime(object state)
         {
             var now = DateTime.UtcNow;
-            var period = TimeSpan.FromSeconds(10);
-            var threshold = now - period;
+            var threshold = now - busyTimeWindow;
             var newBusyTime = TimeSpan.Zero;
 
             foreach (var task in taskDurations)
@@ -92,7 +103,68 @@ namespace TgSearchStatistics.Models
 
             TotalBusyTime = newBusyTime;
 
-            Console.WriteLine($"Client {DatabaseId}: Updated total busy time: {TotalBusyTime.TotalSeconds} seconds.");
+            _logger?.LogInformation($"Client {DatabaseId}: Updated total busy time: {TotalBusyTime.TotalSeconds} seconds.");
+        }
+
+        public void EnqueueTask(TaskRequest taskRequest)
+        {
+            lock (lockObj)
+            {
+                taskQueue.Enqueue(taskRequest);
+            }
+        }
+
+        private async Task ProcessTasks()
+        {
+            while (true)
+            {
+                TaskRequest taskRequest = null;
+
+                lock (lockObj)
+                {
+                    if (taskQueue.TryDequeue(out var request))
+                    {
+                        taskRequest = request;
+                    }
+                }
+
+                if (taskRequest != null)
+                {
+                    try
+                    {
+                        var result = await ExecuteWithClientAsync(taskRequest.TaskToExecute);
+                        taskRequest.TaskCompletionSource.SetResult(result);
+                    }
+                    catch (Exception ex)
+                    {
+                        taskRequest.TaskCompletionSource.SetException(ex);
+                    }
+                }
+                else
+                {
+                    await Task.Delay(100);
+                }
+            }
+        }
+
+        private async Task<List<TL.Message>> ExecuteWithClientAsync(Func<Client, Task<List<TL.Message>>> task)
+        {
+            ArgumentNullException.ThrowIfNull(task);
+
+            try
+            {
+                IsBusy = true;
+                AddTaskStart();
+
+                var result = await task(Client);
+
+                return result;
+            }
+            finally
+            {
+                AddTaskEnd();
+                IsBusy = false;
+            }
         }
     }
 }

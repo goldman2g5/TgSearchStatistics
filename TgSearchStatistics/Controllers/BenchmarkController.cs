@@ -34,9 +34,9 @@ namespace TgSearchStatistics.Controllers
             var requestDataList = new List<RequestData>
             {
                                 //new RequestData { ChannelId = -1001135818819, StartDate = now.AddDays(-10), EndDate = now }, // 3 months ago to nownew RequestData { ChannelId = -1001135818819, StartDate = now.AddDays(-10), EndDate = now }, // 3 months ago to now
-                new RequestData { ChannelId = -1001075423523, StartDate = now.AddDays(-10), EndDate = now },
+                //new RequestData { ChannelId = -1001075423523, StartDate = now.AddDays(-1), EndDate = now },
 
-                new RequestData { ChannelId = -1001135818819, StartDate = now.AddDays(-10), EndDate = now },
+                //new RequestData { ChannelId = -1001135818819, StartDate = now.AddDays(-1), EndDate = now },
                 new RequestData { ChannelId = -1001703721750, StartDate = now.AddDays(-10), EndDate = now },
 
 
@@ -67,9 +67,9 @@ namespace TgSearchStatistics.Controllers
             // Define different data sets for requests
             var requestDataList = new List<RequestData>
     {
-        new RequestData { ChannelId = -1001075423523, StartDate = now.AddDays(-30), EndDate = now },
-        new RequestData { ChannelId = -1001135818819, StartDate = now.AddDays(-30), EndDate = now },
-        new RequestData { ChannelId = -1001703721750, StartDate = now.AddDays(-30), EndDate = now },
+        new RequestData { ChannelId = -1001075423523, StartDate = now.AddDays(-10), EndDate = now },
+        new RequestData { ChannelId = -1001135818819, StartDate = now.AddDays(-10), EndDate = now },
+        new RequestData { ChannelId = -1001703721750, StartDate = now.AddDays(-10), EndDate = now },
         // Add more data sets as needed
     };
 
