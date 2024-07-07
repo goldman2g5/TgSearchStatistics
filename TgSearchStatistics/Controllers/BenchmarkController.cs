@@ -34,9 +34,9 @@ namespace TgSearchStatistics.Controllers
             var requestDataList = new List<RequestData>
             {
                                 //new RequestData { ChannelId = -1001135818819, StartDate = now.AddDays(-10), EndDate = now }, // 3 months ago to nownew RequestData { ChannelId = -1001135818819, StartDate = now.AddDays(-10), EndDate = now }, // 3 months ago to now
-                new RequestData { ChannelId = -1001075423523, StartDate = now.AddDays(-30), EndDate = now },
+                new RequestData { ChannelId = -1001075423523, StartDate = now.AddDays(-120), EndDate = now },
 
-                new RequestData { ChannelId = -1001135818819, StartDate = now.AddDays(-30), EndDate = now },
+                new RequestData { ChannelId = -1001135818819, StartDate = now.AddDays(-80), EndDate = now },
                 new RequestData { ChannelId = -1001403805810, StartDate = now.AddDays(-30), EndDate = now },
 
 
@@ -47,7 +47,7 @@ namespace TgSearchStatistics.Controllers
             foreach (var requestData in requestDataList)
             {
                 requests.Add(SendRequest(requestData));
-                await Task.Delay(1500);
+                await Task.Delay(2000);
             }
 
             var results = await Task.WhenAll(requests);
@@ -92,6 +92,7 @@ namespace TgSearchStatistics.Controllers
         private async Task<BenchmarkLog> SendRequest(RequestData requestData)
         {
             var stopwatch = Stopwatch.StartNew();
+            await Task.Delay(new Random().Next(1000, 5000));
             var response = await _client.GetAsync($"/api/Telegram/GetMessagesByPeriod?channelId={requestData.ChannelId}&startDate={requestData.StartDate:yyyy-MM-ddTHH:mm:ssZ}&endDate={requestData.EndDate:yyyy-MM-ddTHH:mm:ssZ}");
             stopwatch.Stop();
 

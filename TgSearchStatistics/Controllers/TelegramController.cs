@@ -49,12 +49,6 @@ namespace TgCheckerApi.Controllers
             _logger.LogInformation("GetMessagesByPeriodAsync started for channel {ChannelId} with start date {StartDate} and end date {EndDate}", channelId, startDate, endDate);
             try
             {
-                var _client = await _tgclientService.GetClientByTelegramId(channelId);
-                if (_client == null)
-                {
-                    _logger.LogWarning("No active client found for channel {ChannelId}", channelId);
-                    return NotFound("No active client found for that channel");
-                }
 
                 var allMessages = await _tgclientService.GetMessagesByPeriodAsync(channelId, startDate, endDate);
                 if (allMessages == null)

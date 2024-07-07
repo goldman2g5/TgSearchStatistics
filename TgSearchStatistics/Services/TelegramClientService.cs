@@ -161,7 +161,7 @@ namespace TgSearchStatistics.Services
                 TaskToExecute = async client =>
                 {
                     var messages = await GetMessagesByPeriodInternalAsync(client, channelId, startDate, endDate);
-                    return messages;
+                    return messages.DistinctBy(m => m.id).ToList(); // Ensure distinct messages by ID
                 },
                 TaskCompletionSource = tcs
             };

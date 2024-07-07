@@ -4,6 +4,7 @@ using TgSearchStatistics.Interfaces;
 using TgSearchStatistics.Models.BaseModels;
 using TgSearchStatistics.Queues;
 using TgSearchStatistics.Services;
+using TL;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,7 +37,7 @@ builder.Services.AddSingleton<IDbContextFactory<TgDbContext>>(serviceProvider =>
     return new MyDbContextFactory(optionsBuilder.Options, serviceProvider.GetRequiredService<IServiceScopeFactory>());
 });
 
-builder.Services.AddHostedService<MessageUpdateBackgroundService>();
+builder.Services.AddSingleton<IHostedService, MessageUpdateBackgroundService>();
 builder.Services.AddSingleton<IMessageUpdateQueue, MessageUpdateQueue>();
 builder.Services.AddSingleton<TgClientFactory>();
 builder.Services.AddSingleton<TelegramClientService>();
