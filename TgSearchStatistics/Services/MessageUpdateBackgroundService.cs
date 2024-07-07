@@ -111,38 +111,13 @@ namespace TgSearchStatistics.Services
                 if (newMessages.Any())
                 {
                     _logger.LogInformation("Adding {Count} new messages.", newMessages.Count);
-                    var localMessagesDict = context.Messages.Local.ToDictionary(m => m.Id);
-
-                    foreach (var updatedMessage in updatedMessages)
-                    {
-                        if (localMessagesDict.TryGetValue(updatedMessage.Id, out var trackedMessage))
-                        {
-                            // If the message is already being tracked, update its values
-                            context.Entry(trackedMessage).CurrentValues.SetValues(updatedMessage);
-                        }
-                        else
-                        {
-                            // If the message is not being tracked, attach it for update
-                            context.Messages.Update(updatedMessage);
-                        }
-                    }
+                    await context.Messages.AddRangeAsync(newMessages, stoppingToken);
                 }
 
                 if (updatedMessages.Any())
                 {
                     _logger.LogInformation("Updating {Count} messages.", updatedMessages.Count);
-                    foreach (var updatedMessage in updatedMessages)
-                    {
-                        var trackedMessage = context.Messages.Local.FirstOrDefault(m => m.Id == updatedMessage.Id);
-                        if (trackedMessage == null)
-                        {
-                            context.Messages.Update(updatedMessage);
-                        }
-                        else
-                        {
-                            context.Entry(trackedMessage).CurrentValues.SetValues(updatedMessage);
-                        }
-                    }
+                    context.Messages.UpdateRange(updatedMessages);
                 }
 
                 _logger.LogInformation("Saving changes to the database.");

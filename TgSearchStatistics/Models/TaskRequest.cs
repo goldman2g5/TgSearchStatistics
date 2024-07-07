@@ -8,5 +8,6 @@ namespace TgSearchStatistics.Models
         public string ChannelUsername { get; set; }
         public Func<Client, Task<List<TL.Message>>> TaskToExecute { get; set; }
         public TaskCompletionSource<List<TL.Message>> TaskCompletionSource { get; set; }
+        public Client Client { get; set; } // New property to hold the Client
     }
 }

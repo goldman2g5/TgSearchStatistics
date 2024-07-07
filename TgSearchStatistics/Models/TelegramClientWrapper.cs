@@ -18,10 +18,11 @@ namespace TgSearchStatistics.Models
         public long TelegramId { get; set; }
         public bool IsBusy { get; set; }
         private ConcurrentQueue<(DateTime start, DateTime? end)> taskDurations;
+        private readonly ConcurrentQueue<TaskRequest> taskQueue = new();
         public TimeSpan TotalBusyTime { get; private set; }
         private Timer busyTimeUpdateTimer;
         private readonly TimeSpan busyTimeWindow;
-        private readonly ConcurrentQueue<TaskRequest> taskQueue = new();
+
         private readonly object lockObj = new object();
 
         public TelegramClientWrapper(Client client, int databaseId, long telegramId, TimeSpan? busyTimeWindow = null)
@@ -111,6 +112,7 @@ namespace TgSearchStatistics.Models
             lock (lockObj)
             {
                 taskQueue.Enqueue(taskRequest);
+                _logger?.LogInformation($"Client {DatabaseId}: Task enqueued. Queue size: {taskQueue.Count}.");
             }
         }
 
@@ -125,6 +127,7 @@ namespace TgSearchStatistics.Models
                     if (taskQueue.TryDequeue(out var request))
                     {
                         taskRequest = request;
+                        _logger?.LogInformation($"Client {DatabaseId}: Task dequeued. Queue size: {taskQueue.Count}.");
                     }
                 }
 
@@ -132,31 +135,34 @@ namespace TgSearchStatistics.Models
                 {
                     try
                     {
-                        var result = await ExecuteWithClientAsync(taskRequest.TaskToExecute);
+                        var result = await ExecuteWithClientAsync(taskRequest.TaskToExecute, taskRequest.Client);
                         taskRequest.TaskCompletionSource.SetResult(result);
+                        _logger?.LogInformation($"Client {DatabaseId}: Task completed successfully.");
                     }
                     catch (Exception ex)
                     {
                         taskRequest.TaskCompletionSource.SetException(ex);
+                        _logger?.LogError(ex, $"Client {DatabaseId}: Task execution failed.");
                     }
                 }
                 else
                 {
-                    await Task.Delay(100);
+                    await Task.Delay(50);
                 }
             }
         }
 
-        private async Task<List<TL.Message>> ExecuteWithClientAsync(Func<Client, Task<List<TL.Message>>> task)
+        private async Task<List<TL.Message>> ExecuteWithClientAsync(Func<Client, Task<List<TL.Message>>> task, Client client)
         {
             ArgumentNullException.ThrowIfNull(task);
+            ArgumentNullException.ThrowIfNull(client);
 
             try
             {
                 IsBusy = true;
                 AddTaskStart();
 
-                var result = await task(Client);
+                var result = await task(client);
 
                 return result;
             }
@@ -164,6 +170,28 @@ namespace TgSearchStatistics.Models
             {
                 AddTaskEnd();
                 IsBusy = false;
+            }
+        }
+
+
+        private async Task TryJoinChannel(Client client, long telegramChannelId, string channelUsername)
+        {
+            try
+            {
+                var resolveResult = await client.Contacts_ResolveUsername(channelUsername);
+                if (resolveResult?.Channel == null)
+                {
+                    Console.WriteLine($"Channel with username {channelUsername} could not be resolved.");
+                    return;
+                }
+
+                var inputChannel = new InputChannel(resolveResult.Channel.ID, resolveResult.Channel.access_hash);
+                await client.Channels_JoinChannel(inputChannel);
+                Console.WriteLine($"Successfully joined channel: {channelUsername}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to join channel {channelUsername}: {ex.Message}");
             }
         }
     }
