@@ -47,7 +47,6 @@ namespace TgSearchStatistics.Controllers
             foreach (var requestData in requestDataList)
             {
                 requests.Add(SendRequest(requestData));
-                await Task.Delay(2000);
             }
 
             var results = await Task.WhenAll(requests);
